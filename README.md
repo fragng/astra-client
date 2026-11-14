@@ -1,48 +1,93 @@
-# Astra Client 1.7.0
+# Astra Client 1.8.0
 
-Cosmetic Fabric client for Minecraft Java **1.21.11**, **Java 21**, **Fabric Loader 0.19.3+**, and **Fabric API 0.141.6+1.21.11**.
+Cosmetic client mod for Minecraft Java **1.21.11**, **Java 21**, **Fabric Loader 0.19.3+**, and **Fabric API 0.141.6+1.21.11**.
 
-[Download Astra Client 1.7.0.jar](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.7.0.jar)
+[Download Astra Client 1.8.0.jar](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.8.0.jar)
 
-Replace your previous Astra jar in the mods folder. Press **Right Shift** in a world to open the menu.
+## Install
 
-## Smooth transitions and Reactive Background (1.7.0)
+Remove previous Astra Client jars from your instance's `mods` folder. Install `astra-client-1.8.0.jar` alongside Fabric API and launch the Fabric profile. Press **Right Shift** in a world to open the client menu; Right Shift, Escape and X close it.
 
-The Right Shift menu now fades and gently scales/slides when opening and closing. Category changes fade and slide between pages; fast requests select the latest page. X, Escape and Right Shift use the closing transition. Elapsed-time handling keeps page swaps from stalling on slow frames.
+## Menu categories
 
-Enable **Visuals → Menu Background → Reactive Background**. The requested description is **Makes the Menu Look 100X Better.** The title screen's Menu Background panel has the same saved toggle.
+- **Visuals:** menu-only brightness, Minecraft FOV, Bubble Font, background themes, Reactive Background and local Fake Media.
+- **Settings:** smooth animations, button sounds, and reset Astra preferences.
+- **Jamble / Best Buds:** labelled placeholders for future features.
+- **HUD:** Astra watermark and moon logo.
+- **Spotify HUD:** all Spotify HUD preferences, desktop linking, song status and playback controls.
+- **Essentials:** hold-to-use Freelook and a configurable keyboard or mouse bind.
 
-When On, cached sprites show meteors, rockets, shooting stars and passing planets, while the wallpaper drifts slowly. These effects draw only on the title screen and client menu. The scene is bounded to at most 19 sprite submissions per frame. **Settings → Smooth animations** freezes Astra's effects and makes menu/page changes immediate when Off. Reactive Background defaults to Off.
+Custom preferences save automatically in `config/astra-client.json` and load at startup. FOV uses Minecraft's actual option. Menu brightness leaves world gamma unchanged. Bubble Font switches immediately between Coiny bubble lettering and Minecraft's normal font, including text measurement. Reset keeps Minecraft's FOV, gamma and music volume.
 
-The title panel and main buttons also fit narrow windows without overlapping; the Mods button retains its position.
+The title screen retains Normal/Galaxy/Nebula/Astra backgrounds; Normal retains Minecraft's panorama. Main title buttons align with Mod Menu. Native Minecraft buttons have rounded styling.
 
-## Inventory hover rendering fix (1.6.1)
+## Inventory rendering
 
-Removed the standalone Music category and its volume/mute controls. Spotify HUD remains a separate category, and Minecraft's native sound settings are kept.
+The standalone Music category and its volume/mute controls have been removed. Spotify controls remain in Spotify HUD. Native Minecraft sound settings are kept.
 
-Rounded inventory slots, hover highlights and tooltip backgrounds now use cached GUI-atlas sprites instead of rebuilding many small rectangles per frame. In an instrumented 54-item chest test, hovering/sweeping submitted **881 GUI elements per frame, down from 8,810**. This is a GUI-element measurement from a software-rendered development host, not a hardware FPS guarantee. Tooltips, item content and rounded styling were checked after a resource reload.
+Rounded inventory slots, slot highlights and default tooltip backgrounds now use cached GUI-atlas sprites. Slots use a single sprite, while expandable panels use stretched nine-slice sprites. This removes thousands of repeated rectangle submissions in populated inventories and chests without changing item or tooltip content. The sprites reload through Minecraft's normal resource system. The optional asset generator is `tools/generate_inventory_sprites.py` (Python with Pillow); it is not a runtime dependency.
 
 ## Spotify HUD category
 
-All Spotify controls now live in **Right Shift → Spotify HUD**:
+Open Spotify's Windows desktop app and start a song. In **Right Shift → Spotify HUD**:
 
-- Enable Spotify HUD and Enable Lyrics.
-- Desktop link and Reconnect.
-- HUD size (50–100%, default 70%).
-- Song/connection status, Previous, Play-pause and Next.
-- **Customise Spotify HUD:** Galaxy, Astra, Nebula or Black, with a live preview and saved independent theme preference.
+- **Enable Spotify HUD:** show/hide the top-centre card. Enabling also turns on Desktop link and reconnects if disconnected.
+- **Enable Lyrics:** show/hide lyrics below the card.
+- **Desktop link:** start/stop the Windows media helper.
+- **Reconnect:** restart the media helper manually.
+- **Spotify HUD size:** change the whole HUD immediately, from 50% to 100%; default 70%.
+- **Previous / Play-pause / Next:** control Spotify's media session. Unsupported actions are disabled.
+- **Customise Spotify HUD:** choose Galaxy, Astra, Nebula or Black with an immediate live preview. Only one theme is selected. This preference is separate from the main-menu background and saves across restarts. Black is the default.
 
-The top-centre card now uses a compact text-only layout: no album artwork or music icon. Lyrics glide vertically between lines with fading and a gradual highlight. Seeks and track changes select the correct lyric immediately. Smooth animations can be disabled in Settings.
+Close the client menu to see the HUD in-game. The compact card shows song, artist, elapsed time and progress. **Album artwork and the music icon have been removed**, along with their loading/decoding work. The existing separate Astra watermark retains its optional moon logo. The waiting card stays visible even if Spotify is disconnected; its status explains the connection state. F1/F3 hide the HUD. Narrow-screen layout moves the watermark below the card when needed.
 
-HUD holds Astra watermark preferences, and Settings holds general client preferences. The standalone Music category and its controls are removed. The Bubble Font switch remains in Visuals.
+## Lyrics and motion
 
-Open the Windows Spotify desktop app and play a song. Close the client menu to see the HUD. Lyrics use LRCLIB and require internet and catalogue availability; no Spotify login is requested. Metadata lookup sends song title, artist, album and duration to LRCLIB. Missing lyrics or timing have clear status messages.
+Lyrics come from **LRCLIB** over HTTPS using song title, artist, album and duration when available. No Spotify login is requested. Lookup happens in a background worker, with a bounded in-memory cache. Disabling lyrics or the Spotify HUD cancels an outstanding lookup and prevents new lookups.
 
-## Validation
+Timestamped lines follow Spotify's playback time. Lines scroll vertically into place with fading and a gradual active-line highlight. Ordinary line changes ease smoothly, while seeking or changing tracks selects the correct line immediately. The animation uses elapsed frame time. **Settings → Smooth animations** disables the transition when Off. Missing lyrics, instrumental tracks, missing timing and network failures have clear status text. Plain lyrics are labelled unsynced and cycle for reading every eight seconds of playback; this is not song synchronization.
 
-Version 1.7.0 was built and exercised in a real singleplayer world: open/close paths, seven categories, rapid retargeting, FOV, four reactive themes, saved toggles, reduced motion, Normal title panorama and a 640×480 title window. Tween checks cover frame-rate independence, reversals and long frames across the page-swap boundary. The inventory rendering optimization is preserved.
+## Windows desktop integration
 
+Windows 10/11, Windows PowerShell and desktop media-session access are required. The helper uses Windows Global System Media Transport Controls. Spotify continues playing audio through its own app. Minecraft's Music volume is separate from Spotify transport controls. Browser-only Spotify and non-Windows desktop media integration are unsupported.
 
-Built and exercised inside Minecraft on Linux: seven-page navigation, moved preferences, size, four distinct theme previews and in-game backgrounds, compact layout and lyric transition frames. Lyric motion tests check frame-rate independence, seeking and reduced motion. The Windows helper loop was tested with mocked sessions; live Windows Spotify playback remains unverified on this Linux host. Development fixtures are excluded from the download.
+The helper retries after failure or a stopped process, with a ten-second delay. Disabling the link cancels startup; stale workers cannot overwrite a new connection. Windows PowerShell startup errors are logged under **Astra Spotify** in Minecraft's `latest.log`. The helper stops when the client closes. Timeline advancement accounts for older Windows timestamps, preventing the former five-second progress freeze.
 
-[Download source, full documentation and build instructions](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.7.0-source.zip)
+## Build
+
+Use a Java 21 JDK:
+
+```sh
+./gradlew build
+./gradlew runClient
+```
+
+On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.8.0.jar`, not the sources jar.
+
+Coiny is bundled under the included `COINY-OFL.txt`. Background artwork is bundled locally; only lyric lookup requires internet. No gameplay cheats are included.
+
+## Validation limits
+
+UI, category navigation, size, themes, previews and lyric transitions were exercised inside Minecraft on Linux using a separate development-only media/lyrics fixture. The fixture and synthetic song are excluded from the mod. The production PowerShell loop and Java media protocol have automated mock tests; connection recovery was exercised with real substitute child processes. Live Windows Spotify playback remains unverified on this Linux host. No hardware FPS improvement is claimed. See `TESTING.md` for checks.
+
+## Menu transitions and Reactive Background (1.8.0)
+
+The Right Shift menu now fades and gently scales/slides when opening and closing. Category changes fade the old page out, then slide/fade the new page in. Rapid category clicks select the latest requested page. X, Escape and Right Shift all use the close transition. Mouse positions use the animated panel transform; moving page controls briefly ignore input until their transition finishes. Elapsed-time transitions finish promptly even when a frame is slow. **Settings → Smooth animations** makes opening, closing and page changes immediate when Off.
+
+**Visuals → Menu Background → Reactive Background** enables the optional moving space scene. Its description is **Makes the Menu Look 100X Better.** The same saved toggle appears beneath the theme buttons in the title screen's **Menu Background** panel. Narrow title windows use slimmer button widths so the new panel does not overlap the main controls; the Mods button keeps its original position. It defaults to Off and loads from `config/astra-client.json`.
+
+When On, the background drifts slowly and cached sprites show meteors, rockets, shooting stars, twinkling stars and passing ringed planets. The scene is restricted to the title screen and Astra menu; it does not draw into gameplay, inventory or chest screens. Normal title mode keeps Minecraft's panorama beneath the optional effects. Turning Smooth animations Off freezes Astra's effects and wallpaper drift. The original Minecraft panorama retains its own vanilla behaviour. Reset turns Reactive Background Off.
+
+The scene has a fixed maximum of 19 sprite submissions per frame and uses Minecraft's GUI atlas, with no particle spawning or per-frame image loading. `tools/generate_space_sprites.py` authors the bundled sprites; Pillow is a development dependency only. The description is cosmetic; no FPS increase is claimed.
+
+## Essentials, Fake Media and softer motion (1.8.0)
+
+**Essentials** replaces General. It integrates the original [FreeLook mod by jmilthedude](https://modrinth.com/mod/freelook-og), version 1.6.0 for Minecraft 1.21.11, bundled under its MIT license. A separate FreeLook installation is unnecessary. Remove an existing standalone copy to avoid duplicate mod IDs. Its source is [FreeLook-MultiLoader](https://github.com/jmilthedude/FreeLook-MultiLoader); redistribution details are in `THIRD-PARTY-FREELOOK.txt` inside the jar and `third-party/freelook/LICENSE.txt` in the source.
+
+Enable **Freelook**, enter rear third person with **F5**, and hold your bind (default **Left Alt**). Mouse movement rotates the camera; releasing returns to your normal view. The camera keeps Minecraft's normal third-person collision. It has no detached freecam, world-brightness override, entity detection, reach, movement assistance or automated actions. It stops in first person, front-facing third person, menus or an unfocused window. This describes its behaviour; individual servers decide whether they permit Freelook.
+
+Use **Set a key** and press a keyboard key or mouse button. Escape cancels capture; Delete clears the bind. This supports individual keys/scancodes and mouse buttons that Minecraft receives, rather than OS-reserved shortcuts, hardware-only Fn keys or key combinations. A conflict notice identifies shared native bindings; the real FreeLook mapping is also available in Minecraft Controls. Bindings save in both Astra configuration and native options.
+
+**Visuals → Menu Background → Fake Media** is an optional, local-only decoration. In F5 it draws the reference's pink media badge beside your own rendered name. It never changes your server name, rank, team, permissions or network packets, and other players cannot see it. It hides in first person, menus, with F1, and when invisible/spectating. It defaults to Off.
+
+Open/close transitions use a softer quintic easing curve, less zoom and shorter movement. Rounded client panels now use cached nine-slice sprites rather than repeated scanline rectangles. Smooth animations Off still makes transitions immediate. Reset moved to Settings and resets the Freelook enable/bind and Fake Media preference too.
