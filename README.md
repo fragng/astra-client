@@ -2,11 +2,15 @@
 
 A cosmetic Fabric client for Minecraft Java 1.21.11, Java 21 and Fabric Loader 0.19.3 or newer. Requires Fabric API 0.141.6+1.21.11.
 
-[Download Astra Client 1.5.0.jar](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.5.0.jar)
+[Download Astra Client 1.5.1.jar](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.5.1.jar)
 
 Replace your previous Astra jar in the mods folder. Press **Right Shift** in a world to open the menu.
 
-## New Spotify HUD
+## Spotify HUD visibility fix (1.5.1)
+
+The card now appears whenever enabled, including when Spotify is disconnected or has no song title. It shows the connection status and a Reconnect hint. Enabling it from Settings or HUD also enables Desktop link and reconnects if needed. Close the Right Shift menu to view the HUD.
+
+## Spotify HUD
 
 A top-centre card with album artwork, song title, artist, progress bar and playback time, styled after the supplied reference. Lyrics appear below the card.
 
@@ -21,4 +25,4 @@ Lyrics use LRCLIB and require internet access. Timestamped lyrics follow playbac
 
 Built and exercised in Minecraft on Linux with a development-only media fixture. Live Windows Spotify playback/artwork remains unverified; the Windows bridge protocol was tested with mocked sessions. The downloadable mod excludes all testing fixtures.
 
-[Download source, full documentation and build instructions](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.5.0-source.zip)
+[Download source, full documentation and build instructions](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.5.1-source.zip)
