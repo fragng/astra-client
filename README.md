@@ -1,12 +1,12 @@
-# Astra Client 1.8.1
+# Astra Client 1.8.2
 
 Cosmetic client mod for Minecraft Java **1.21.11**, **Java 21**, **Fabric Loader 0.19.3+**, and **Fabric API 0.141.6+1.21.11**.
 
-[Download Astra Client 1.8.1.jar](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.8.1.jar)
+[Download Astra Client 1.8.2.jar](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.8.2.jar)
 
 ## Install
 
-Remove previous Astra Client jars from your instance's `mods` folder. Install `astra-client-1.8.1.jar` alongside Fabric API and launch the Fabric profile. Press **Right Shift** in a world to open the client menu; Right Shift, Escape and X close it.
+Remove previous Astra Client jars from your instance's `mods` folder. Install `astra-client-1.8.2.jar` alongside Fabric API and launch the Fabric profile. Press **Right Shift** in a world to open the client menu; Right Shift, Escape and X close it.
 
 ## Menu categories
 
@@ -62,7 +62,7 @@ Use a Java 21 JDK:
 ./gradlew runClient
 ```
 
-On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.8.1.jar`, not the sources jar.
+On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.8.2.jar`, not the sources jar.
 
 Coiny is bundled under the included `COINY-OFL.txt`. Background artwork is bundled locally; only lyric lookup requires internet. No gameplay cheats are included.
 
@@ -80,18 +80,18 @@ When On, the background drifts slowly and cached sprites show meteors, rockets, 
 
 The scene has a fixed maximum of 19 sprite submissions per frame and uses Minecraft's GUI atlas, with no particle spawning or per-frame image loading. `tools/generate_space_sprites.py` authors the bundled sprites; Pillow is a development dependency only. The description is cosmetic; no FPS increase is claimed.
 
-## Essentials, Fake Media and softer motion (1.8.0)
+## Essentials and the supplied Freelook mod (1.8.2)
 
-**Essentials** replaces General. It integrates the original [FreeLook mod by jmilthedude](https://modrinth.com/mod/freelook-og), version 1.6.0 for Minecraft 1.21.11, bundled under its MIT license. A separate FreeLook installation is unnecessary. Remove an existing standalone copy to avoid duplicate mod IDs. Its source is [FreeLook-MultiLoader](https://github.com/jmilthedude/FreeLook-MultiLoader); redistribution details are in `THIRD-PARTY-FREELOOK.txt` inside the jar and `third-party/freelook/LICENSE.txt` in the source.
+Astra bundles the exact **Freelook 1.2.8 by Celibistrial** JAR supplied by the user. Its SHA-256 is `fe1a32d9e4b8894122f52985c9d81b5cefa7bb7b67e67d17e8d03c495f8ba1e4`. The previous jmilthedude implementation has been removed. Remove previous Astra jars and separate Freelook copies before installing this version; Freelook is included.
 
-Enable **Freelook** and hold your bind (default **Left Alt**) from any camera view. It temporarily enters rear third person, where mouse movement rotates only the camera. Release restores your previous perspective; you no longer need to press F5 manually. If you already use rear third person, the normal smooth camera return is retained. The camera keeps Minecraft's normal third-person collision. It has no detached freecam, world-brightness override, entity detection, reach, movement assistance or automated actions. Opening a menu, disabling Freelook or losing window focus ends the hold and restores the previous view. A manual F5 perspective change during a hold is respected. This describes its behaviour; individual servers decide whether they permit Freelook.
+Enable **Essentials → Freelook**, choose **Set a key**, and hold that keyboard key or mouse button in a world. Its default is **Left Alt**. Astra uses the attached mod's actual key mapping and native camera/input logic. From first person, the mod enters its configured perspective; when you release the key it restores your previous view. Existing F5 perspectives follow the mod's native behaviour. **M** opens its original settings page while Astra's Freelook option is enabled. That page can select hold/toggle mode and perspective; Astra's instructions reflect the selected mode.
 
-Use **Set a key** and press a keyboard key or mouse button. Escape or Delete clears the binding and shows **Not bound**. Escape is never assigned as an activation key; older saved Escape bindings are migrated to unbound. Escape outside key capture still closes the menu. This supports individual keys/scancodes and mouse buttons that Minecraft receives, rather than OS-reserved shortcuts, hardware-only Fn keys or key combinations. A conflict notice identifies shared native bindings; the real FreeLook mapping is also available in Minecraft Controls. Bindings save in both Astra configuration and native options.
+**Escape or Delete clears the binding** to **Not bound**. Escape is never an activation key. Older saved Escape bindings are also cleared at startup. Escape outside key capture closes Astra normally. Individual keyboard keys/scancodes and mouse buttons received by Minecraft are supported; OS-reserved shortcuts, hardware-only Fn keys and combinations are outside the key picker. Conflicting Minecraft bindings are identified. The same real binding is editable in native Minecraft Controls, and the value is synchronised to Astra's saved configuration.
 
-**Visuals → Menu Background → Fake Media** is an optional, local-only decoration. In F5 it draws the reference's pink media badge beside your own rendered name. It never changes your server name, rank, team, permissions or network packets, and other players cannot see it. It hides in first person, menus, with F1, and when invisible/spectating. It defaults to Off.
+Astra's enable toggle gates activation. Menus, lost window focus, disabling the setting or clearing the bind stop active Freelook using the supplied mod's own stop method. Its server block list is preserved and respected; Astra displays a notice when that list disables Freelook. It defaults to blocking Hypixel. Astra does not clear that list or override a blocked state. Camera collision and player movement remain native; no detached free camera, movement assistance, reach or automation is added. Each server decides which client mods it permits.
 
-Open/close transitions use a softer quintic easing curve, less zoom and shorter movement. Rounded client panels now use cached nine-slice sprites rather than repeated scanline rectangles. Smooth animations Off still makes transitions immediate. Reset moved to Settings and resets the Freelook enable/bind and Fake Media preference too.
+The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.8.2-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
 
-## Freelook activation fix (1.8.1)
+**Visuals → Menu Background → Fake Media** remains an optional local-only decoration. In F5 it draws the pink media badge beside your own rendered name. It never changes your server name, rank, team, permissions or network packets, and other players cannot see it. It hides in first person, menus, with F1, and when invisible/spectating. It defaults to Off.
 
-The 1.8.0 gate required manual rear F5 mode. A held bind now enters that camera mode automatically and restores the prior camera view on release or interruption. Essentials describes the new behaviour. Saved/native Escape bindings are treated as unbound, and the key-capture label explicitly explains Escape/Delete clearing.
+Open/close transitions use quintic easing, subtle zoom and short movement. Rounded panels use cached nine-slice sprites. Smooth animations Off makes transitions immediate. Reset is in Settings and resets the Freelook enable/bind and Fake Media preference too.
