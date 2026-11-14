@@ -1,19 +1,19 @@
-# Astra Client 1.9.0
+# Astra Client 1.10.0
 
 Cosmetic client mod for Minecraft Java **1.21.11**, **Java 21**, **Fabric Loader 0.19.3+**, and **Fabric API 0.141.6+1.21.11**.
 
-[Download Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.9.0.jar) · [Download 30-day Premium edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.9.0-premium.jar)
+[Download Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.10.0.jar) · [Download 30-day Premium edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.10.0-premium.jar)
 
 ## Install
 
-Remove previous Astra Client jars from your instance's `mods` folder. Install **one** edition (`astra-client-1.9.0.jar` or `astra-client-1.9.0-premium.jar`) alongside Fabric API and launch the Fabric profile. Press **Right Shift** in a world to open the client menu; Right Shift, Escape and X close it.
+Remove previous Astra Client jars from your instance's `mods` folder. Install **one** edition (`astra-client-1.10.0.jar` or `astra-client-1.10.0-premium.jar`) alongside Fabric API and launch the Fabric profile. Press **Right Shift** in a world to open the client menu; Right Shift, Escape and X close it.
 
 ## Menu categories
 
 - **Visuals:** menu-only brightness, Minecraft FOV, Bubble Font, background themes, Reactive Background and local Fake Media.
 - **Settings:** smooth animations, button sounds, and reset Astra preferences.
 - **Jamble:** labelled placeholder for future features.
-- **Customize Totem:** replaces Best Buds, with Minecraft's actual Totem of Undying icon and a dedicated page. Totem customisation controls have not yet been specified.
+- **Customize Totem:** replaces Best Buds, with Minecraft's actual Totem of Undying icon and the built-in DonutSMP Pack.
 - **HUD:** Astra watermark and moon logo.
 - **Spotify HUD:** all Spotify HUD preferences, desktop linking, song status and playback controls.
 - **Essentials:** hold-to-use Freelook and a configurable keyboard or mouse bind.
@@ -63,7 +63,7 @@ Use a Java 21 JDK:
 ./gradlew runClient
 ```
 
-On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.9.0.jar`, not the sources jar.
+On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.10.0.jar`, not the sources jar.
 
 Coiny is bundled under the included `COINY-OFL.txt`. Background artwork is bundled locally; only lyric lookup requires internet. No gameplay cheats are included.
 
@@ -91,13 +91,13 @@ Enable **Essentials → Freelook**, choose **Set a key**, and hold that keyboard
 
 Astra's enable toggle gates activation. Menus, lost window focus, disabling the setting or clearing the bind stop active Freelook using the supplied mod's own stop method. Its server block list is preserved and respected; Astra displays a notice when that list disables Freelook. It defaults to blocking Hypixel. Astra does not clear that list or override a blocked state. Camera collision and player movement remain native; no detached free camera, movement assistance, reach or automation is added. Each server decides which client mods it permits.
 
-The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.9.0-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
+The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.10.0-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
 
 **Visuals → Menu Background → Fake Media** remains an optional local-only decoration. In F5 it draws the pink media badge beside your own rendered name. It never changes your server name, rank, team, permissions or network packets, and other players cannot see it. It hides in first person, menus, with F1, and when invisible/spectating. It defaults to Off.
 
 Open/close transitions use quintic easing, subtle zoom and short movement. Rounded panels use cached nine-slice sprites. Smooth animations Off makes transitions immediate. Reset is in Settings and resets the Freelook enable/bind and Fake Media preference too.
 
-## Reference icons, Minecraft profile and separate Premium download (1.9.0)
+## Reference icons, Minecraft profile and separate Premium download (1.10.0)
 
 Visuals, Jamble, HUD, Spotify HUD and Essentials use the supplied reference designs as colour icons. Best Buds is replaced by **Customize Totem**, with the vanilla Totem of Undying texture. Settings keeps its gear icon. Icon textures are cached resources; no downloads occur during menu rendering.
 
@@ -113,4 +113,22 @@ To build the separate edition with Java 21:
 ./gradlew build -PpremiumEdition=true
 ```
 
-This produces `build/libs/astra-client-1.9.0-premium.jar`. Plain `./gradlew build` produces Member edition. The JAR's `astra-edition.json` records the edition; there are no hidden credentials or account endpoints.
+This produces `build/libs/astra-client-1.10.0-premium.jar`. Plain `./gradlew build` produces Member edition. The JAR's `astra-edition.json` records the edition; there are no hidden credentials or account endpoints.
+
+## DonutSMP Pack (1.10.0)
+
+Open **Right Shift → Customize Totem → DonutSMP Pack → Open Pack**. The built-in pack contains five reference-based pixel-art totem designs:
+
+- Drdonut's Totem
+- Jettism's Totem
+- Farex's Totem
+- Hoozar0's Totem
+- Jack's Totem
+
+Each card has a live preview and **Equip** button. The selected card glows and its button changes to **Unequip**. Equipping another design switches to it, so only one design is active. Unequip on the selected card, or **Unequip Totem** on the pack overview, restores the original Minecraft/server-resource-pack model. Back to packs and the category buttons use the existing smooth transitions.
+
+The selection saves in `config/astra-client.json` as `totemStyle` and loads on restart. Reset Astra preferences also unequips it. Invalid saved selections fall back to Minecraft's original model. No separate resource-pack installation or reload is needed when changing designs.
+
+This changes the client appearance of actual Totems of Undying in inventory/hotbar, hands, third person, dropped-item rendering and the totem activation animation. It does not give you a totem, move it to your hand, change item names/components/counts, or change its gameplay effect. Other item types retain their original models. The resolver selects a preloaded model identifier, with no per-frame texture decoding, stack copying or full resource reload on Equip.
+
+The pack is included in both Member and the separate 30-day Premium edition. Premium dates are preserved across this update.
