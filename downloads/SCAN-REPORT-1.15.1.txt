@@ -1,0 +1,47 @@
+Astra Client 1.15.1 — replacement-build scan report
+
+IMPORTANT: This is NOT a Microsoft Defender result or a guarantee of safety.
+The reported Defender threat name and affected-file hash were unavailable.
+The installable replacements remove the embedded script and encoded/hidden
+PowerShell launcher entirely. Windows media uses the system WinRT APIs.
+
+Scanner: official Cisco-Talos ClamAV 1.5.4, verified release package SHA-256
+28d6efc5b4423e7830c3559339552eb53870a9eac51ac4efb37d60530d329886
+Databases: official signed daily 28184 (15 Nov 2026) and bytecode 339.
+Coverage is LIMITED: the main database was CDN rate-limited and not available.
+No attempt was made to bypass that cooldown. Signature verification stayed on.
+The old 1.14.0 JARs also had no detections under this same limited scan;
+that does not invalidate the reported Defender alert.
+
+Live Microsoft Defender and Windows Spotify were not available on this
+Linux host. Native Windows ABI-contract tests and real Minecraft/Linux UI
+checks passed. Source, tests and review are supplied for inspection.
+
+Keep antivirus protection enabled. If Defender blocks a replacement, keep
+the block; do not add exclusions, disguise the file or turn protection off.
+
+This release adds reversible Discord Capture Mode and removes the taskbar
+identity override. The reviewed script-free media implementation is unchanged.
+A live Windows Discord screen share has not been verified on this Linux host.
+
+Exact file hashes (SHA-256):
+09e144f1dd5069a0efe15bfd7eee8fa4ba9a7fb32513e6031f82f06ede818102  astra-client-1.15.1.jar
+7f12ede13354fafa3b909a2d5e63dbffc4edeabb11a8134071d73adcef6a29b9  astra-client-1.15.1-premium.jar
+3ed5a975428d7cd54425494f6a671b04ba162aef2b10498836bb58553c03ed10  astra-client-1.15.1-source.zip
+
+Raw scanner output:
+astra-client-1.15.1.jar: OK
+astra-client-1.15.1-premium.jar: OK
+astra-client-1.15.1-source.zip: OK
+
+----------- SCAN SUMMARY -----------
+Known viruses: 341270
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 3
+Infected files: 0
+Data scanned: 41.89 MiB
+Data read: 27.73 MiB (ratio 1.51:1)
+Time: 8.255 sec (0 m 8 s)
+Start Date: 2026:11:15 15:24:50
+End Date:   2026:11:15 15:24:59
