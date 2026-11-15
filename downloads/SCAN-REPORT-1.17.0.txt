@@ -1,0 +1,49 @@
+Astra Client 1.17.0 — replacement-build scan report
+
+IMPORTANT: This is NOT a Microsoft Defender result or a guarantee of safety.
+The reported Defender threat name and affected-file hash were unavailable.
+The installable replacements remove the embedded script and encoded/hidden
+PowerShell launcher entirely. Windows media uses the system WinRT APIs.
+
+Scanner: official Cisco-Talos ClamAV 1.5.4, verified release package SHA-256
+28d6efc5b4423e7830c3559339552eb53870a9eac51ac4efb37d60530d329886
+Databases: official signed daily 28184 (15 Nov 2026) and bytecode 339.
+Coverage is LIMITED: the main database was CDN rate-limited and not available.
+No attempt was made to bypass that cooldown. Signature verification stayed on.
+The old 1.14.0 JARs also had no detections under this same limited scan;
+that does not invalidate the reported Defender alert.
+
+Live Microsoft Defender and Windows Spotify were not available on this
+Linux host. Native Windows ABI-contract tests and real Minecraft/Linux UI
+checks passed. Source, tests and review are supplied for inspection.
+
+Keep antivirus protection enabled. If Defender blocks a replacement, keep
+the block; do not add exclusions, disguise the file or turn protection off.
+
+This release adds local Jamble payment-notice parsing, saved stake limits,
+client-only win confirmation and exact 2x payout records/HUDs. No currency
+transfer, chat broadcast, new network endpoint or process is introduced.
+Tests include native Minecraft chat-button interactions with synthetic
+notices; a live authenticated DonutSMP session was unavailable.
+
+Exact file hashes (SHA-256):
+c37b556d081a6bb8267984c23555d7e728593a8d5cc0d190b7d44014725237ce  astra-client-1.17.0.jar
+ff21cb0d9a4b6849ff436b597f7d754287f84193b70a2d35b6f7a5e507b37a3e  astra-client-1.17.0-premium.jar
+041f8a671ec136165d42c9634c9d3a28d84037738a7d72e322e74c1d645d1b46  astra-client-1.17.0-source.zip
+
+Raw scanner output:
+astra-client-1.17.0.jar: OK
+astra-client-1.17.0-premium.jar: OK
+astra-client-1.17.0-source.zip: OK
+
+----------- SCAN SUMMARY -----------
+Known viruses: 341270
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 3
+Infected files: 0
+Data scanned: 42.11 MiB
+Data read: 27.78 MiB (ratio 1.52:1)
+Time: 9.316 sec (0 m 9 s)
+Start Date: 2026:11:15 19:22:55
+End Date:   2026:11:15 19:23:04
