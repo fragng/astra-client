@@ -1,0 +1,46 @@
+Astra Client 1.15.2 — replacement-build scan report
+
+IMPORTANT: This is NOT a Microsoft Defender result or a guarantee of safety.
+The reported Defender threat name and affected-file hash were unavailable.
+The installable replacements remove the embedded script and encoded/hidden
+PowerShell launcher entirely. Windows media uses the system WinRT APIs.
+
+Scanner: official Cisco-Talos ClamAV 1.5.4, verified release package SHA-256
+28d6efc5b4423e7830c3559339552eb53870a9eac51ac4efb37d60530d329886
+Databases: official signed daily 28184 (15 Nov 2026) and bytecode 339.
+Coverage is LIMITED: the main database was CDN rate-limited and not available.
+No attempt was made to bypass that cooldown. Signature verification stayed on.
+The old 1.14.0 JARs also had no detections under this same limited scan;
+that does not invalidate the reported Defender alert.
+
+Live Microsoft Defender and Windows Spotify were not available on this
+Linux host. Native Windows ABI-contract tests and real Minecraft/Linux UI
+checks passed. Source, tests and review are supplied for inspection.
+
+Keep antivirus protection enabled. If Defender blocks a replacement, keep
+the block; do not add exclusions, disguise the file or turn protection off.
+
+This release changes only Jamble result-banner layout and narrow-screen
+HUD spacing. Existing script-free media/capture implementations are retained.
+
+Exact file hashes (SHA-256):
+5ca2c70caf7c4d944069e8dedcc15f1fdf57e72717fc2d09f05bf063d9492cc1  astra-client-1.15.2.jar
+eb2e536fa9ab24c628c11abda0c72ed34f5d0fcf0d7a001c0e10feb53cf38daa  astra-client-1.15.2-premium.jar
+e617581cf3c83fe4d0348670d55ea27b751e13fa5f9126189dc889e03a9cf516  astra-client-1.15.2-source.zip
+
+Raw scanner output:
+astra-client-1.15.2.jar: OK
+astra-client-1.15.2-premium.jar: OK
+astra-client-1.15.2-source.zip: OK
+
+----------- SCAN SUMMARY -----------
+Known viruses: 341270
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 3
+Infected files: 0
+Data scanned: 41.89 MiB
+Data read: 27.73 MiB (ratio 1.51:1)
+Time: 7.606 sec (0 m 7 s)
+Start Date: 2026:11:15 15:38:41
+End Date:   2026:11:15 15:38:49
