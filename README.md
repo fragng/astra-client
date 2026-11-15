@@ -1,18 +1,18 @@
-# Astra Client 1.16.0
+# Astra Client 1.17.0
 
 Cosmetic client mod for Minecraft Java **1.21.11**, **Java 21**, **Fabric Loader 0.19.3+**, and **Fabric API 0.141.6+1.21.11**.
 
-[Download replacement Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.16.0.jar) · [Download replacement 30-day Premium edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.16.0-premium.jar)
+[Download replacement Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.17.0.jar) · [Download replacement 30-day Premium edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.17.0-premium.jar)
 
 **Defender verification is pending.** These replacements retain the script-free native media bridge from 1.14.2 and include source/checksums. A scan with another engine is not proof that Defender will accept a file. Keep any antivirus block in place and report the exact threat name and affected filename if it persists.
 
-[SHA-256 checksums](downloads/SHA256SUMS-1.16.0.txt) · [Security review](SECURITY.md) · [Scan report](downloads/SCAN-REPORT-1.16.0.txt)
+[SHA-256 checksums](downloads/SHA256SUMS-1.17.0.txt) · [Security review](SECURITY.md) · [Scan report](downloads/SCAN-REPORT-1.17.0.txt)
 
 ## Install
 
-Remove previous Astra Client jars from your instance's `mods` folder. Install **one** edition (`astra-client-1.16.0.jar` or `astra-client-1.16.0-premium.jar`) alongside Fabric API and launch the Fabric profile. Press **Right Shift** in a world to open the client menu; Right Shift, Escape and X close it.
+Remove previous Astra Client jars from your instance's `mods` folder. Install **one** edition (`astra-client-1.17.0.jar` or `astra-client-1.17.0-premium.jar`) alongside Fabric API and launch the Fabric profile. Press **Right Shift** in a world to open the client menu; Right Shift, Escape and X close it.
 
-Jamble win announcements are now smaller and sit near the top, below the Host/Viewer cards and any Spotify lyrics. On narrow windows, Spotify moves below the announcement while it is visible.
+Jamble keeps payment receipts below Spotify, win announcements below the top HUD, and the latest confirmed payout above the hotbar. Compact windows scale the top row so these panels stay separated.
 
 ## Menu categories
 
@@ -23,7 +23,7 @@ The sidebar groups appearance controls first, then tools, with Settings and Buy 
 - **Spotify HUD:** desktop linking, playback, HUD size/themes and HUD lyrics.
 - **Essentials:** Freelook and its keyboard/mouse binding, plus a saved Fullbright toggle.
 - **Customize Totem — Premium:** the five solid 3D DonutSMP creator totems.
-- **Jamble — Premium:** opt-in named-item hotbar tracking and winner announcements.
+- **Jamble — Premium:** opt-in named-item hotbar tracking, DonutSMP payment limits/queue, viewer-win confirmation and a 2x payout HUD.
 - **Settings:** animation, button sounds, Discord Capture Mode and reset preferences.
 - **Buy Premium:** Discord-logo button linking to https://discord.gg/gazebo through Minecraft's native link confirmation.
 
@@ -102,7 +102,7 @@ Use a Java 21 JDK:
 ./gradlew runClient
 ```
 
-On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.16.0.jar`, not the sources jar.
+On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.17.0.jar`, not the sources jar.
 
 Coiny is bundled under the included `COINY-OFL.txt`. Background artwork is bundled locally; only lyric lookup requires internet. The installable JAR contains no bundled PowerShell/batch/shell scripts or EXE/DLL helpers. No gameplay cheats are included.
 
@@ -130,13 +130,13 @@ Enable **Essentials → Freelook**, choose **Set a key**, and hold that keyboard
 
 Astra's enable toggle gates activation. Menus, lost window focus, disabling the setting or clearing the bind stop active Freelook using the supplied mod's own stop method. Its server block list is preserved and respected; Astra displays a notice when that list disables Freelook. It defaults to blocking Hypixel. Astra does not clear that list or override a blocked state. Camera collision and player movement remain native; no detached free camera, movement assistance, reach or automation is added. Each server decides which client mods it permits.
 
-The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.16.0-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
+The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.17.0-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
 
 **Visuals → Menu Background → Fake Media** remains an optional local-only decoration. In F5 it draws the pink media badge beside your own rendered name. It never changes your server name, rank, team, permissions or network packets, and other players cannot see it. It hides in first person, menus, with F1, and when invisible/spectating. It defaults to Off.
 
 Open/close transitions use quintic easing, subtle zoom and short movement. Rounded panels use cached nine-slice sprites. Smooth animations Off makes transitions immediate. Reset is in Settings and resets the Freelook enable/bind and Fake Media preference too.
 
-## Reference icons, Minecraft profile and separate Premium download (1.16.0)
+## Reference icons, Minecraft profile and separate Premium download (1.17.0)
 
 Visuals, Jamble, HUD, Spotify HUD and Essentials use the supplied reference designs as colour icons. Best Buds is replaced by **Customize Totem**, with the vanilla Totem of Undying texture. Settings keeps its gear icon. Icon textures are cached resources; no downloads occur during menu rendering.
 
@@ -152,9 +152,9 @@ To build the separate edition with Java 21:
 ./gradlew build -PpremiumEdition=true
 ```
 
-This produces `build/libs/astra-client-1.16.0-premium.jar`. Plain `./gradlew build` produces Member edition. The JAR's `astra-edition.json` records the edition; there are no hidden credentials or account endpoints.
+This produces `build/libs/astra-client-1.17.0-premium.jar`. Plain `./gradlew build` produces Member edition. The JAR's `astra-edition.json` records the edition; there are no hidden credentials or account endpoints.
 
-## DonutSMP Pack (1.16.0)
+## DonutSMP Pack (1.17.0)
 
 Open **Right Shift → Customize Totem → DonutSMP Pack → Open Pack**. The built-in pack contains five reference-based pixel-art totem designs:
 
@@ -172,7 +172,7 @@ This changes the client appearance of actual Totems of Undying in inventory/hotb
 
 The pack can be previewed in Member mode; equipping it requires active Premium. Premium dates are preserved across this update.
 
-## Performance Mode for streamers (1.16.0)
+## Performance Mode for streamers (1.17.0)
 
 Open **Right Shift → top-right gear → Performance Mode**. This saved, reversible toggle applies a balanced native video preset:
 
@@ -194,7 +194,7 @@ Your previous native values and the applied preset are stored with Astra prefere
 
 This reduces rendering work using Minecraft's normal settings. The FPS result depends on your hardware, world, shaders and recording workload; no fixed gain is promised. Both downloads include Performance Mode, and the Premium period is preserved.
 
-## Solid 3D creator totems (1.16.0)
+## Solid 3D creator totems (1.17.0)
 
 All five DonutSMP Pack designs now use **closed 3D cuboid character models**, replacing the old `minecraft:item/generated` sprites. Heads, torsos, arms and separate legs have front, back, side, top and bottom faces. The original reference-based front artwork remains; hair, clothing, skin and footwear patches estimate unseen sides and backs.
 
@@ -204,7 +204,7 @@ The pack menu now renders the actual 3D models at an angle, rather than a flat t
 
 `tools/generate_totem_models.py` authors the model geometry and UV mappings from the existing texture artwork using Python's standard library. No runtime texture processing or new dependencies are required.
 
-## Jamble hotbar rounds (1.16.0)
+## Jamble hotbar rounds (1.17.0)
 
 Open **Right Shift → Jamble → Enable Jamble**. It defaults to Off, saves your choice, and shows instructions on the same page.
 
@@ -219,14 +219,28 @@ Both eligible arrivals must occur within a **two-second window**, allowing sligh
 
 Tracking compares new hotbar counts against total owned counts. Moving the same items between hotbar slots, from the main inventory or from the offhand/cursor does not create a fresh round. Renaming alone does not create a new physical item gain, and anvil-screen changes are baselined. This is a local read-only receipt overlay: it does not verify a dispenser block's identity, generate rolls, dispense items, change item names/counts or send gameplay actions. The custom-name and new-arrival checks determine the result.
 
-Spotify stays between the two cards when there is room. Compact windows move it below the cards, and the watermark moves out of the way or is temporarily hidden if there is insufficient height above the hotbar. Media playback and saved HUD preferences remain unchanged. The centre announcement draws above other HUDs like a temporary title. F1 and the debug overlay hide Astra HUDs; disabling Jamble immediately clears its cards and pending pair.
+Spotify stays between the two cards, with the payment row below its lyrics and the small win banner below that. A shared responsive layout scales the top row on compact windows. The payout HUD sits above the native hotbar/health area, separated from the win banner. The watermark moves aside or hides when there is insufficient space. Media playback and saved size preferences are retained. F1 and the debug overlay hide Astra HUDs; disabling Jamble clears its session.
 
 Jamble requires active Premium and works with Performance Mode, Bubble Font and the custom 3D totems. Item stacks are copied only when an eligible result arrives; the opt-in tracker reads inventory once per client tick and does no per-frame network requests or texture decoding.
 
-## Offhand orientation fix (1.13.1, retained in 1.16.0)
+## Jamble payments and 2x payout records
+
+In **Right Shift → Jamble → Payment Limits**, enter **Minimum Pay** and **Maximum Pay**, then click **Apply Payment Limits**. **K = 1,000**, **M = 1,000,000**, **B = 1,000,000,000**; decimals such as `2.5M`, dollar prefixes and properly grouped commas are supported. Limits are inclusive, apply to new payments, and save across restarts. Defaults are **1K–1B**. Invalid input or a maximum below the minimum leaves the saved limits intact. Currency calculations use exact integer cents; the editable values preserve all cents, while compact HUD labels can round for readability.
+
+With Jamble On and active Premium, incoming **server system-chat notices** matching **`Username paid you amount`** are recognised while connected using `donutsmp.net` or one of its subdomains. Player-chat messages, actionbar text, other hosts, outgoing notices, invalid values and payments outside the limits do not enter the queue. The original receipt remains in chat and gains a local **[Viewer won]** button. The current payer appears below Spotify/lyrics as **Username · Jamble Amount**. Identical legitimate payments remain separate entries.
+
+Process payments **in arrival order**. Each eligible new hotbar round is associated with the oldest waiting payment. A Host win closes that entry without a viewer payout. A Viewer win makes its receipt eligible for confirmation and adds a new local chat prompt. Press **T** and click **[Viewer won]** beside that payment. Early clicks, Host-winning entries, old-session IDs and duplicate confirmations are refused. The bottom HUD then shows the viewer's username and **exactly 2x their payment**, for example **2.5M → 5M**. Chat confirmation shows the exact unrounded amount. The HUD keeps the latest confirmed winner.
+
+This is **local payout bookkeeping**. The client does not send `/pay`, transfer currency, generate items or broadcast chat. Pay the recorded amount through the server's normal controls when appropriate. The receipt does not independently verify the server economy or identify which person supplied roll items; it uses the observed payment format and FIFO association.
+
+Payment/round state is bounded to 256 entries and is **session-only**. Completed entries are pruned first; if all entries remain pending, new receipts are left unqueued with a visible queue-full label. Turning Jamble Off, disconnecting, losing Premium or resetting Astra clears the session; limits remain saved unless reset. Native chat keeps its usual rendering and interaction. The payout overlay does not cover Host Wins!/Viewer Wins!; the win banner is also drawn last.
+
+Tested in real Minecraft with synthetic payment notices and actual native chat-button clicks. A live authenticated DonutSMP session was unavailable on the test host; parsing follows the owner's supplied notice format.
+
+## Offhand orientation fix (1.13.1, retained in 1.17.0)
 
 The five DonutSMP character totems now use matching authored first-person transforms. Minecraft mirrors the left-hand pose itself, so the face stays turned towards you in either hand, including when Left is your Minecraft main-hand preference. Meshes, textures, size, Equip/Unequip, Jamble and other settings are preserved. Disable competing custom-totem mods/packs when using Astra's selected model.
 
 ## Native window and taskbar branding (1.14.2 and later)
 
-The game window is titled **Astra Client** from startup, including title-screen/world/server transitions. The existing gold crescent-moon logo is used for the native window and running-app taskbar icons on Windows and X11. Six icon sizes are generated once at startup using Minecraft's native image resizer; no artwork is downloaded or processed each frame. Windows uses the per-process app identity `AstraClient.Client` so the running client can have its own taskbar group. This does not modify the launcher, Java executable, registry or pinned shortcuts. Other window systems retain their native icon handling.
+The game window is titled **Astra Client** from startup, including title-screen/world/server transitions. The existing gold crescent-moon logo is used for the native window and running-app taskbar icons on Windows and X11. Six icon sizes are generated once at startup using Minecraft's native image resizer; no artwork is downloaded or processed each frame. The per-process taskbar identity override was removed in 1.15.1 for capture compatibility; Windows keeps its normal process grouping. This does not modify the launcher, Java executable, registry or pinned shortcuts. Other window systems retain their native icon handling.
