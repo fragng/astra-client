@@ -2,7 +2,7 @@
 
 Cosmetic client mod for Minecraft Java **1.21.11**, **Java 21**, **Fabric Loader 0.19.3+**, and **Fabric API 0.141.6+1.21.11**.
 
-[Download Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.14.0.jar) · [Download 30-day Premium edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.14.0-premium.jar)
+**Downloads are temporarily paused while a reported Microsoft Defender threat alert is investigated. Keep antivirus protection enabled; do not bypass a block. A replacement build is under review.**
 
 ## Install
 
