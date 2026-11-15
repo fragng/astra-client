@@ -1,12 +1,16 @@
-# Astra Client 1.14.0
+# Astra Client 1.14.2
 
 Cosmetic client mod for Minecraft Java **1.21.11**, **Java 21**, **Fabric Loader 0.19.3+**, and **Fabric API 0.141.6+1.21.11**.
 
-**Downloads are temporarily paused while a reported Microsoft Defender threat alert is investigated. Keep antivirus protection enabled; do not bypass a block. A replacement build is under review.**
+[Download replacement Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.14.2.jar) · [Download replacement 30-day Premium edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.14.2-premium.jar)
+
+**Defender verification is pending.** These replacements remove the retired scripting helper and include source/checksums. A scan with another engine is not proof that Defender will accept a file. Keep any antivirus block in place and report the exact threat name and affected filename if it persists.
+
+[SHA-256 checksums](downloads/SHA256SUMS-1.14.2.txt) · [Security review](SECURITY.md) · [Scan report](downloads/SCAN-REPORT-1.14.2.txt)
 
 ## Install
 
-Remove previous Astra Client jars from your instance's `mods` folder. Install **one** edition (`astra-client-1.14.0.jar` or `astra-client-1.14.0-premium.jar`) alongside Fabric API and launch the Fabric profile. Press **Right Shift** in a world to open the client menu; Right Shift, Escape and X close it.
+Remove previous Astra Client jars from your instance's `mods` folder. Install **one** edition (`astra-client-1.14.2.jar` or `astra-client-1.14.2-premium.jar`) alongside Fabric API and launch the Fabric profile. Press **Right Shift** in a world to open the client menu; Right Shift, Escape and X close it.
 
 ## Menu categories
 
@@ -65,9 +69,11 @@ Timestamped lines follow Spotify's playback time. Lines scroll vertically into p
 
 ## Windows desktop integration
 
-Windows 10/11, Windows PowerShell and desktop media-session access are required. The helper uses Windows Global System Media Transport Controls. Spotify continues playing audio through its own app. Minecraft's Music volume is separate from Spotify transport controls. Browser-only Spotify and non-Windows desktop media integration are unsupported.
+Windows 10 version 1809 or later / Windows 11 and Spotify's desktop app are required. Version 1.14.2 reads Windows Global System Media Transport Controls directly through the system WinRT APIs and the JNA libraries already supplied by Minecraft. It does **not** launch PowerShell, compile helper scripts, start an executable, download a native bridge, change execution policy or alter antivirus settings. Metadata and playback commands stay on a single background COM worker; Minecraft's tick/render thread never waits on a media request.
 
-The helper retries after failure or a stopped process, with a ten-second delay. Disabling the link cancels startup; stale workers cannot overwrite a new connection. Windows PowerShell startup errors are logged under **Astra Spotify** in Minecraft's `latest.log`. The helper stops when the client closes. Timeline advancement accounts for older Windows timestamps, preventing the former five-second progress freeze.
+The worker filters for Spotify, reads song/artist/album, supported controls and the Windows timeline. It releases COM interfaces and strings, times out/cancels asynchronous requests, and retries failures after ten seconds. Disable Desktop link to stop it, or use Reconnect. Native failures are logged under **Astra Spotify**. Spotify plays audio through its own app; Minecraft's Music volume is separate. Browser-only Spotify and non-Windows integration remain unsupported.
+
+**Security review:** a friend of the client owner reported a Microsoft Defender threat alert on the previous public download. The exact detection name and affected-file hash were unavailable. The old encoded/hidden PowerShell helper was an unnecessary mechanism and a plausible trigger; this does not establish the actual Defender verdict or prove a false positive. It has been removed completely from the replacement installable JAR. See [SECURITY.md](SECURITY.md) for the review and validation limits. Keep security protection enabled; never add an exclusion or override a block to use Astra.
 
 ## Build
 
@@ -78,13 +84,13 @@ Use a Java 21 JDK:
 ./gradlew runClient
 ```
 
-On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.14.0.jar`, not the sources jar.
+On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.14.2.jar`, not the sources jar.
 
-Coiny is bundled under the included `COINY-OFL.txt`. Background artwork is bundled locally; only lyric lookup requires internet. No gameplay cheats are included.
+Coiny is bundled under the included `COINY-OFL.txt`. Background artwork is bundled locally; only lyric lookup requires internet. The installable JAR contains no bundled PowerShell/batch/shell scripts or EXE/DLL helpers. No gameplay cheats are included.
 
 ## Validation limits
 
-UI, category navigation, size, themes, previews and lyric transitions were exercised inside Minecraft on Linux using a separate development-only media/lyrics fixture. The fixture and synthetic song are excluded from the mod. The production PowerShell loop and Java media protocol have automated mock tests; connection recovery was exercised with real substitute child processes. Live Windows Spotify playback remains unverified on this Linux host. No hardware FPS improvement is claimed. See `TESTING.md` for checks.
+UI, category navigation, size, themes, previews and lyric transitions were exercised inside Minecraft on Linux using a separate development-only media/lyrics fixture. The fixture and synthetic song are excluded from the mod. The replacement native WinRT bridge has repeatable COM-vtable tests (`./gradlew testWindowsMediaAbi`, also part of `check`). The retired PowerShell bridge/process tests no longer validate the current implementation. Live Windows Spotify playback remains unverified on this Linux host. No hardware FPS improvement is claimed. See `TESTING.md` for checks.
 
 ## Menu transitions and Reactive Background (1.8.0)
 
@@ -106,13 +112,13 @@ Enable **Essentials → Freelook**, choose **Set a key**, and hold that keyboard
 
 Astra's enable toggle gates activation. Menus, lost window focus, disabling the setting or clearing the bind stop active Freelook using the supplied mod's own stop method. Its server block list is preserved and respected; Astra displays a notice when that list disables Freelook. It defaults to blocking Hypixel. Astra does not clear that list or override a blocked state. Camera collision and player movement remain native; no detached free camera, movement assistance, reach or automation is added. Each server decides which client mods it permits.
 
-The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.14.0-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
+The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.14.2-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
 
 **Visuals → Menu Background → Fake Media** remains an optional local-only decoration. In F5 it draws the pink media badge beside your own rendered name. It never changes your server name, rank, team, permissions or network packets, and other players cannot see it. It hides in first person, menus, with F1, and when invisible/spectating. It defaults to Off.
 
 Open/close transitions use quintic easing, subtle zoom and short movement. Rounded panels use cached nine-slice sprites. Smooth animations Off makes transitions immediate. Reset is in Settings and resets the Freelook enable/bind and Fake Media preference too.
 
-## Reference icons, Minecraft profile and separate Premium download (1.14.0)
+## Reference icons, Minecraft profile and separate Premium download (1.14.2)
 
 Visuals, Jamble, HUD, Spotify HUD and Essentials use the supplied reference designs as colour icons. Best Buds is replaced by **Customize Totem**, with the vanilla Totem of Undying texture. Settings keeps its gear icon. Icon textures are cached resources; no downloads occur during menu rendering.
 
@@ -128,9 +134,9 @@ To build the separate edition with Java 21:
 ./gradlew build -PpremiumEdition=true
 ```
 
-This produces `build/libs/astra-client-1.14.0-premium.jar`. Plain `./gradlew build` produces Member edition. The JAR's `astra-edition.json` records the edition; there are no hidden credentials or account endpoints.
+This produces `build/libs/astra-client-1.14.2-premium.jar`. Plain `./gradlew build` produces Member edition. The JAR's `astra-edition.json` records the edition; there are no hidden credentials or account endpoints.
 
-## DonutSMP Pack (1.14.0)
+## DonutSMP Pack (1.14.2)
 
 Open **Right Shift → Customize Totem → DonutSMP Pack → Open Pack**. The built-in pack contains five reference-based pixel-art totem designs:
 
@@ -148,7 +154,7 @@ This changes the client appearance of actual Totems of Undying in inventory/hotb
 
 The pack can be previewed in Member mode; equipping it requires active Premium. Premium dates are preserved across this update.
 
-## Performance Mode for streamers (1.14.0)
+## Performance Mode for streamers (1.14.2)
 
 Open **Right Shift → top-right gear → Performance Mode**. This saved, reversible toggle applies a balanced native video preset:
 
@@ -170,7 +176,7 @@ Your previous native values and the applied preset are stored with Astra prefere
 
 This reduces rendering work using Minecraft's normal settings. The FPS result depends on your hardware, world, shaders and recording workload; no fixed gain is promised. Both downloads include Performance Mode, and the Premium period is preserved.
 
-## Solid 3D creator totems (1.14.0)
+## Solid 3D creator totems (1.14.2)
 
 All five DonutSMP Pack designs now use **closed 3D cuboid character models**, replacing the old `minecraft:item/generated` sprites. Heads, torsos, arms and separate legs have front, back, side, top and bottom faces. The original reference-based front artwork remains; hair, clothing, skin and footwear patches estimate unseen sides and backs.
 
@@ -180,7 +186,7 @@ The pack menu now renders the actual 3D models at an angle, rather than a flat t
 
 `tools/generate_totem_models.py` authors the model geometry and UV mappings from the existing texture artwork using Python's standard library. No runtime texture processing or new dependencies are required.
 
-## Jamble hotbar rounds (1.14.0)
+## Jamble hotbar rounds (1.14.2)
 
 Open **Right Shift → Jamble → Enable Jamble**. It defaults to Off, saves your choice, and shows instructions on the same page.
 
@@ -199,6 +205,10 @@ Spotify stays between the two cards when there is room. Compact windows move it 
 
 Jamble requires active Premium and works with Performance Mode, Bubble Font and the custom 3D totems. Item stacks are copied only when an eligible result arrives; the opt-in tracker reads inventory once per client tick and does no per-frame network requests or texture decoding.
 
-## Offhand orientation fix (1.13.1, retained in 1.14.0)
+## Offhand orientation fix (1.13.1, retained in 1.14.2)
 
 The five DonutSMP character totems now use matching authored first-person transforms. Minecraft mirrors the left-hand pose itself, so the face stays turned towards you in either hand, including when Left is your Minecraft main-hand preference. Meshes, textures, size, Equip/Unequip, Jamble and other settings are preserved. Disable competing custom-totem mods/packs when using Astra's selected model.
+
+## Native window and taskbar branding (1.14.2)
+
+The game window is titled **Astra Client** from startup, including title-screen/world/server transitions. The existing gold crescent-moon logo is used for the native window and running-app taskbar icons on Windows and X11. Six icon sizes are generated once at startup using Minecraft's native image resizer; no artwork is downloaded or processed each frame. Windows uses the per-process app identity `AstraClient.Client` so the running client can have its own taskbar group. This does not modify the launcher, Java executable, registry or pinned shortcuts. Other window systems retain their native icon handling.
