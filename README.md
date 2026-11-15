@@ -1,16 +1,16 @@
-# Astra Client 1.15.0
+# Astra Client 1.15.1
 
 Cosmetic client mod for Minecraft Java **1.21.11**, **Java 21**, **Fabric Loader 0.19.3+**, and **Fabric API 0.141.6+1.21.11**.
 
-[Download replacement Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.15.0.jar) · [Download replacement 30-day Premium edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.15.0-premium.jar)
+[Download replacement Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.15.1.jar) · [Download replacement 30-day Premium edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.15.1-premium.jar)
 
 **Defender verification is pending.** These replacements retain the script-free native media bridge from 1.14.2 and include source/checksums. A scan with another engine is not proof that Defender will accept a file. Keep any antivirus block in place and report the exact threat name and affected filename if it persists.
 
-[SHA-256 checksums](downloads/SHA256SUMS-1.15.0.txt) · [Security review](SECURITY.md) · [Scan report](downloads/SCAN-REPORT-1.15.0.txt)
+[SHA-256 checksums](downloads/SHA256SUMS-1.15.1.txt) · [Security review](SECURITY.md) · [Scan report](downloads/SCAN-REPORT-1.15.1.txt)
 
 ## Install
 
-Remove previous Astra Client jars from your instance's `mods` folder. Install **one** edition (`astra-client-1.15.0.jar` or `astra-client-1.15.0-premium.jar`) alongside Fabric API and launch the Fabric profile. Press **Right Shift** in a world to open the client menu; Right Shift, Escape and X close it.
+Remove previous Astra Client jars from your instance's `mods` folder. Install **one** edition (`astra-client-1.15.1.jar` or `astra-client-1.15.1-premium.jar`) alongside Fabric API and launch the Fabric profile. Press **Right Shift** in a world to open the client menu; Right Shift, Escape and X close it.
 
 ## Menu categories
 
@@ -22,7 +22,7 @@ The sidebar groups appearance controls first, then tools, with Settings and Buy 
 - **Essentials:** Freelook and its keyboard/mouse binding.
 - **Customize Totem — Premium:** the five solid 3D DonutSMP creator totems.
 - **Jamble — Premium:** opt-in named-item hotbar tracking and winner announcements.
-- **Settings:** animation, button sounds and reset preferences.
+- **Settings:** animation, button sounds, Discord Capture Mode and reset preferences.
 - **Buy Premium:** Discord-logo button linking to https://discord.gg/gazebo through Minecraft's native link confirmation.
 
 **Active Premium is required for Custom Sky, Lyrics In Sky, Customize Totem and Jamble.** Member mode can browse sky previews and see clearly labelled locked feature pages. Existing selections are retained when Premium is inactive; their effects stop, native totem/sky rendering returns and pending Jamble results clear. Other Astra functions remain available.
@@ -42,6 +42,14 @@ Sky lyrics render behind terrain, roofs and clouds as part of the sky; solid geo
 Custom preferences save automatically in `config/astra-client.json` and load at startup. FOV uses Minecraft's actual option. Menu brightness leaves world gamma unchanged. Bubble Font switches immediately between Coiny bubble lettering and Minecraft's normal font, including text measurement. Reset keeps Minecraft's FOV, gamma and music volume.
 
 The title screen retains Normal/Galaxy/Nebula/Astra backgrounds; Normal retains Minecraft's panorama. Main title buttons align with Mod Menu. Native Minecraft buttons have rounded styling.
+
+## Discord screen sharing
+
+For a black or frozen Discord stream, enable **Right Shift → Settings → Discord Capture Mode** before starting the stream. It switches Minecraft to a normal window, disables pause on lost focus, and bypasses the native short/long AFK render throttle while retaining your normal FPS cap. The window is named **Astra Client | Minecraft 1.21.11** in this mode; choose it from Discord's **Share Your Screen → Applications** list. Leave the game open rather than minimizing it.
+
+The mode is optional and off by default. Your previous fullscreen/pause preferences are backed up in Astra's config, survive a restart and are restored when the mode is disabled or Astra preferences are reset. Native option changes you deliberately make while it is enabled are preserved when they differ from the applied preset. The original Astra logo remains; the separate Windows process taskbar-ID override from 1.14.2/1.15.0 has been removed as a compatibility precaution.
+
+This addresses application-side fullscreen, pause and AFK-throttling causes; it does not modify Discord, install capture hooks, access your account or bypass Windows protections. Game rendering/focus/restore behaviour is tested in Minecraft on Linux. A live Windows Discord stream and audio capture could not be verified on that host. If the window still captures black, try Discord's full-display sharing, and check that Discord and Minecraft run on the same GPU. Discord capture-method settings and GPU drivers can also affect the result.
 
 ## Inventory rendering
 
@@ -86,7 +94,7 @@ Use a Java 21 JDK:
 ./gradlew runClient
 ```
 
-On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.15.0.jar`, not the sources jar.
+On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.15.1.jar`, not the sources jar.
 
 Coiny is bundled under the included `COINY-OFL.txt`. Background artwork is bundled locally; only lyric lookup requires internet. The installable JAR contains no bundled PowerShell/batch/shell scripts or EXE/DLL helpers. No gameplay cheats are included.
 
@@ -114,13 +122,13 @@ Enable **Essentials → Freelook**, choose **Set a key**, and hold that keyboard
 
 Astra's enable toggle gates activation. Menus, lost window focus, disabling the setting or clearing the bind stop active Freelook using the supplied mod's own stop method. Its server block list is preserved and respected; Astra displays a notice when that list disables Freelook. It defaults to blocking Hypixel. Astra does not clear that list or override a blocked state. Camera collision and player movement remain native; no detached free camera, movement assistance, reach or automation is added. Each server decides which client mods it permits.
 
-The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.15.0-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
+The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.15.1-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
 
 **Visuals → Menu Background → Fake Media** remains an optional local-only decoration. In F5 it draws the pink media badge beside your own rendered name. It never changes your server name, rank, team, permissions or network packets, and other players cannot see it. It hides in first person, menus, with F1, and when invisible/spectating. It defaults to Off.
 
 Open/close transitions use quintic easing, subtle zoom and short movement. Rounded panels use cached nine-slice sprites. Smooth animations Off makes transitions immediate. Reset is in Settings and resets the Freelook enable/bind and Fake Media preference too.
 
-## Reference icons, Minecraft profile and separate Premium download (1.15.0)
+## Reference icons, Minecraft profile and separate Premium download (1.15.1)
 
 Visuals, Jamble, HUD, Spotify HUD and Essentials use the supplied reference designs as colour icons. Best Buds is replaced by **Customize Totem**, with the vanilla Totem of Undying texture. Settings keeps its gear icon. Icon textures are cached resources; no downloads occur during menu rendering.
 
@@ -136,9 +144,9 @@ To build the separate edition with Java 21:
 ./gradlew build -PpremiumEdition=true
 ```
 
-This produces `build/libs/astra-client-1.15.0-premium.jar`. Plain `./gradlew build` produces Member edition. The JAR's `astra-edition.json` records the edition; there are no hidden credentials or account endpoints.
+This produces `build/libs/astra-client-1.15.1-premium.jar`. Plain `./gradlew build` produces Member edition. The JAR's `astra-edition.json` records the edition; there are no hidden credentials or account endpoints.
 
-## DonutSMP Pack (1.15.0)
+## DonutSMP Pack (1.15.1)
 
 Open **Right Shift → Customize Totem → DonutSMP Pack → Open Pack**. The built-in pack contains five reference-based pixel-art totem designs:
 
@@ -156,7 +164,7 @@ This changes the client appearance of actual Totems of Undying in inventory/hotb
 
 The pack can be previewed in Member mode; equipping it requires active Premium. Premium dates are preserved across this update.
 
-## Performance Mode for streamers (1.15.0)
+## Performance Mode for streamers (1.15.1)
 
 Open **Right Shift → top-right gear → Performance Mode**. This saved, reversible toggle applies a balanced native video preset:
 
@@ -178,7 +186,7 @@ Your previous native values and the applied preset are stored with Astra prefere
 
 This reduces rendering work using Minecraft's normal settings. The FPS result depends on your hardware, world, shaders and recording workload; no fixed gain is promised. Both downloads include Performance Mode, and the Premium period is preserved.
 
-## Solid 3D creator totems (1.15.0)
+## Solid 3D creator totems (1.15.1)
 
 All five DonutSMP Pack designs now use **closed 3D cuboid character models**, replacing the old `minecraft:item/generated` sprites. Heads, torsos, arms and separate legs have front, back, side, top and bottom faces. The original reference-based front artwork remains; hair, clothing, skin and footwear patches estimate unseen sides and backs.
 
@@ -188,7 +196,7 @@ The pack menu now renders the actual 3D models at an angle, rather than a flat t
 
 `tools/generate_totem_models.py` authors the model geometry and UV mappings from the existing texture artwork using Python's standard library. No runtime texture processing or new dependencies are required.
 
-## Jamble hotbar rounds (1.15.0)
+## Jamble hotbar rounds (1.15.1)
 
 Open **Right Shift → Jamble → Enable Jamble**. It defaults to Off, saves your choice, and shows instructions on the same page.
 
@@ -207,7 +215,7 @@ Spotify stays between the two cards when there is room. Compact windows move it 
 
 Jamble requires active Premium and works with Performance Mode, Bubble Font and the custom 3D totems. Item stacks are copied only when an eligible result arrives; the opt-in tracker reads inventory once per client tick and does no per-frame network requests or texture decoding.
 
-## Offhand orientation fix (1.13.1, retained in 1.15.0)
+## Offhand orientation fix (1.13.1, retained in 1.15.1)
 
 The five DonutSMP character totems now use matching authored first-person transforms. Minecraft mirrors the left-hand pose itself, so the face stays turned towards you in either hand, including when Left is your Minecraft main-hand preference. Meshes, textures, size, Equip/Unequip, Jamble and other settings are preserved. Disable competing custom-totem mods/packs when using Astra's selected model.
 
