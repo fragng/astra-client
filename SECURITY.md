@@ -1,4 +1,4 @@
-# Astra Client security review — 1.15.0 (script-free bridge retained from 1.14.2)
+# Astra Client security review — 1.15.1 (script-free bridge retained from 1.14.2)
 
 A Microsoft Defender threat alert was reported by a friend of the client owner for the latest public version (1.14.0). The exact Defender detection name, affected filename and file hash were not available. The report is taken seriously; the recommended download links were paused during investigation, and both 1.14.0 installable JARs were withdrawn from the default branch (source/history retained). No claim is made that the report was a false positive or that Defender has cleared the replacement.
 
@@ -8,9 +8,9 @@ The prior Windows Spotify integration launched a bundled PowerShell script using
 
 The installable JAR contains no PowerShell/batch/shell scripts or EXE/DLL files. The media bridge does not disable protection, create exclusions, bypass execution policy, add persistence, install a service, start a child process or download/run a helper. The Java source remains readable and included. The only bundled mod dependency is the exact original Freelook 1.2.8 JAR, SHA-256 `fe1a32d9e4b8894122f52985c9d81b5cefa7bb7b67e67d17e8d03c495f8ba1e4`; its bytecode was reviewed for process/network/native loading, with only its normal configuration file I/O found.
 
-Astra's lyric service uses HTTPS to LRCLIB with the selected song's title/artist/album/duration. The Discord link opens through Minecraft's native user confirmation. Other custom preferences stay in the instance's config directory. The native Windows taskbar app ID is per-process and does not modify pinned shortcuts or the registry.
+Astra's lyric service uses HTTPS to LRCLIB with the selected song's title/artist/album/duration. The Discord link opens through Minecraft's native user confirmation. Other custom preferences stay in the instance's config directory. Astra 1.15.1 removes the per-process Windows taskbar app-ID override; the bundled window logo remains. No registry or pinned-shortcut changes are made.
 
-Version 1.15.0 retains the exact media/taskbar implementation from the reviewed 1.14.2 replacement and changes sky-lyrics rendering/controls. Its hashes and separate scan report identify the new artifacts. Defender verification remains pending.
+Version 1.15.1 retains the exact media implementation from the reviewed 1.14.2 replacement. It adds an opt-in reversible windowed capture mode, bypasses the native AFK rendering throttle while that mode is enabled and removes the taskbar identity override. It does not integrate into Discord or install capture hooks. Its hashes and separate scan report identify the new artifacts. Defender verification remains pending.
 
 ## What was verified
 
