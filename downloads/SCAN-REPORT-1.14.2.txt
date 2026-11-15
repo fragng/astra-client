@@ -1,0 +1,43 @@
+Astra Client 1.14.2 — replacement-build scan report
+
+IMPORTANT: This is NOT a Microsoft Defender result or a guarantee of safety.
+The reported Defender threat name and affected-file hash were unavailable.
+The installable replacements remove the embedded script and encoded/hidden
+PowerShell launcher entirely. Windows media uses the system WinRT APIs.
+
+Scanner: official Cisco-Talos ClamAV 1.5.4, verified release package SHA-256
+28d6efc5b4423e7830c3559339552eb53870a9eac51ac4efb37d60530d329886
+Databases: official signed daily 28184 (15 Nov 2026) and bytecode 339.
+Coverage is LIMITED: the main database was CDN rate-limited and not available.
+No attempt was made to bypass that cooldown. Signature verification stayed on.
+The old 1.14.0 JARs also had no detections under this same limited scan;
+that does not invalidate the reported Defender alert.
+
+Live Microsoft Defender and Windows Spotify were not available on this
+Linux host. Native Windows ABI-contract tests and real Minecraft/Linux UI
+checks passed. Source, tests and review are supplied for inspection.
+
+Keep antivirus protection enabled. If Defender blocks a replacement, keep
+the block; do not add exclusions, disguise the file or turn protection off.
+
+Exact file hashes (SHA-256):
+8821b51e9876f6a92c13d245fd372c1cc4f117b823eac0c46b658931e5626bf1  astra-client-1.14.2.jar
+3d1015bf17a1810ae09e82b1742bdb7d0191901118e18cc59d24cc17e65a0ec3  astra-client-1.14.2-premium.jar
+4189eeb3aa17cc7184d6a25ed855063b8701cddcda15644b05016224e3fbfc66  astra-client-1.14.2-source.zip
+
+Raw scanner output:
+astra-client-1.14.2.jar: OK
+astra-client-1.14.2-premium.jar: OK
+astra-client-1.14.2-source.zip: OK
+
+----------- SCAN SUMMARY -----------
+Known viruses: 341270
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 3
+Infected files: 0
+Data scanned: 41.75 MiB
+Data read: 27.68 MiB (ratio 1.51:1)
+Time: 9.077 sec (0 m 9 s)
+Start Date: 2026:11:15 13:23:13
+End Date:   2026:11:15 13:23:22
