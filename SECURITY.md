@@ -1,4 +1,4 @@
-# Astra Client security review — 1.16.0 (script-free bridge retained from 1.14.2)
+# Astra Client security review — 1.18.0 (script-free bridge retained from 1.14.2)
 
 A Microsoft Defender threat alert was reported by a friend of the client owner for the latest public version (1.14.0). The exact Defender detection name, affected filename and file hash were not available. The report is taken seriously; the recommended download links were paused during investigation, and both 1.14.0 installable JARs were withdrawn from the default branch (source/history retained). No claim is made that the report was a false positive or that Defender has cleared the replacement.
 
@@ -10,7 +10,7 @@ The installable JAR contains no PowerShell/batch/shell scripts or EXE/DLL files.
 
 Astra's lyric service uses HTTPS to LRCLIB with the selected song's title/artist/album/duration. The Discord link opens through Minecraft's native user confirmation. Other custom preferences stay in the instance's config directory. Astra 1.15.1 removes the per-process Windows taskbar app-ID override; the bundled window logo remains. No registry or pinned-shortcut changes are made.
 
-Version 1.16.0 retains the exact media implementation from the reviewed 1.14.2 replacement. It retains the opt-in reversible windowed capture mode and native AFK-throttle handling from 1.15.1, with the taskbar identity override removed. Version 1.16.0 adds a saved, local Fullbright lightmap setting in Essentials. It does not change native gamma, world light data or potion effects. It does not integrate into Discord or install capture hooks. Its hashes and separate scan report identify the new artifacts. Defender verification remains pending.
+Version 1.18.0 retains the exact media implementation from the reviewed 1.14.2 replacement. It retains the opt-in reversible windowed capture mode and native AFK-throttle handling from 1.15.1, with the taskbar identity override removed. Version 1.18.0 adds a newly reworked receipt-triggered Jamble HUD and native payment-review screen with exact 2x local records. It reads the supplied server-notice format on DonutSMP hostnames and uses client-only commands for review links. Confirming a win never sends a server payment or chat broadcast. No new network endpoint, executable or background process is introduced. Version 1.17.0 remains withdrawn. Existing Fullbright and capture implementations are retained. It does not integrate into Discord or install capture hooks. Its hashes and separate scan report identify the new artifacts. Defender verification remains pending.
 
 ## What was verified
 
