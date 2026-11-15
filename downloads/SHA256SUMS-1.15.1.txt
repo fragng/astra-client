@@ -1,0 +1,3 @@
+09e144f1dd5069a0efe15bfd7eee8fa4ba9a7fb32513e6031f82f06ede818102  astra-client-1.15.1.jar
+7f12ede13354fafa3b909a2d5e63dbffc4edeabb11a8134071d73adcef6a29b9  astra-client-1.15.1-premium.jar
+3ed5a975428d7cd54425494f6a671b04ba162aef2b10498836bb58553c03ed10  astra-client-1.15.1-source.zip
