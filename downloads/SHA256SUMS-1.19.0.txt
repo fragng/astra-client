@@ -1,0 +1,3 @@
+5ffa26ae4dcac39ac51dd40a520e919e083b0129a9e7aa7bf73734efa8984c32  astra-client-1.19.0.jar
+131f73265e0c23b50e09d08466d82babd6e795bd57cff8ed6cfc14c26d9b325a  astra-client-1.19.0-premium.jar
+40a448450fcd7074b6257595619c1337b7e91202dfcd732ddf57326744bde065  astra-client-1.19.0-source.zip
