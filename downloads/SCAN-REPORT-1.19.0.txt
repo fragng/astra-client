@@ -1,0 +1,51 @@
+Astra Client 1.19.0 — replacement-build scan report
+
+IMPORTANT: This is NOT a Microsoft Defender result or a guarantee of safety.
+The reported Defender threat name and affected-file hash were unavailable.
+The installable replacements remove the embedded script and encoded/hidden
+PowerShell launcher entirely. Windows media uses the system WinRT APIs.
+
+Scanner: official Cisco-Talos ClamAV 1.5.4, verified release package SHA-256
+28d6efc5b4423e7830c3559339552eb53870a9eac51ac4efb37d60530d329886
+Databases: official signed daily 28184 (15 Nov 2026) and bytecode 339.
+Coverage is LIMITED: the main database was CDN rate-limited and not available.
+No attempt was made to bypass that cooldown. Signature verification stayed on.
+The old 1.14.0 JARs also had no detections under this same limited scan;
+that does not invalidate the reported Defender alert.
+
+Live Microsoft Defender and Windows Spotify were not available on this
+Linux host. Native Windows ABI-contract tests and real Minecraft/Linux UI
+checks passed. Source, tests and review are supplied for inspection.
+
+Keep antivirus protection enabled. If Defender blocks a replacement, keep
+the block; do not add exclusions, disguise the file or turn protection off.
+
+Version 1.19.0 adds the second PvP menu page, saved local visual controls,
+a movable own-player HUD and native Damage Tilt settings. The existing
+Windows media implementation and original nested Freelook are unchanged.
+No new endpoint, executable, process or combat automation is introduced.
+Native Minecraft/Linux mouse, render, persistence and data checks passed.
+Version 1.17.0 remains withdrawn. Live authenticated DonutSMP and Windows
+integration remain unverified.
+
+Exact file hashes (SHA-256):
+5ffa26ae4dcac39ac51dd40a520e919e083b0129a9e7aa7bf73734efa8984c32  astra-client-1.19.0.jar
+131f73265e0c23b50e09d08466d82babd6e795bd57cff8ed6cfc14c26d9b325a  astra-client-1.19.0-premium.jar
+40a448450fcd7074b6257595619c1337b7e91202dfcd732ddf57326744bde065  astra-client-1.19.0-source.zip
+
+Raw scanner output:
+astra-client-1.19.0.jar: OK
+astra-client-1.19.0-premium.jar: OK
+astra-client-1.19.0-source.zip: OK
+
+----------- SCAN SUMMARY -----------
+Known viruses: 341270
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 3
+Infected files: 0
+Data scanned: 42.33 MiB
+Data read: 27.85 MiB (ratio 1.52:1)
+Time: 19.455 sec (0 m 19 s)
+Start Date: 2026:11:16 17:54:45
+End Date:   2026:11:16 17:55:05
