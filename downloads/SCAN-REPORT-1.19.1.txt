@@ -1,0 +1,53 @@
+Astra Client 1.19.1 — replacement-build scan report
+
+IMPORTANT: This is NOT a Microsoft Defender result or a guarantee of safety.
+The reported Defender threat name and affected-file hash were unavailable.
+The installable replacements remove the embedded script and encoded/hidden
+PowerShell launcher entirely. Windows media uses the system WinRT APIs.
+
+Scanner: official Cisco-Talos ClamAV 1.5.4, verified release package SHA-256
+28d6efc5b4423e7830c3559339552eb53870a9eac51ac4efb37d60530d329886
+Databases: official signed daily 28184 (15 Nov 2026) and bytecode 339.
+Coverage is LIMITED: the main database was CDN rate-limited and not available.
+No attempt was made to bypass that cooldown. Signature verification stayed on.
+The old 1.14.0 JARs also had no detections under this same limited scan;
+that does not invalidate the reported Defender alert.
+
+Live Microsoft Defender and Windows Spotify were not available on this
+Linux host. Native Windows ABI-contract tests and real Minecraft/Linux UI
+checks passed. Source, tests and review are supplied for inspection.
+
+Keep antivirus protection enabled. If Defender blocks a replacement, keep
+the block; do not add exclusions, disguise the file or turn protection off.
+
+Version 1.19.1 removes Jamble payments, its J-key review screen/binding,
+client commands/chat links, stake limits, ledger and payout HUD/controls.
+Original hotbar-only Jamble and Spotify layout sources match pre-payment
+1.16.0 exactly. PvP and other production code remain unchanged from 1.19.0.
+No new endpoint, executable, process or dependency is introduced. The exact
+Freelook JAR and native media bridge are unchanged. Native Minecraft/Linux
+roll, UI, J-key, config and small-window checks passed; Windows and live
+authenticated DonutSMP testing remain unavailable. Version 1.17.0 remains
+withdrawn. This report does not establish a Microsoft Defender verdict.
+
+Exact file hashes (SHA-256):
+c99c09d66a09869ca41f129db22c5da41cb754d01c147770ee868fdcce6c9e4f  astra-client-1.19.1.jar
+d50a9a607628d2b8fbece6cf111bd143934c45132649b279902ecba1a2baa9f2  astra-client-1.19.1-premium.jar
+f92261d581c77bd8b652f27bc6ca8c3465884efd3a130c8d58bc94b1ecd510f1  astra-client-1.19.1-source.zip
+
+Raw scanner output:
+astra-client-1.19.1.jar: OK
+astra-client-1.19.1-premium.jar: OK
+astra-client-1.19.1-source.zip: OK
+
+----------- SCAN SUMMARY -----------
+Known viruses: 341270
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 3
+Infected files: 0
+Data scanned: 42.02 MiB
+Data read: 27.78 MiB (ratio 1.51:1)
+Time: 9.595 sec (0 m 9 s)
+Start Date: 2026:11:17 16:12:28
+End Date:   2026:11:17 16:12:38
