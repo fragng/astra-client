@@ -1,20 +1,20 @@
-# Astra Client 1.19.0
+# Astra Client 1.19.1
 
-Version 1.17.0 has been withdrawn at the owner's request. The recommended version is 1.19.0.
+Version 1.17.0 has been withdrawn at the owner's request. The recommended version is 1.19.1.
 
 Cosmetic client mod for Minecraft Java **1.21.11**, **Java 21**, **Fabric Loader 0.19.3+**, and **Fabric API 0.141.6+1.21.11**.
 
-[Download replacement Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.19.0.jar) · [Download replacement 30-day Premium edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.19.0-premium.jar)
+[Download replacement Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.19.1.jar) · [Download replacement 30-day Premium edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.19.1-premium.jar)
 
 **Defender verification is pending.** These replacements retain the script-free native media bridge from 1.14.2 and include source/checksums. A scan with another engine is not proof that Defender will accept a file. Keep any antivirus block in place and report the exact threat name and affected filename if it persists.
 
-[SHA-256 checksums](downloads/SHA256SUMS-1.19.0.txt) · [Security review](SECURITY.md) · [Scan report](downloads/SCAN-REPORT-1.19.0.txt)
+[SHA-256 checksums](downloads/SHA256SUMS-1.19.1.txt) · [Security review](SECURITY.md) · [Scan report](downloads/SCAN-REPORT-1.19.1.txt)
 
 ## Install
 
-Remove previous Astra Client jars from your instance's `mods` folder. Install **one** edition (`astra-client-1.19.0.jar` or `astra-client-1.19.0-premium.jar`) alongside Fabric API and launch the Fabric profile. Press **Right Shift** in a world to open the client menu; Right Shift, Escape and X close it.
+Remove previous Astra Client jars from your instance's `mods` folder. Install **one** edition (`astra-client-1.19.1.jar` or `astra-client-1.19.1-premium.jar`) alongside Fabric API and launch the Fabric profile. Press **Right Shift** in a world to open the client menu; Right Shift, Escape and X close it.
 
-Jamble stays invisible until an eligible payment arrives. Its automatic UI is one compact receipt/roll card and a brief payout toast. Press J for a small, mouse-controlled payment-review window.
+Jamble is back to its original hotbar-only mode. Enable it, then receive a Host item and Viewer item together to show their numbers, icons and winner. The payment queue, J-key review menu, stake limits and payout controls have been removed.
 
 ## Menu categories
 
@@ -25,13 +25,13 @@ The sidebar groups appearance controls first, then tools, with Settings and Buy 
 - **Spotify HUD:** desktop linking, playback, HUD size/themes and HUD lyrics.
 - **Essentials:** Freelook and its keyboard/mouse binding, plus a saved Fullbright toggle.
 - **Customize Totem — Premium:** the five solid 3D DonutSMP creator totems.
-- **Jamble — Premium:** payment-triggered compact roll HUD, saved stake limits and native payment-review buttons.
+- **Jamble — Premium:** original named-item hotbar tracking, Host/Viewer cards and winner announcements.
 - **Settings:** animation, button sounds, Discord Capture Mode and reset preferences.
 - **Buy Premium:** Discord-logo button linking to https://discord.gg/gazebo through Minecraft's native link confirmation.
 
 **Active Premium is required for Custom Sky, Lyrics In Sky, Customize Totem and Jamble.** Member mode can browse sky previews and see clearly labelled locked feature pages. Existing selections are retained when Premium is inactive; their effects stop, native totem/sky rendering returns and pending Jamble results clear. Other Astra functions remain available.
 
-## PvP page (1.19.0)
+## PvP page (1.19.1)
 
 Open **Right Shift → PvP >** in the bottom-right corner. **< Client** returns to your original categories. Both pages keep their selected category while you switch; tab/page transitions use the same smooth animation. The PvP page is available in **both editions**, with eight item-icon categories:
 
@@ -127,7 +127,7 @@ Use a Java 21 JDK:
 ./gradlew runClient
 ```
 
-On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.19.0.jar`, not the sources jar.
+On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.19.1.jar`, not the sources jar.
 
 Coiny is bundled under the included `COINY-OFL.txt`. Background artwork is bundled locally; only lyric lookup requires internet. The installable JAR contains no bundled PowerShell/batch/shell scripts or EXE/DLL helpers. No gameplay cheats are included.
 
@@ -155,13 +155,13 @@ Enable **Essentials → Freelook**, choose **Set a key**, and hold that keyboard
 
 Astra's enable toggle gates activation. Menus, lost window focus, disabling the setting or clearing the bind stop active Freelook using the supplied mod's own stop method. Its server block list is preserved and respected; Astra displays a notice when that list disables Freelook. It defaults to blocking Hypixel. Astra does not clear that list or override a blocked state. Camera collision and player movement remain native; no detached free camera, movement assistance, reach or automation is added. Each server decides which client mods it permits.
 
-The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.19.0-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
+The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.19.1-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
 
 **Visuals → Menu Background → Fake Media** remains an optional local-only decoration. In F5 it draws the pink media badge beside your own rendered name. It never changes your server name, rank, team, permissions or network packets, and other players cannot see it. It hides in first person, menus, with F1, and when invisible/spectating. It defaults to Off.
 
 Open/close transitions use quintic easing, subtle zoom and short movement. Rounded panels use cached nine-slice sprites. Smooth animations Off makes transitions immediate. Reset is in Settings and resets the Freelook enable/bind and Fake Media preference too.
 
-## Reference icons, Minecraft profile and separate Premium download (1.19.0)
+## Reference icons, Minecraft profile and separate Premium download (1.19.1)
 
 Visuals, Jamble, HUD, Spotify HUD and Essentials use the supplied reference designs as colour icons. Best Buds is replaced by **Customize Totem**, with the vanilla Totem of Undying texture. Settings keeps its gear icon. Icon textures are cached resources; no downloads occur during menu rendering.
 
@@ -177,9 +177,9 @@ To build the separate edition with Java 21:
 ./gradlew build -PpremiumEdition=true
 ```
 
-This produces `build/libs/astra-client-1.19.0-premium.jar`. Plain `./gradlew build` produces Member edition. The JAR's `astra-edition.json` records the edition; there are no hidden credentials or account endpoints.
+This produces `build/libs/astra-client-1.19.1-premium.jar`. Plain `./gradlew build` produces Member edition. The JAR's `astra-edition.json` records the edition; there are no hidden credentials or account endpoints.
 
-## DonutSMP Pack (1.19.0)
+## DonutSMP Pack (1.19.1)
 
 Open **Right Shift → Customize Totem → DonutSMP Pack → Open Pack**. The built-in pack contains five reference-based pixel-art totem designs:
 
@@ -197,7 +197,7 @@ This changes the client appearance of actual Totems of Undying in inventory/hotb
 
 The pack can be previewed in Member mode; equipping it requires active Premium. Premium dates are preserved across this update.
 
-## Performance Mode for streamers (1.19.0)
+## Performance Mode for streamers (1.19.1)
 
 Open **Right Shift → top-right gear → Performance Mode**. This saved, reversible toggle applies a balanced native video preset:
 
@@ -219,7 +219,7 @@ Your previous native values and the applied preset are stored with Astra prefere
 
 This reduces rendering work using Minecraft's normal settings. The FPS result depends on your hardware, world, shaders and recording workload; no fixed gain is promised. Both downloads include Performance Mode, and the Premium period is preserved.
 
-## Solid 3D creator totems (1.19.0)
+## Solid 3D creator totems (1.19.1)
 
 All five DonutSMP Pack designs now use **closed 3D cuboid character models**, replacing the old `minecraft:item/generated` sprites. Heads, torsos, arms and separate legs have front, back, side, top and bottom faces. The original reference-based front artwork remains; hair, clothing, skin and footwear patches estimate unseen sides and backs.
 
@@ -229,27 +229,17 @@ The pack menu now renders the actual 3D models at an angle, rather than a flat t
 
 `tools/generate_totem_models.py` authors the model geometry and UV mappings from the existing texture artwork using Python's standard library. No runtime texture processing or new dependencies are required.
 
-## Compact Jamble payments (1.19.0)
+## Original Jamble restored (1.19.1)
 
-Enable **Right Shift → Jamble → Enable Jamble** before receiving payments. **Nothing is added to the gameplay HUD until a qualifying payment arrives**: no empty waiting panels, permanent limit labels or large Host/Viewer boxes. Named-item rolls without a queued payment stay off the HUD.
+Enable **Right Shift → Jamble → Enable Jamble** before receiving items. Name Host items **1.1–9.1** and Viewer items **1–9** in an anvil. Receive exactly one of each together into the **hotbar**, within two seconds. Higher wins; **5.1 beats 5**, so Host wins on matching base numbers.
 
-Open **Payment Limits**, enter minimum/maximum amounts and click **Apply Payment Limits**. **K = thousands, M = millions, B = billions**, including values such as `2.5M`; the default range is **1K–1B**, inclusive. Limits save across restarts and affect new receipts. Invalid input leaves the previous range intact. Exact cents are used internally, with safe exact 2x payout calculations.
+The original Host/Viewer cards show the received numbers and actual item icons for eight seconds. A small **Host Wins!** or **Viewer Wins!** banner appears near the top for roughly 3.5 seconds. There is no waiting HUD before a complete pair arrives. On wide screens, the cards flank Spotify; on narrower screens, Spotify moves below the roll display while it is visible. F1/debug/menu visibility is respected, and turning Jamble Off clears the result. Jamble remains a Premium feature as before.
 
-The connected server must be `donutsmp.net` or a subdomain. New system-chat notices matching **Username paid you amount** create queue entries. Player-chat lookalikes, actionbar text, other hosts, outgoing-payment messages, zero/invalid amounts and out-of-range payments are ignored. The original receipt gains a **[Review]** link that opens the payment window immediately, even before its roll.
+No payment is required. Existing inventory, main-inventory/offhand/cursor transfers, slot rearrangements and anvil renaming alone do not count as new acquisitions. Multiple ambiguous arrivals are not guessed. The tracker only observes your own inventory and cannot identify the dispenser or player that supplied an item.
 
-Process payments in arrival order. Name Host items **1.1–9.1** and Viewer items **1–9** in an anvil, then receive one of each together into the **hotbar** after payment. Both must arrive within two seconds. Existing inventory, offhand/main-inventory/cursor transfers, slot rearrangements and renaming alone are not new acquisitions. Ambiguous arrivals are not guessed. Host 5.1 beats Viewer 5. The tracker observes inventory; it cannot prove which dispenser or player supplied an item.
+The payment listener, payment queue, J-key review screen/keybinding, chat Review links, stake limits, payout confirmation/records and payment HUD/toast have been removed. Previous payment-limit fields in an old config are ignored and disappear on the next Astra save. Minecraft's J key is available to your other bindings. This release retains the PvP page and the rest of Astra's features.
 
-After payment, one **228×44 GUI-unit** card below Spotify/lyrics shows the payer, stake, small item icons, Host/Viewer values and result. Host results disappear after a few seconds; a viewer win remains ready for confirmation. There are no large separate roll panels or central title. Idle play keeps Spotify's normal size and position. On short windows, only an active receipt can temporarily fit the music stack more tightly, without changing its saved size preference.
-
-Press **J** for the **small payment-review window**, use **Right Shift → Jamble → Payments**, or press **T** and click **[Review]** in chat. The J shortcut can be changed in Minecraft Controls. The window releases the cursor and uses real native mouse buttons next to the payer's name. **Await roll** clearly indicates a waiting payment. **Mark won** becomes enabled after that payment's viewer-winning roll; clicking it records exactly **2x**, changes the button to **Recorded**, and prevents duplicate recording. Previous/Next review other payments; incoming receipts do not change the selected payer.
-
-Confirmation gives a **208×22 GUI-unit** payout toast above the hotbar for roughly four seconds after leaving review, then it fades away. Completed receipts leave no permanent HUD behind. History remains available through explicit review controls for the session. F1/debug visibility is respected. Review adds no fullscreen dark layer or blur.
-
-This is **local payout bookkeeping**, not an automatic transfer. It never sends `/pay`, broadcasts chat, generates items or contacts an account service. Review shows exact amounts; compact HUD values can round for readability. The queue holds up to 256 entries, pruning completed entries first and visibly labelling new unqueued receipts when full. Turning Jamble Off, disconnecting, losing Premium or resetting Astra clears the session. Limits remain saved until changed/reset.
-
-Tested in Minecraft with synthetic notices, actual hotbar rolls, keyboard shortcuts, native chat links and real mouse clicks on Mark won. A live authenticated DonutSMP session was unavailable on the test host. Version 1.17.0 remains withdrawn; this is a newly reworked release requested after that cancellation.
-
-## Offhand orientation fix (1.13.1, retained in 1.19.0)
+## Offhand orientation fix (1.13.1, retained in 1.19.1)
 
 The five DonutSMP character totems now use matching authored first-person transforms. Minecraft mirrors the left-hand pose itself, so the face stays turned towards you in either hand, including when Left is your Minecraft main-hand preference. Meshes, textures, size, Equip/Unequip, Jamble and other settings are preserved. Disable competing custom-totem mods/packs when using Astra's selected model.
 
