@@ -1,0 +1,54 @@
+Astra Client 1.21.0 — replacement-build scan report
+
+IMPORTANT: This is NOT a Microsoft Defender result or a guarantee of safety.
+The reported Defender threat name and affected-file hash were unavailable.
+The installable replacements remove the embedded script and encoded/hidden
+PowerShell launcher entirely. Windows media uses the system WinRT APIs.
+
+Scanner: official Cisco-Talos ClamAV 1.5.4, verified release package SHA-256
+28d6efc5b4423e7830c3559339552eb53870a9eac51ac4efb37d60530d329886
+Databases: official signed daily 28184 (15 Nov 2026) and bytecode 339.
+Coverage is LIMITED: the main database was CDN rate-limited and not available.
+No attempt was made to bypass that cooldown. Signature verification stayed on.
+The old 1.14.0 JARs also had no detections under this same limited scan;
+that does not invalidate the reported Defender alert.
+
+Live Microsoft Defender and Windows Spotify were not available on this
+Linux host. Native Windows ABI-contract tests and real Minecraft/Linux UI
+checks passed. Source, tests and review are supplied for inspection.
+
+Keep antivirus protection enabled. If Defender blocks a replacement, keep
+the block; do not add exclusions, disguise the file or turn protection off.
+
+Version 1.21.0 adds six locally authored, animated cosmetic character models,
+a SpongeBob category icon, native 3D previews and saved exclusive toggles.
+Only the local player/first-person cosmetic render changes; hitboxes, eye
+height, equipment data, account skins and other players are retained. Assets
+are bundled JSON/PNG and cached native geometry. There is no new endpoint,
+model download, process, executable or native dependency. Media, original
+Jamble, PvP, backgrounds and exact original Freelook remain. Both builds and
+actual Minecraft/Linux model/UI/persistence checks passed. Windows, Defender
+and live authenticated DonutSMP remain unverified; this is not a Defender
+verdict. Version 1.17.0 remains withdrawn.
+
+Exact file hashes (SHA-256):
+a21329ebad10bfc605a40c13899d2fb43045d0db89b2049a63df3c7fe2705d58  astra-client-1.21.0.jar
+823f81d4010af93fc427ff3fe2452f693c5a48e6b71414475ff65d3b624da4db  astra-client-1.21.0-premium.jar
+5df07015c12f18dd99d0f5d8353301a12de373c811ce68e6bf48e7e84758402d  astra-client-1.21.0-source.zip
+
+Raw scanner output:
+astra-client-1.21.0.jar: OK
+astra-client-1.21.0-premium.jar: OK
+astra-client-1.21.0-source.zip: OK
+
+----------- SCAN SUMMARY -----------
+Known viruses: 341270
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 3
+Infected files: 0
+Data scanned: 57.81 MiB
+Data read: 38.48 MiB (ratio 1.50:1)
+Time: 9.765 sec (0 m 9 s)
+Start Date: 2026:11:21 12:08:24
+End Date:   2026:11:21 12:08:33
