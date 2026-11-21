@@ -1,28 +1,22 @@
-# Astra Client 1.20.0 validation
+# Astra Client 1.21.0 validation
 
-## Build and deterministic contracts
+## Build and archive checks
 
-- Built Member and 30-day Premium for Java 21, Minecraft 1.21.11 and Fabric Loader 0.19.3. Required native Windows media ABI checks passed.
-- New `testSceneTransitions` also runs in `check`: 108 ordered theme-pair/frame-rate endpoints, normalized full-coverage blends, decreasing outgoing offsets (leftward travel), completion and reduced-motion snapping. Checked 10,000 interrupted retargets for finite normalized weights and continuity of visible positions/colors at each retarget.
-- Verified 80 title-panel viewport combinations. All six rows and Reactive Background fit inside their panel with margins, including short layouts. Longer mode labels scale within the available space rather than touching their switches.
+- Built Member and 30-day Premium for Java 21 / Minecraft 1.21.11 / Fabric Loader 0.19.3. Existing Windows media ABI and six-theme transition/layout contracts passed.
+- Archive integrity passed, with identical code/assets between editions apart from edition/version metadata. Only character classes/mixins, custom config and menu/sidebar/icon classes changed from 1.20.0. Original Jamble, PvP, background travel, media and other existing code are byte-identical. Removed Jamble payment/review classes stay absent.
+- Six solid item previews plus a SpongeBob head icon use generated native model JSON within the allowed element-coordinate bounds. The six entity models share a 512x512 color atlas and use 213 authored cuboids with positive depth. Source generator and matching geometry are included. No downloaded models, runtime scripts, native executables or test fixtures ship.
+- Original nested Freelook SHA-256 remains fe1a32d9e4b8894122f52985c9d81b5cefa7bb7b67e67d17e8d03c495f8ba1e4.
 
-## Packaged Minecraft runs
+## Actual packaged Minecraft checks
 
-Ran the remapped Premium and Member JARs on Linux/software rendering, with an excluded observer:
+Ran packaged Premium, then the final Member edition, using excluded observation helpers and a local creative world:
 
-- Real native title-screen clicks selected all six themes: Normal, Galaxy, Nebula, Astra, Sunset and Beachy Sands. New bundled wallpapers loaded at full 1672x941 size, rather than missing-texture placeholders. Normal returned to Minecraft's live panorama.
-- Inspected title screenshots for all themes and a mixed Galaxy/Sunset frame. During travel the selected destination had a positive incoming offset, both scenes had nonzero blend weights, and settling left the chosen scene at full weight. Repeated rapid selections retained normalized coverage and finished at the latest choice.
-- Repeated native title selection and bounds checks at 640x480. All six modes and Reactive Background remained visible inside the right-hand panel, with a screen-edge margin.
-- Opened the actual local world and Right Shift menu. Its 3x2 selector showed all six choices inside the rounded panel. Real clicks switched every theme, with a sampled mixed Sunset frame and correctly settled endpoints. Checked the smaller in-game layout at 640x480. Reactive Background/Bubble Font remained usable below the theme grid.
-- Smooth animations Off and Performance Mode On produced an immediate settled selection on the next rendered frame. Re-enabling ordinary animations restored travel. Turning Performance Mode Off restored its backed-up native settings.
-- Saved Beachy Sands, restarted with the Member edition and verified it loaded at full weight. Reloaded Minecraft resources, then switched between both new themes with valid textures. Entered the world again, used Right Shift and both new choices, then clicked Minecraft's actual Save and Quit to Title button. It saved the world and returned to the same Beachy Sands title screen.
+- First-page navigation showed nine categories and a clickable 3D Characters page. Six real native switches selected SpongeBob, DrDonutt, Patrick, Squidward, Mr. Krabs and Sandy. Each replaced the previously selected style. Turning the active switch Off restored the normal player/texture.
+- Native model checks baked all six models, verified non-flat 3D extents, observed actual leg-pose changes with walk animation and confirmed cached model reuse. Third-person-front screenshots showed each actual in-game character. First-person screenshots showed matching SpongeBob hands and Mr. Krabs claws. Inventory preview rendered the selected model.
+- Local render states used the character atlas; a separate nonlocal avatar state kept the player's original skin texture. Renderer model pointers returned to the vanilla player model after drawing, preventing a selected model from leaking into later renders.
+- Real equipped sword, offhand shield and chestplate data stayed present. Held items rendered with the character. Native reported hitbox stayed 0.6 wide / 1.8 tall and eye height 1.62. Cosmetic armor/cape layers were replaced only on the custom local model, as designed.
+- The separate PvP page still opened with eight categories after adding the ninth main-page category. At 640x480, all six character cards and nine sidebar rows remained accessible and native clicks worked.
+- Saved Sandy, restarted the final Member JAR and confirmed the saved choice loaded and rendered without Premium. Tested exclusive On/Off again, inventory preview while geared and native Reset Astra preferences returning to the normal player. Inspected the rear model/tail geometry as well.
+- The first sidebar-icon preview was cropped. Adjusted the authored icon's GUI transform, rebuilt both editions and inspected the corrected SpongeBob face in the final Member menu. Character geometry and other previews were unchanged.
 
-The observer needed to wait for rendered state rather than merely the earlier config/input tick, and to identify native screens by their actual buttons because production Minecraft class names are remapped. An early external helper directly invoked a force-rendering disconnect from inside a tick; that instrumentation run was stopped after it stalled the software renderer. The subsequent test used the real native pause-menu button and passed. No production code change was required for those helper issues. Fixtures, test worlds, screenshots, runtime configuration and helper commands do not ship.
-
-## Scope and archive checks
-
-- Only background/menu/preload classes and the new SceneTransition class changed. Original JambleHud/JambleRules/SpotifyHud, config serialization, PvP, media and other existing production classes match 1.19.1 byte-for-byte. Jamble payment/review/money classes remain absent.
-- Archive integrity passed. Member/Premium share identical code/assets and differ only in version/edition metadata. Both new wallpaper files match the generated originals. No runtime scripts, native executables or fixtures were added. The exact original nested Freelook 1.2.8 hash remains fe1a32d9e4b8894122f52985c9d81b5cefa7bb7b67e67d17e8d03c495f8ba1e4.
-- No per-frame image decode, GPU texture upload or offscreen render-target allocation is introduced by the background renderer. Fixed-size transition arrays cover at most six cached scene textures; settled rendering uses the selected scene. Texture lookup uses Minecraft's resource manager after reloads.
-
-These are functional/rendering checks, not GPU FPS benchmarks or live authenticated DonutSMP/Windows tests. Windows Spotify and Microsoft Defender were unavailable. Existing security review limits and the separate limited-coverage scan report still apply.
+The observer, synthetic gear commands, screenshots, runtime config and worlds do not ship. The game closed cleanly after both runs. Tests used Linux/software rendering, not Windows/GPU FPS benchmarking or a live authenticated DonutSMP server. These cosmetics are local and do not update the account skin or transmit a disguise to other players. Existing Windows/Defender limits remain in SECURITY.md and the limited-coverage scan report.
