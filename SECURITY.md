@@ -1,4 +1,4 @@
-# Astra Client security review — 1.20.0 (script-free bridge retained from 1.14.2)
+# Astra Client security review — 1.21.0 (script-free bridge retained from 1.14.2)
 
 A Microsoft Defender threat alert was reported by a friend of the client owner for the latest public version (1.14.0). The exact Defender detection name, affected filename and file hash were not available. The report is taken seriously; the recommended download links were paused during investigation, and both 1.14.0 installable JARs were withdrawn from the default branch (source/history retained). No claim is made that the report was a false positive or that Defender has cleared the replacement.
 
@@ -13,6 +13,8 @@ Astra's lyric service uses HTTPS to LRCLIB with the selected song's title/artist
 Version 1.19.1 removes the Jamble payment listener, client commands/chat links, J-key review screen and keybinding, payment ledger, stake-limit preferences and payout HUD/records. The original read-only named-item hotbar tracker and Host/Viewer result renderer are restored byte-for-byte from the last pre-payment source (1.16.0), together with its Spotify layout integration. No payment receipt is required for a roll. The PvP page from 1.19.0 remains, along with the existing native media bridge, exact Freelook dependency, capture mode, Fullbright, skies and totems. No new network endpoint, executable, child process or native dependency is introduced. Version 1.17.0 remains withdrawn. Defender verification remains pending.
 
 Version 1.20.0 adds two bundled PNG wallpapers, a shared local six-theme transition renderer and adaptive selectors. It uses cached Minecraft textures and fixed-size animation state; it adds no download endpoint, process, native library, credential or gameplay action. The original Jamble rollback remains in place. Media, PvP, skies, totems, capture and Freelook code are unchanged from 1.19.1.
+
+Version 1.21.0 adds six locally authored 3D character models, a saved exclusive cosmetic choice and three renderer/access mixins. They replace only the local player model, its matching texture and first-person hands, restoring the original renderer afterward. Other players, account skins, hitboxes, eye height and equipment data are unchanged. Character gear layers are cosmetically suppressed while held items remain visible. Assets are bundled JSON/PNG and cached native geometry; no new endpoint, account access, model download, process, executable or native dependency is introduced. Backgrounds, original Jamble, PvP, media and the exact Freelook dependency are retained.
 
 ## What was verified
 
