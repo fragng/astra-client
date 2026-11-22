@@ -1,0 +1,57 @@
+Astra Client 1.26.0 — replacement-build scan report
+
+IMPORTANT: This is NOT a Microsoft Defender result or a guarantee of safety.
+The reported Defender threat name and affected-file hash were unavailable.
+The installable replacements remove the embedded script and encoded/hidden
+PowerShell launcher entirely. Windows media uses the system WinRT APIs.
+
+Scanner: official Cisco-Talos ClamAV 1.5.4, verified release package SHA-256
+28d6efc5b4423e7830c3559339552eb53870a9eac51ac4efb37d60530d329886
+Databases: official signed daily 28184 (15 Nov 2026) and bytecode 339.
+Coverage is LIMITED: the main database was CDN rate-limited and not available.
+No attempt was made to bypass that cooldown. Signature verification stayed on.
+The old 1.14.0 JARs also had no detections under this same limited scan;
+that does not invalidate the reported Defender alert.
+
+Live Microsoft Defender and Windows Spotify were not available on this
+Linux host. Native Windows ABI-contract tests and real Minecraft/Linux UI
+checks passed. Source, tests and review are supplied for inspection.
+
+Keep antivirus protection enabled. If Defender blocks a replacement, keep
+the block; do not add exclusions, disguise the file or turn protection off.
+
+Version 1.26.0 refines the six local character models, including a reference-based
+black hoodie and new face/hair for DrDonutt, fitted facial/clothing patches and
+cleaner limb/clothing joins. The completed .gg/astrayt invite remains included.
+Only CharacterStyle/CharacterModels/CharacterSurface class families and local
+model assets/version metadata changed from 1.25.1. Existing audio, media,
+glow-sign fixes, transitions, Jamble and dependency remain unchanged. Both
+required builds/checks and archive comparisons passed. No runtime scripts,
+executables or excluded fixtures ship. Coverage remains limited; the database
+warning is retained below. This is not Defender clearance.
+
+Final SHA-256 values:
+b200fa77f5f17604d53fe690793dfdbda91bc51ec10223143ae33f7e6d0175ff  astra-client-1.26.0.jar
+615eea95baea19a873c80bea2d07c2600645bb50081627536d1a0fa95bd0c941  astra-client-1.26.0-premium.jar
+62c1a4d3467f91d0a8eda47b1e5823d3bf4934f632e7bfbe49374fc6fda19698  astra-client-1.26.0-source.zip
+
+Raw scanner output:
+LibClamAV Warning: **************************************************
+LibClamAV Warning: ***  The virus database is older than 7 days!  ***
+LibClamAV Warning: ***   Please update it as soon as possible.    ***
+LibClamAV Warning: **************************************************
+/workspace/output/astra-client-1.26.0.jar: OK
+/workspace/output/astra-client-1.26.0-premium.jar: OK
+/workspace/output/astra-client-1.26.0-source.zip: OK
+
+----------- SCAN SUMMARY -----------
+Known viruses: 341270
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 3
+Infected files: 0
+Data scanned: 92.73 MiB
+Data read: 68.98 MiB (ratio 1.34:1)
+Time: 24.501 sec (0 m 24 s)
+Start Date: 2026:11:22 20:51:38
+End Date:   2026:11:22 20:52:03
