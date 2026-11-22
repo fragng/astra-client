@@ -1,4 +1,4 @@
-# Astra Client security review — 1.21.0 (script-free bridge retained from 1.14.2)
+# Astra Client security review — 1.22.0 (script-free bridge retained from 1.14.2)
 
 A Microsoft Defender threat alert was reported by a friend of the client owner for the latest public version (1.14.0). The exact Defender detection name, affected filename and file hash were not available. The report is taken seriously; the recommended download links were paused during investigation, and both 1.14.0 installable JARs were withdrawn from the default branch (source/history retained). No claim is made that the report was a false positive or that Defender has cleared the replacement.
 
@@ -15,6 +15,8 @@ Version 1.19.1 removes the Jamble payment listener, client commands/chat links, 
 Version 1.20.0 adds two bundled PNG wallpapers, a shared local six-theme transition renderer and adaptive selectors. It uses cached Minecraft textures and fixed-size animation state; it adds no download endpoint, process, native library, credential or gameplay action. The original Jamble rollback remains in place. Media, PvP, skies, totems, capture and Freelook code are unchanged from 1.19.1.
 
 Version 1.21.0 adds six locally authored 3D character models, a saved exclusive cosmetic choice and three renderer/access mixins. They replace only the local player model, its matching texture and first-person hands, restoring the original renderer afterward. Other players, account skins, hitboxes, eye height and equipment data are unchanged. Character gear layers are cosmetically suppressed while held items remain visible. Assets are bundled JSON/PNG and cached native geometry; no new endpoint, account access, model download, process, executable or native dependency is introduced. Backgrounds, original Jamble, PvP, media and the exact Freelook dependency are retained.
+
+Version 1.22.0 refines those same six local cosmetics with curved surfaces and analytic lighting normals. A native ModelPart.Cube subclass emits cached vertices through Minecraft's existing vertex API; native articulated bones, texture scope and renderer restoration remain in place. Native skin-preview rendering displays the same curved geometry with separate pose instances. Assets remain bundled JSON/PNG. No new network endpoint, process, account permission, native library or gameplay action is introduced. Existing Jamble, media, PvP, skies, capture, totems and Freelook code remain unchanged.
 
 ## What was verified
 
