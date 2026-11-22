@@ -1,14 +1,22 @@
-# Astra Client 1.25.1
+# Astra Client 1.26.0
 
-Version 1.17.0 has been withdrawn at the owner's request. The recommended version is 1.25.1.
+Version 1.17.0 has been withdrawn at the owner's request. The recommended version is 1.26.0.
 
 Cosmetic client mod for Minecraft Java **1.21.11**, **Java 21**, **Fabric Loader 0.19.3+**, and **Fabric API 0.141.6+1.21.11**.
 
-[Download replacement Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.25.1.jar) · [Download replacement 30-day Premium edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.25.1-premium.jar)
+[Download replacement Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.26.0.jar) · [Download replacement 30-day Premium edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.26.0-premium.jar)
 
 **Defender verification is pending.** These replacements retain the script-free native media bridge from 1.14.2 and include source/checksums. A scan with another engine is not proof that Defender will accept a file. Keep any antivirus block in place and report the exact threat name and affected filename if it persists.
 
-[SHA-256 checksums](downloads/SHA256SUMS-1.25.1.txt) · [Security review](SECURITY.md) · [Scan report](downloads/SCAN-REPORT-1.25.1.txt)
+[SHA-256 checksums](downloads/SHA256SUMS-1.26.0.txt) · [Security review](SECURITY.md) · [Scan report](downloads/SCAN-REPORT-1.26.0.txt)
+
+## Reference-based character cleanup (1.26.0)
+
+DrDonutt now wears a black pullover hoodie with a folded hood, cuffs, drawstrings and pocket, based on the supplied clothing reference. Short brown hair, a narrower face and smaller eyes replace the former headphones/white-shirt design. This remains an original stylised model; the existing generic voice is unchanged.
+
+All six characters have cleaner clothing and limb joins. Sleeves, wrist cuffs, hems and hip roots overlap instead of meeting at narrow rounded tips. Thin facial markings and talking mouths follow the curved face rather than sitting on flat floating cards. Sandy's helmet rim now sits around the dome; her flower, muzzle, gloves and boots are fitted more closely. Character walking, crouching, attacking, blinking and voice-driven mouth movement retain the native rig. Geometry is cached once and reused.
+
+The completed Discord update is included: the title banner displays `.gg/astrayt` and Buy Premium opens `https://discord.gg/astrayt` through Minecraft's confirmation.
 
 ## Glow-ink signs and background travel (1.25.0)
 
@@ -20,7 +28,7 @@ Spotify HUD themes now use the same continuous camera/blend model with smooth ba
 
 ## Install
 
-Remove previous Astra Client jars from your instance's `mods` folder. Install **one** edition (`astra-client-1.25.1.jar` or `astra-client-1.25.1-premium.jar`) alongside Fabric API and launch the Fabric profile. Press **Right Shift** in a world to open the client menu; Right Shift, Escape and X close it.
+Remove previous Astra Client jars from your instance's `mods` folder. Install **one** edition (`astra-client-1.26.0.jar` or `astra-client-1.26.0-premium.jar`) alongside Fabric API and launch the Fabric profile. Press **Right Shift** in a world to open the client menu; Right Shift, Escape and X close it.
 
 Jamble is back to its original hotbar-only mode. Enable it, then receive a Host item and Viewer item together to show their numbers, icons and winner. The payment queue, J-key review menu, stake limits and payout controls have been removed.
 
@@ -40,7 +48,7 @@ The sidebar groups appearance controls first, then tools, with Settings and Buy 
 
 **Active Premium is required for Custom Sky, Lyrics In Sky, Customize Totem and Jamble.** Member mode can browse sky previews and see clearly labelled locked feature pages. Existing selections are retained when Premium is inactive; their effects stop, native totem/sky rendering returns and pending Jamble results clear. Other Astra functions remain available.
 
-## 3D Characters (1.25.0)
+## 3D Characters (1.26.0)
 
 Open **Right Shift → 3D Characters** on the **first page**, identified by the SpongeBob face icon. The six choices are **SpongeBob SquarePants, DrDonutt (real-life-inspired), Patrick Star, Squidward Tentacles, Mr. Krabs and Sandy Cheeks**. They are available in both **Member and Premium**.
 
@@ -48,7 +56,7 @@ Each character has its own On/Off switch and a live 3D preview using the same cu
 
 Use **F5** to view the model in-game, or open your inventory to see its player preview. Empty-hand first-person rendering uses matching character arms/hands. Native walking, head movement, crouching, using items and attack poses animate the models. Held items stay visible. Character outfits replace the cosmetic armor/cape layers while active; your equipped items, defense, durability and movement keep working normally. Hitboxes and eye height retain their Minecraft values.
 
-Version **1.25.0** adds animated living details: blinking eyelids, subtle breathing, mouth movement timed to the audio’s actual volume pattern, and highlighted 3D sweat beads. Sweat builds during sustained sprinting, burning or low health, follows the curved face, then fades after recovery. **Animated Details** below the character cards can disable these additions. Smooth animations Off or Performance Mode freezes decorative movement. The same details appear on the real F5 model and the native menu previews. Fine clothing seams, fur tufts, shell joints, hair strands, a recessed Patrick belly button and existing facial shading add depth. These remain stylised 3D models, with no claim of photorealism.
+Animated living details include: blinking eyelids, subtle breathing, mouth movement timed to the audio’s actual volume pattern, and highlighted 3D sweat beads. Sweat builds during sustained sprinting, burning or low health, follows the curved face, then fades after recovery. **Animated Details** below the character cards can disable these additions. Smooth animations Off or Performance Mode freezes decorative movement. The same details appear on the real F5 model and the native menu previews. Fitted clothing seams, shell joints, a recessed Patrick belly button and subtle facial shading add depth. These remain stylised 3D models, with no claim of photorealism.
 
 Existing surface details remain: SpongeBob has actual shallow, closed pores with solid material behind them, curved cheeks and eye highlights. Subtle cached vertex-colour variation gives skin and clothing softer material detail. All six retain their curved anatomy and smooth shading. These remain stylised 3D cosmetics rather than photorealistic likenesses.
 
@@ -180,7 +188,7 @@ Use a Java 21 JDK:
 ./gradlew runClient
 ```
 
-On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.25.1.jar`, not the sources jar.
+On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.26.0.jar`, not the sources jar.
 
 Coiny is bundled under the included `COINY-OFL.txt`. Background artwork is bundled locally; only lyric lookup requires internet. The installable JAR contains no bundled PowerShell/batch/shell scripts or EXE/DLL helpers. No gameplay cheats are included.
 
@@ -208,7 +216,7 @@ Enable **Essentials → Freelook**, choose **Set a key**, and hold that keyboard
 
 Astra's enable toggle gates activation. Menus, lost window focus, disabling the setting or clearing the bind stop active Freelook using the supplied mod's own stop method. Its server block list is preserved and respected; Astra displays a notice when that list disables Freelook. It defaults to blocking Hypixel. Astra does not clear that list or override a blocked state. Camera collision and player movement remain native; no detached free camera, movement assistance, reach or automation is added. Each server decides which client mods it permits.
 
-The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.25.1-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
+The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.26.0-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
 
 **Visuals → Menu Background → Fake Media** remains an optional local-only decoration. In F5 it draws the pink media badge beside your own rendered name. It never changes your server name, rank, team, permissions or network packets, and other players cannot see it. It hides in first person, menus, with F1, and when invisible/spectating. It defaults to Off.
 
@@ -230,7 +238,7 @@ To build the separate edition with Java 21:
 ./gradlew build -PpremiumEdition=true
 ```
 
-This produces `build/libs/astra-client-1.25.1-premium.jar`. Plain `./gradlew build` produces Member edition. The JAR's `astra-edition.json` records the edition; there are no hidden credentials or account endpoints.
+This produces `build/libs/astra-client-1.26.0-premium.jar`. Plain `./gradlew build` produces Member edition. The JAR's `astra-edition.json` records the edition; there are no hidden credentials or account endpoints.
 
 ## DonutSMP Pack (1.25.0)
 
