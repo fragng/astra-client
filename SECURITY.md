@@ -1,6 +1,8 @@
-# Astra Client security review — 1.25.1 (script-free bridge retained from 1.14.2)
+# Astra Client security review — 1.26.0 (script-free bridge retained from 1.14.2)
 
 A Microsoft Defender threat alert was reported by a friend of the client owner for the latest public version (1.14.0). The exact Defender detection name, affected filename and file hash were not available. The report is taken seriously; the recommended download links were paused during investigation, and both 1.14.0 installable JARs were withdrawn from the default branch (source/history retained). No claim is made that the report was a false positive or that Defender has cleared the replacement.
+
+Version 1.26.0 changes only bundled character geometry, its cached surface fitting, the DrDonutt description and release metadata. It retains the completed `.gg/astrayt` invite update from 1.25.1. The new surface grid is local JSON data processed when a model is built; it creates no service, account request or runtime process. Existing audio and media integration are unchanged.
 
 ## Replacement implementation
 
