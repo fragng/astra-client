@@ -1,6 +1,6 @@
 # Character speech and attribution
 
-Astra 1.23.0 includes 324 original, short synthetic speech recordings: six distinct voices, 27 event types and two variations per event. Dialogue is authored for this project. These are generic neural performances, not recordings of the cartoon actors or DrDonutt, and do not claim their endorsement.
+Astra 1.24.0 includes 648 original, short synthetic speech recordings: six distinct voices, 27 event types and four variations per event. Dialogue is authored for this project. These are generic neural performances, not recordings of the cartoon actors or DrDonutt, and do not claim their endorsement.
 
 ## Online voice source
 
@@ -14,9 +14,19 @@ Licensed under **Creative Commons Attribution 4.0 International**:
 https://creativecommons.org/licenses/by/4.0/
 https://creativecommons.org/licenses/by/4.0/legalcode
 
-The supplied model card also attributes the Hi-Fi TTS reader-92 base voice, Cori Samuel. Model authors/contributors: Piper / rhasspy-piper voice contributors. Changes: synthesized new dialogue with six dataset speaker IDs and adjusted speaking rates; normalized loudness, short entry fades, mono 22.05-kHz Ogg Vorbis encoding. Audio and this attribution are bundled together. Dataset speakers: SpongeBob p226; DrDonutt p227; Patrick p232; Squidward p243; Mr. Krabs p251; Sandy p225. Character names label local cosmetic presets; the voices remain those of the licensed speech model.
+The supplied model card also attributes the Hi-Fi TTS reader-92 base voice, Cori Samuel. Model authors/contributors: Piper / rhasspy-piper voice contributors. Changes: synthesized new original dialogue with character-specific speaking styles, adjusted speaking rates, Rubber Band pitch/formant shifts, equalization and mild Mr. Krabs harmonics; normalized loudness, short entry fades, mono 22.05-kHz Ogg Vorbis encoding. Audio and this attribution are bundled together. Dataset speakers: SpongeBob p226; DrDonutt p227; Patrick p232; Squidward p243; Mr. Krabs p251; Sandy uses U.S. English LJ Speech. Character names label local cosmetic presets; the voices remain those of the licensed speech model.
 
 Model SHA-256: `fc3d92d266b1a6c03af2a38215e0eee430ca7fb360f641d7c3dcb17c7670c0f3`.
+
+## Additional U.S. voice and character styling
+
+Sandy now uses **en_US-ljspeech-medium**, trained on Keith Ito's public-domain LJ Speech dataset:
+https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/medium
+https://keithito.com/LJ-Speech-Dataset/
+
+Model SHA-256: `6f52a751e2349abe7a76735eb09dc1875298c77ea2342ffd2fef79ff81b87f22`.
+
+SpongeBob has a brighter/higher/nasal profile, Patrick a deeper/slower profile, Squidward a dry nasal profile, Mr. Krabs a lower/gravelly profile and Sandy a brighter U.S. voice with original Southern phrasing. DrDonutt retains an original unmodified generic voice; his real voice is not imitated. These are character-inspired synthetic performances, not the official recordings or a promise of an exact voice match. Two new personality-specific variants per event precede the previous two variants. Runtime mouth movement follows precomputed RMS samples of each final processed clip; no runtime speech recognition or audio analysis is involved.
 
 ## Development and runtime
 
@@ -24,7 +34,7 @@ Authoring script: `tools/generate_character_voices.py`. Install Piper and FFmpeg
 
 Minecraft only plays bundled Ogg files through its native sound manager, Voice/Speech category and master volume. The TTS engine, model, Python, FFmpeg and synthesis dependencies are **not shipped or executed at runtime**. Speech playback makes no web request, starts no helper process and does not use the microphone. There is no online account or subscription to configure. Native captions provide the spoken line when Minecraft subtitles are enabled.
 
-Enable **3D Characters → Voice Lines → Character voice lines** after choosing a character. Volume, five event groups and Calm/Normal/Chatty frequency save in Astra's config. Speech starts Off; group switches start On. Preview uses the selected voice. Turning speech Off or choosing the normal Minecraft character stops the current clip. Important survival reactions can interrupt a less important line; quieter events are dropped rather than queued. Normal cadence allows a 16-second gap, Calm 30, Chatty 8, with a separate 45-second per-event cooldown (4 seconds for critical survival events).
+Choose a character in **3D Characters** to enable its voice and hear a greeting automatically. **Voice Lines** retains a manual mute, volume and event controls. Legacy settings upgrade to automatic speech once; an explicit Off saved afterward persists across restart. A new character selection re-enables speech. Volume, five event groups and Calm/Normal/Chatty frequency save in Astra's config. Speech starts On automatically; group switches start On. Preview uses the selected voice. Turning speech Off or choosing the normal Minecraft character stops the current clip. Important survival reactions can interrupt a less important line; quieter events are dropped rather than queued. Normal cadence allows a 16-second gap, Calm 30, Chatty 8, with a separate 45-second per-event cooldown (4 seconds for critical survival events).
 
 Reactions cover joining, totem activation, rain starting/clearing, thunder, dawn/dusk, damage, low/recovered health, death/respawn, dimensions, diamond mining/general mining, eating, fishing casts, swimming, catching fire, Elytra flight, sleeping, experience levels, visible advancements, defeating a recently attacked mob, landing damage, crafting and container opening. Events use local observed player/world state, completed client actions and existing server packets. No inventory action, attack, chat command, packet or server permission is generated by the feature. Ordinary reactions are suppressed in unrelated menus and do not build a backlog. Server rules and client-observed events can differ; no claim is made to detect hidden or unsupported server events.
 
