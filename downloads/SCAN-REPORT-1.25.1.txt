@@ -1,0 +1,54 @@
+Astra Client 1.25.1 — replacement-build scan report
+
+IMPORTANT: This is NOT a Microsoft Defender result or a guarantee of safety.
+The reported Defender threat name and affected-file hash were unavailable.
+The installable replacements remove the embedded script and encoded/hidden
+PowerShell launcher entirely. Windows media uses the system WinRT APIs.
+
+Scanner: official Cisco-Talos ClamAV 1.5.4, verified release package SHA-256
+28d6efc5b4423e7830c3559339552eb53870a9eac51ac4efb37d60530d329886
+Databases: official signed daily 28184 (15 Nov 2026) and bytecode 339.
+Coverage is LIMITED: the main database was CDN rate-limited and not available.
+No attempt was made to bypass that cooldown. Signature verification stayed on.
+The old 1.14.0 JARs also had no detections under this same limited scan;
+that does not invalidate the reported Defender alert.
+
+Live Microsoft Defender and Windows Spotify were not available on this
+Linux host. Native Windows ABI-contract tests and real Minecraft/Linux UI
+checks passed. Source, tests and review are supplied for inspection.
+
+Keep antivirus protection enabled. If Defender blocks a replacement, keep
+the block; do not add exclusions, disguise the file or turn protection off.
+
+Version 1.25.1 changes the displayed invite to .gg/astrayt and the native
+confirmed Discord destination to https://discord.gg/astrayt. Only the two
+menu class families and version metadata changed. Other code/assets are
+unchanged from 1.25.0. Required builds/checks and archive comparisons passed.
+No runtime scripts/executables or excluded fixtures ship. Coverage remains
+limited and the database warning is retained below; this is not Defender clearance.
+
+Final SHA-256 values:
+ea7a2acb3f91399affd4176d97f22142d4b690967382606f1b654436af113a50  astra-client-1.25.1.jar
+90d4fdd49eaffd5ffaf56111681fe422a8dc1ef4c13a45e851a68284eefadc09  astra-client-1.25.1-premium.jar
+2e962cad5313968d40f6e17eadcadf75732be33df736d9b8cfb0d3da4169fdb1  astra-client-1.25.1-source.zip
+
+Raw scanner output:
+LibClamAV Warning: **************************************************
+LibClamAV Warning: ***  The virus database is older than 7 days!  ***
+LibClamAV Warning: ***   Please update it as soon as possible.    ***
+LibClamAV Warning: **************************************************
+/workspace/output/astra-client-1.25.1.jar: OK
+/workspace/output/astra-client-1.25.1-premium.jar: OK
+/workspace/output/astra-client-1.25.1-source.zip: OK
+
+----------- SCAN SUMMARY -----------
+Known viruses: 341270
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 3
+Infected files: 0
+Data scanned: 92.42 MiB
+Data read: 68.92 MiB (ratio 1.34:1)
+Time: 12.365 sec (0 m 12 s)
+Start Date: 2026:11:22 20:22:38
+End Date:   2026:11:22 20:22:50
