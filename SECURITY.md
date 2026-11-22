@@ -1,8 +1,14 @@
-# Astra Client security review — 1.26.0 (script-free bridge retained from 1.14.2)
+# Astra Client security review — 1.27.0 (script-free bridge retained from 1.14.2)
 
 A Microsoft Defender threat alert was reported by a friend of the client owner for the latest public version (1.14.0). The exact Defender detection name, affected filename and file hash were not available. The report is taken seriously; the recommended download links were paused during investigation, and both 1.14.0 installable JARs were withdrawn from the default branch (source/history retained). No claim is made that the report was a false positive or that Defender has cleared the replacement.
 
 Version 1.26.0 changes only bundled character geometry, its cached surface fitting, the DrDonutt description and release metadata. It retains the completed `.gg/astrayt` invite update from 1.25.1. The new surface grid is local JSON data processed when a model is built; it creates no service, account request or runtime process. Existing audio and media integration are unchanged.
+
+Version 1.27.0 replaces the resettable local Premium timer with offline Ed25519-signed grants bound to a launcher UUID and a fixed 30-day period from issuance. Public releases contain the verification key and hashed account bindings; the exact owner UUID is not printed in current public instructions or code. The separately supplied owner key stays outside public source/downloads. `/client <username>` requires the JackJ25 UUID and a matching private key, resolves the public recipient profile through Microsoft's Minecraft HTTPS API on a background worker, and writes a copy of the current mod to `astra-premium-exports`. No access token or private key is sent. It copies assets and the original dependency, embeds the signed grant, and leaves the installed mod untouched. It starts no helper process. The public owner Premium file is assigned specifically to JackJ25; public build flags alone grant no access. Signature verification covers the recipient UUID/name, serial and issuance/expiry dates. Modified, expired, missing or wrong-account grants use Member mode.
+
+This is not a first-launch claiming service or unbreakable DRM. The unchanged client trusts the launcher's UUID and device clock; custom/offline identity spoofing, changed client code and clock/data tampering are outside the restriction. No server means no central revocation, no invalidation of older downloads and no synchronized first-use claim. A renewal is a separate grant with its own expiry. Ed25519 license signatures do not constitute Authenticode/JAR code signing or Defender clearance. See OWNER_SETUP.md for private-key handling. Native tests use excluded local identity fixtures without real Minecraft tokens.
+
+The new Characters Work In Progress gate and progress use a fixed calendar window ending 15 December 2026 at 00:00 Europe/London; no new network request is involved. Previously saved character/voice effects are suppressed until release. Existing model assets and audio remain unchanged.
 
 ## Replacement implementation
 
