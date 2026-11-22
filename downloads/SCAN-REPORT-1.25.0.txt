@@ -1,0 +1,60 @@
+Astra Client 1.25.0 — replacement-build scan report
+
+IMPORTANT: This is NOT a Microsoft Defender result or a guarantee of safety.
+The reported Defender threat name and affected-file hash were unavailable.
+The installable replacements remove the embedded script and encoded/hidden
+PowerShell launcher entirely. Windows media uses the system WinRT APIs.
+
+Scanner: official Cisco-Talos ClamAV 1.5.4, verified release package SHA-256
+28d6efc5b4423e7830c3559339552eb53870a9eac51ac4efb37d60530d329886
+Databases: official signed daily 28184 (15 Nov 2026) and bytecode 339.
+Coverage is LIMITED: the main database was CDN rate-limited and not available.
+No attempt was made to bypass that cooldown. Signature verification stayed on.
+The old 1.14.0 JARs also had no detections under this same limited scan;
+that does not invalidate the reported Defender alert.
+
+Live Microsoft Defender and Windows Spotify were not available on this
+Linux host. Native Windows ABI-contract tests and real Minecraft/Linux UI
+checks passed. Source, tests and review are supplied for inspection.
+
+Keep antivirus protection enabled. If Defender blocks a replacement, keep
+the block; do not add exclusions, disguise the file or turn protection off.
+
+Version 1.25.0 adds a cached render-only vanilla font alias for glowing sign
+text and smoother title/client/Spotify background camera/blend transitions.
+Original world/server sign data, styles and explicit custom fonts are retained.
+The sign cache clears on resource/language reload. Existing textures and fixed-
+size animation state are reused, without frame captures or new render targets.
+No new runtime endpoint, executable, native dependency or gameplay/server action
+is introduced. Character audio/models, original Jamble, PvP, skies, totems, media
+and exact Freelook remain unchanged. Both builds and packaged Minecraft/Linux
+standing/wall/hanging sign and background-transition checks passed. No runtime
+scripts/executables or excluded fixtures are present in the installable JARs.
+The signature snapshot is over seven days old; its raw warning remains below.
+No Microsoft Defender clearance is claimed.
+
+Final SHA-256 values:
+734289b06d4b24f2acbeb0640f249a439674cbd994dce5ab32e56cbeb7b9651b  astra-client-1.25.0.jar
+7b5c200f6584a7c5d3f82adb414c1f601a2079a242aa4035e4e70091d14ff048  astra-client-1.25.0-premium.jar
+178a05d6e1cece48aafa2d49a8897923e0cf54c80cba7797bdabafa67cc4b9a7  astra-client-1.25.0-source.zip
+
+Raw scanner output:
+LibClamAV Warning: **************************************************
+LibClamAV Warning: ***  The virus database is older than 7 days!  ***
+LibClamAV Warning: ***   Please update it as soon as possible.    ***
+LibClamAV Warning: **************************************************
+/workspace/output/astra-client-1.25.0.jar: OK
+/workspace/output/astra-client-1.25.0-premium.jar: OK
+/workspace/output/astra-client-1.25.0-source.zip: OK
+
+----------- SCAN SUMMARY -----------
+Known viruses: 341270
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 3
+Infected files: 0
+Data scanned: 92.42 MiB
+Data read: 68.92 MiB (ratio 1.34:1)
+Time: 19.499 sec (0 m 19 s)
+Start Date: 2026:11:22 17:10:40
+End Date:   2026:11:22 17:11:00
