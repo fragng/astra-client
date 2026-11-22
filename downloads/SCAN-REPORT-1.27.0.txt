@@ -1,0 +1,64 @@
+Astra Client 1.27.0 — replacement-build scan report
+
+IMPORTANT: This is NOT a Microsoft Defender result or a guarantee of safety.
+The reported Defender threat name and affected-file hash were unavailable.
+The installable replacements remove the embedded script and encoded/hidden
+PowerShell launcher entirely. Windows media uses the system WinRT APIs.
+
+Scanner: official Cisco-Talos ClamAV 1.5.4, verified release package SHA-256
+28d6efc5b4423e7830c3559339552eb53870a9eac51ac4efb37d60530d329886
+Databases: official signed daily 28184 (15 Nov 2026) and bytecode 339.
+Coverage is LIMITED: the main database was CDN rate-limited and not available.
+No attempt was made to bypass that cooldown. Signature verification stayed on.
+The old 1.14.0 JARs also had no detections under this same limited scan;
+that does not invalidate the reported Defender alert.
+
+Live Microsoft Defender and Windows Spotify were not available on this
+Linux host. Native Windows ABI-contract tests and real Minecraft/Linux UI
+checks passed. Source, tests and review are supplied for inspection.
+
+Keep antivirus protection enabled. If Defender blocks a replacement, keep
+the block; do not add exclusions, disguise the file or turn protection off.
+
+Version 1.27.0 adds signed account-specific 30-day grants and an owner-only
+/client username issuing command. The private issuing key is supplied separately
+to the owner and is absent from all public JARs/source; only the public verifier
+is bundled. Exported files contain a signed UUID/name/serial/issuance/expiry grant.
+An owner-initiated Microsoft public profile lookup uses HTTPS with the requested
+username only. It sends no access token or private key and starts no helper process.
+The Characters Work In Progress calendar lock/progress ends 15 December 2026.
+Existing geometry, 648 audio clips, dependency, signs, transitions and other game
+features remain unchanged. Both required builds and new/existing contracts passed.
+Native Minecraft exercised owner-only issuance, renewal, wrong-account rejection,
+matching-account access and the real responsive WIP page using excluded fixtures.
+This offline check trusts the launcher UUID/clock and cannot prevent modified
+clients or identity spoofing, claim a first user globally or revoke older copies.
+The distributed Premium JAR is assigned to JackJ25; the template flag alone is not
+a license. This is not Authenticode signing or Defender clearance. Scan coverage
+and the older-than-seven-days database warning remain limited as described above.
+
+Final SHA-256 values:
+3808bf5006ecaccd1e9e3af17c62ed6b40a8facff1c7e7849c6341e9759dbf23  astra-client-1.27.0.jar
+d5679780516450a3fa047377465a110b05cd50e9388593362bda8cad60f4d52e  astra-client-1.27.0-premium-JackJ25.jar
+f7ba4c89f75ab265775b0445c95bac938d4711f967e97e52b900955f78540b4e  astra-client-1.27.0-source.zip
+
+Raw scanner output:
+LibClamAV Warning: **************************************************
+LibClamAV Warning: ***  The virus database is older than 7 days!  ***
+LibClamAV Warning: ***   Please update it as soon as possible.    ***
+LibClamAV Warning: **************************************************
+/workspace/output/astra-client-1.27.0.jar: OK
+/workspace/output/astra-client-1.27.0-premium-JackJ25.jar: OK
+/workspace/output/astra-client-1.27.0-source.zip: OK
+
+----------- SCAN SUMMARY -----------
+Known viruses: 341270
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 3
+Infected files: 0
+Data scanned: 92.94 MiB
+Data read: 69.04 MiB (ratio 1.35:1)
+Time: 12.605 sec (0 m 12 s)
+Start Date: 2026:11:22 21:15:54
+End Date:   2026:11:22 21:16:06
