@@ -1,3 +1,9 @@
+# Astra Client 1.25.1 validation
+
+This patch changes the title banner to `.gg/astrayt` and the native confirmed Discord link to `https://discord.gg/astrayt`. The prior invite is absent from current Java source and both installable JARs. Member/Premium builds passed required checks. Archive comparison confirms only AstraMenu/ClientMenuScreen bytecode and version/edition metadata changed from 1.25.0; editions share code/assets. No new test was added for this string replacement. Original assets, 648 speech clips, native-font sign fix, transitions and exact Freelook dependency remain unchanged. No runtime scripts/executables or excluded test fixtures ship.
+
+Previous packaged Minecraft validation for the unchanged 1.25.0 rendering behaviour is recorded below. It was not repeated for this text/link patch.
+
 # Astra Client 1.25.0 validation
 
 - Member and Premium builds passed Java 21 / Minecraft 1.21.11 / Fabric Loader 0.19.3 checks, including Windows-media ABI, geometry/pores, character animation and voice gating.
