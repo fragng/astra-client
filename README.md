@@ -1,14 +1,22 @@
-# Astra Client 1.26.0
+# Astra Client 1.27.0
 
-Version 1.17.0 has been withdrawn at the owner's request. The recommended version is 1.26.0.
+Version 1.17.0 has been withdrawn at the owner's request. The recommended version is 1.27.0.
 
 Cosmetic client mod for Minecraft Java **1.21.11**, **Java 21**, **Fabric Loader 0.19.3+**, and **Fabric API 0.141.6+1.21.11**.
 
-[Download replacement Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.26.0.jar) · [Download replacement 30-day Premium edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.26.0-premium.jar)
+[Download replacement Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.27.0.jar) · [Owner Premium file — JackJ25 only](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.27.0-premium-JackJ25.jar)
 
 **Defender verification is pending.** These replacements retain the script-free native media bridge from 1.14.2 and include source/checksums. A scan with another engine is not proof that Defender will accept a file. Keep any antivirus block in place and report the exact threat name and affected filename if it persists.
 
-[SHA-256 checksums](downloads/SHA256SUMS-1.26.0.txt) · [Security review](SECURITY.md) · [Scan report](downloads/SCAN-REPORT-1.26.0.txt)
+[SHA-256 checksums](downloads/SHA256SUMS-1.27.0.txt) · [Security review](SECURITY.md) · [Scan report](downloads/SCAN-REPORT-1.27.0.txt)
+
+## Account-bound Premium and character release lock (1.27.0)
+
+New Premium files are signed and assigned to one **Minecraft Java UUID** before distribution. Copying an unchanged file to a different account leaves it in Member mode. A file expires **30 days after issuance**, rather than starting a resettable local timer. Only **JackJ25**, with the separate private owner key installed, can run the client-side `/client <username>` command to create a fresh file. New exports appear in the instance's `astra-premium-exports` folder. Share only the recipient's exported JAR. The signing key is supplied privately to the owner; it is absent from public downloads/source.
+
+The **3D Characters** category is temporarily locked with **Work In Progress**, a lock icon and a calendar-based percentage bar. The bar fills gradually from 22 November to **15 December 2026 at 00:00 Europe/London (GMT)** and continues across restarts. The page unlocks automatically at that deadline. Existing saved characters and their voices are inactive until then; their choices are kept for release. The lock applies to Member and Premium alike.
+
+There is no Astra licensing server or redeem-code flow. `/client` looks up the requested Java profile through Microsoft's official Minecraft profile API on a background worker. Premium access checks the launcher's account UUID and the bundled grant's Ed25519 signature/expiry and hashed account identifier. This prevents ordinary cross-account sharing in the unchanged client; it does **not** provide global first-launch claiming, protect against modified clients/offline identity spoofing or trusted-clock tampering, or revoke existing/older files. See [owner instructions](OWNER_SETUP.md).
 
 ## Reference-based character cleanup (1.26.0)
 
@@ -28,7 +36,7 @@ Spotify HUD themes now use the same continuous camera/blend model with smooth ba
 
 ## Install
 
-Remove previous Astra Client jars from your instance's `mods` folder. Install **one** edition (`astra-client-1.26.0.jar` or `astra-client-1.26.0-premium.jar`) alongside Fabric API and launch the Fabric profile. Press **Right Shift** in a world to open the client menu; Right Shift, Escape and X close it.
+Remove previous Astra Client jars from your instance's `mods` folder. Install **one** Astra JAR (the Member download or the Premium file issued specifically for your account) alongside Fabric API and launch the Fabric profile. Press **Right Shift** in a world to open the client menu; Right Shift, Escape and X close it.
 
 Jamble is back to its original hotbar-only mode. Enable it, then receive a Host item and Viewer item together to show their numbers, icons and winner. The payment queue, J-key review menu, stake limits and payout controls have been removed.
 
@@ -39,7 +47,7 @@ The sidebar groups appearance controls first, then tools, with Settings and Buy 
 - **Visuals:** menu brightness, Minecraft FOV, menu themes, Reactive Background, Bubble Font and a Custom Sky preview picker.
 - **HUD:** Astra watermark, moon logo and local Fake Media badge.
 - **Spotify HUD:** desktop linking, playback, HUD size/themes and HUD lyrics.
-- **3D Characters:** six self-only articulated cosmetic models with a SpongeBob icon, 3D previews and exclusive On/Off switches.
+- **3D Characters:** Work In Progress lock/progress until 15 December; then six self-only models and exclusive switches.
 - **Essentials:** Freelook and its keyboard/mouse binding, plus a saved Fullbright toggle.
 - **Customize Totem — Premium:** the five solid 3D DonutSMP creator totems.
 - **Jamble — Premium:** original named-item hotbar tracking, Host/Viewer cards and winner announcements.
@@ -48,9 +56,9 @@ The sidebar groups appearance controls first, then tools, with Settings and Buy 
 
 **Active Premium is required for Custom Sky, Lyrics In Sky, Customize Totem and Jamble.** Member mode can browse sky previews and see clearly labelled locked feature pages. Existing selections are retained when Premium is inactive; their effects stop, native totem/sky rendering returns and pending Jamble results clear. Other Astra functions remain available.
 
-## 3D Characters (1.26.0)
+## 3D Characters (1.27.0)
 
-Open **Right Shift → 3D Characters** on the **first page**, identified by the SpongeBob face icon. The six choices are **SpongeBob SquarePants, DrDonutt (real-life-inspired), Patrick Star, Squidward Tentacles, Mr. Krabs and Sandy Cheeks**. They are available in both **Member and Premium**.
+**Work In Progress until 15 December 2026:** the release page shows the shared calendar progress; saved models and voices remain inactive until release. After it unlocks, open **Right Shift → 3D Characters** on the **first page**, identified by the SpongeBob face icon. The six choices are **SpongeBob SquarePants, DrDonutt (real-life-inspired), Patrick Star, Squidward Tentacles, Mr. Krabs and Sandy Cheeks**. They are available in both **Member and Premium**.
 
 Each character has its own On/Off switch and a live 3D preview using the same curved model as the game. Turning one On replaces your local player model; the previous character switches Off automatically. Turn the active switch Off to restore your normal player and skin. All switches start Off. The selection saves as `characterStyle` in `config/astra-client.json` and loads at startup. **Reset Astra preferences** also restores the normal player.
 
@@ -68,7 +76,7 @@ The old header star is replaced with the supplied **moon logo at the top right**
 
 ## Character voice lines (1.25.0)
 
-Open **3D Characters → Voice Lines**. Choose a character to enable its speech and play its greeting automatically. Use **Preview voice** to audition it again. The pack contains **648 bundled neural speech recordings**: six distinct voices, 27 event types and four variations per event. Two new personality-specific variants per event double the previous line count. Speech uses licensed Piper/VCTK and public-domain LJ Speech models, with brighter SpongeBob, deeper/slower Patrick, nasal Squidward, gravelly Mr. Krabs and brighter American Sandy profiles. DrDonutt uses an original generic voice. These are character-inspired synthetic performances, not official actor recordings or an exact voice-match claim. The model/dataset attribution, source, license and authoring instructions are in [CHARACTER_VOICES.md](CHARACTER_VOICES.md), also bundled with the audio.
+After the 15 December unlock, open **3D Characters → Voice Lines**. Choose a character to enable its speech and play its greeting automatically. Use **Preview voice** to audition it again. The pack contains **648 bundled neural speech recordings**: six distinct voices, 27 event types and four variations per event. Two new personality-specific variants per event double the previous line count. Speech uses licensed Piper/VCTK and public-domain LJ Speech models, with brighter SpongeBob, deeper/slower Patrick, nasal Squidward, gravelly Mr. Krabs and brighter American Sandy profiles. DrDonutt uses an original generic voice. These are character-inspired synthetic performances, not official actor recordings or an exact voice-match claim. The model/dataset attribution, source, license and authoring instructions are in [CHARACTER_VOICES.md](CHARACTER_VOICES.md), also bundled with the audio.
 
 Reactions cover totem activation; rain, clear skies, thunder and time of day; damage, healing, death/respawn and a recently attacked mob's death; joining and dimension travel; swimming, Elytra flight and fire; mining/diamonds, food completion, fishing casts, sleep, crafting, containers, experience levels and visible advancements. They react to observed Minecraft state and native events. The feature does not perform gameplay actions or send chat/commands.
 
@@ -188,7 +196,7 @@ Use a Java 21 JDK:
 ./gradlew runClient
 ```
 
-On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.26.0.jar`, not the sources jar.
+On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.27.0.jar`, not the sources jar.
 
 Coiny is bundled under the included `COINY-OFL.txt`. Background artwork is bundled locally; only lyric lookup requires internet. The installable JAR contains no bundled PowerShell/batch/shell scripts or EXE/DLL helpers. No gameplay cheats are included.
 
@@ -216,29 +224,25 @@ Enable **Essentials → Freelook**, choose **Set a key**, and hold that keyboard
 
 Astra's enable toggle gates activation. Menus, lost window focus, disabling the setting or clearing the bind stop active Freelook using the supplied mod's own stop method. Its server block list is preserved and respected; Astra displays a notice when that list disables Freelook. It defaults to blocking Hypixel. Astra does not clear that list or override a blocked state. Camera collision and player movement remain native; no detached free camera, movement assistance, reach or automation is added. Each server decides which client mods it permits.
 
-The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.26.0-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
+The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.27.0-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
 
 **Visuals → Menu Background → Fake Media** remains an optional local-only decoration. In F5 it draws the pink media badge beside your own rendered name. It never changes your server name, rank, team, permissions or network packets, and other players cannot see it. It hides in first person, menus, with F1, and when invisible/spectating. It defaults to Off.
 
 Open/close transitions use quintic easing, subtle zoom and short movement. Rounded panels use cached nine-slice sprites. Smooth animations Off makes transitions immediate. Reset is in Settings and resets the Freelook enable/bind and Fake Media preference too.
 
-## Reference icons, Minecraft profile and separate Premium download (1.25.0)
+## Minecraft profile and account-bound Premium files (1.27.0)
 
 Visuals, Jamble, HUD, Spotify HUD and Essentials use the supplied reference designs as colour icons. Best Buds is replaced by **Customize Totem**, with the vanilla Totem of Undying texture. Settings keeps its gear icon. Icon textures are cached resources; no downloads occur during menu rendering.
 
-The header's top-right portrait uses your current Minecraft skin, including its hat layer. Below it, **Member** is grey and active **Premium** is gold with subtle sparkles. The gear next to X opens **Profile**, with your Minecraft name, head, rank and (in Premium) remaining time and the local expiry date. Turning Smooth animations Off freezes sparkles.
+The header's top-right portrait uses your current Minecraft skin, including its hat layer. Below it, **Member** is grey and active **Premium** is gold with subtle sparkles. The gear next to X opens **Profile**, with your Minecraft name, head, rank and (in Premium) remaining time and the signed expiry date. Turning Smooth animations Off freezes sparkles.
 
-There are two separate downloads. **Choose one; both have the same Fabric mod ID.** Member edition always shows Member. Premium edition starts a **30-day local cosmetic Premium period on its first launch**, persists that start date across restarts in `config/astra-premium.json`, and returns to Member after expiry. Its Profile page shows a live countdown. Expiry does not disable Minecraft or remove the regular client features. Reset Astra preferences does not restart the Premium period.
+Install one Astra file at a time. The public Member JAR works for everyone. Premium recipients need the JAR issued for their UUID by the owner. The public owner Premium file is assigned only to JackJ25; other accounts remain Member. A fresh `/client <username>` export gets a new signed grant and another 30 days **from the command's issuance time**. The recipient replaces their prior Astra JAR with it. Resetting Astra preferences or deleting the old `astra-premium.json` cannot restart a signed grant's expiry.
 
-There is **no Premium server, redemption code, account verification, owner administration or network check**. The implementation and bundled assets match; active Premium enables custom skies, sky lyrics, creator totems and Jamble. The rank is an Astra cosmetic label and never changes DonutSMP server ranks. The local period can be reset by deleting/modifying local data; it is not server-enforced licensing. Dates use the device's local timezone; elapsed-time accounting also avoids extending a running period merely by turning the system clock backwards.
+The Profile page shows a live countdown and the fixed expiration. Expiry or an invalid/mismatched file returns to Member and keeps normal Minecraft/client features working. The new implementation ignores the old first-launch timer. Old Astra releases cannot be revoked retroactively without a shared service. Issuing a replacement does not invalidate the older file; each retains its signed expiry.
 
-To build the separate edition with Java 21:
+The owner setup contains a private Ed25519 signing key. Never put it on GitHub, send it to a recipient or include it in a public mod pack. The public client/source contains only its matching verification key. Ownership is checked by UUID using a hashed account identifier, rather than a display-name comparison. See [OWNER_SETUP.md](OWNER_SETUP.md) for installation and key-backup instructions.
 
-```sh
-./gradlew build -PpremiumEdition=true
-```
-
-This produces `build/libs/astra-client-1.26.0-premium.jar`. Plain `./gradlew build` produces Member edition. The JAR's `astra-edition.json` records the edition; there are no hidden credentials or account endpoints.
+`./gradlew build` produces Member. `./gradlew build -PpremiumEdition=true` produces an **unlicensed template**; the build flag alone no longer grants Premium. The installed owner command embeds a signed account grant into a copy of the complete release. It changes edition/version/license metadata only and retains assets/dependencies. It does not modify the installed JAR or send a DonutSMP server command.
 
 ## DonutSMP Pack (1.25.0)
 
@@ -256,7 +260,7 @@ The selection saves in `config/astra-client.json` as `totemStyle` and loads on r
 
 This changes the client appearance of actual Totems of Undying in inventory/hotbar, hands, third person, dropped-item rendering and the totem activation animation. It does not give you a totem, move it to your hand, change item names/components/counts, or change its gameplay effect. Other item types retain their original models. The resolver selects a preloaded model identifier, with no per-frame texture decoding, stack copying or full resource reload on Equip.
 
-The pack can be previewed in Member mode; equipping it requires active Premium. Premium dates are preserved across this update.
+The pack can be previewed in Member mode; equipping it requires active Premium. Existing signed grants retain their expiration; old unsigned periods are not licenses.
 
 ## Performance Mode for streamers (1.25.0)
 
@@ -278,7 +282,7 @@ While On, Astra skips the optional reactive meteor/rocket/planet scene, freezes 
 
 Your previous native values and the applied preset are stored with Astra preferences. **Turning Off restores values that still match the applied preset**, including after a Minecraft restart. Any native setting you deliberately changed while the mode was On is kept. Reset Astra preferences turns the mode Off and performs the same restoration. FOV, gamma, screen resolution, FPS cap, VSync and audio preferences keep their existing values.
 
-This reduces rendering work using Minecraft's normal settings. The FPS result depends on your hardware, world, shaders and recording workload; no fixed gain is promised. Both downloads include Performance Mode, and the Premium period is preserved.
+This reduces rendering work using Minecraft's normal settings. The FPS result depends on your hardware, world, shaders and recording workload; no fixed gain is promised. Both downloads include Performance Mode, and signed grant expiration is unchanged.
 
 ## Solid 3D creator totems (1.25.0)
 
@@ -286,7 +290,7 @@ All five DonutSMP Pack designs now use **closed 3D cuboid character models**, re
 
 Jettism has a raised crown with separate points and blue jewels. Farex has a volumetric top hat and brim. Hoozar0 has a red hood with white trim. Jack has a Santa hat, brim, pompom and cyan hoodie seams. Shoe toes also extend forward where applicable. The models use 8–19 cuboids each and are baked by Minecraft's normal item renderer.
 
-The pack menu now renders the actual 3D models at an angle, rather than a flat texture thumbnail. Preview stacks are cached privately and never enter your inventory. Equipping still affects real totems in hands, inventory, third person, ground/frame contexts and the activation animation. Unequip restores the original model, and saved selections require no migration. Performance Mode and Premium dates are retained.
+The pack menu now renders the actual 3D models at an angle, rather than a flat texture thumbnail. Preview stacks are cached privately and never enter your inventory. Equipping still affects real totems in hands, inventory, third person, ground/frame contexts and the activation animation. Unequip restores the original model, and saved selections require no migration. Performance Mode and signed expiration dates are retained.
 
 `tools/generate_totem_models.py` authors the model geometry and UV mappings from the existing texture artwork using Python's standard library. No runtime texture processing or new dependencies are required.
 
