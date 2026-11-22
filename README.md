@@ -1,18 +1,26 @@
-# Astra Client 1.24.0
+# Astra Client 1.25.0
 
-Version 1.17.0 has been withdrawn at the owner's request. The recommended version is 1.24.0.
+Version 1.17.0 has been withdrawn at the owner's request. The recommended version is 1.25.0.
 
 Cosmetic client mod for Minecraft Java **1.21.11**, **Java 21**, **Fabric Loader 0.19.3+**, and **Fabric API 0.141.6+1.21.11**.
 
-[Download replacement Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.24.0.jar) · [Download replacement 30-day Premium edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.24.0-premium.jar)
+[Download replacement Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.25.0.jar) · [Download replacement 30-day Premium edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.25.0-premium.jar)
 
 **Defender verification is pending.** These replacements retain the script-free native media bridge from 1.14.2 and include source/checksums. A scan with another engine is not proof that Defender will accept a file. Keep any antivirus block in place and report the exact threat name and affected filename if it persists.
 
-[SHA-256 checksums](downloads/SHA256SUMS-1.24.0.txt) · [Security review](SECURITY.md) · [Scan report](downloads/SCAN-REPORT-1.24.0.txt)
+[SHA-256 checksums](downloads/SHA256SUMS-1.25.0.txt) · [Security review](SECURITY.md) · [Scan report](downloads/SCAN-REPORT-1.25.0.txt)
+
+## Glow-ink signs and background travel (1.25.0)
+
+Glowing standing, wall and hanging signs now use a dedicated alias to Minecraft's normal font. Their glyphs, wrapping, centering and glow outline use the same measurements, so Astra's global Bubble Font preference cannot distort them. Colours, bold/italic styles, filtered text and server custom fonts are preserved. Both sign faces are covered. This changes the render state only; world/server text is unchanged. Plain signs and the client's bubble font keep their existing behaviour. The weak render-copy cache refreshes on resource/language reload.
+
+Main-menu and client-menu background changes have a **1.65-second glide**, a stronger leftward camera movement, a gentle zoom through the blend and faint travel streaks. Clicking another theme mid-transition keeps the current image, camera position and zoom continuous. Sampling stays inside the texture at different aspect ratios, avoiding movement that stalls against a texture edge. Normal still uses Minecraft's live title panorama and a navy client background.
+
+Spotify HUD themes now use the same continuous camera/blend model with smooth background and border colours; foreground text stays readable and stationary. Main-menu and Spotify theme choices remain independent and saved. **Smooth animations Off** or **Performance Mode On** settles immediately and removes the decorative motion. Backgrounds use existing cached textures and fixed-size transition state, with no new image decoding, frame captures or offscreen render targets. World sky choices retain their separate existing behaviour.
 
 ## Install
 
-Remove previous Astra Client jars from your instance's `mods` folder. Install **one** edition (`astra-client-1.24.0.jar` or `astra-client-1.24.0-premium.jar`) alongside Fabric API and launch the Fabric profile. Press **Right Shift** in a world to open the client menu; Right Shift, Escape and X close it.
+Remove previous Astra Client jars from your instance's `mods` folder. Install **one** edition (`astra-client-1.25.0.jar` or `astra-client-1.25.0-premium.jar`) alongside Fabric API and launch the Fabric profile. Press **Right Shift** in a world to open the client menu; Right Shift, Escape and X close it.
 
 Jamble is back to its original hotbar-only mode. Enable it, then receive a Host item and Viewer item together to show their numbers, icons and winner. The payment queue, J-key review menu, stake limits and payout controls have been removed.
 
@@ -32,7 +40,7 @@ The sidebar groups appearance controls first, then tools, with Settings and Buy 
 
 **Active Premium is required for Custom Sky, Lyrics In Sky, Customize Totem and Jamble.** Member mode can browse sky previews and see clearly labelled locked feature pages. Existing selections are retained when Premium is inactive; their effects stop, native totem/sky rendering returns and pending Jamble results clear. Other Astra functions remain available.
 
-## 3D Characters (1.24.0)
+## 3D Characters (1.25.0)
 
 Open **Right Shift → 3D Characters** on the **first page**, identified by the SpongeBob face icon. The six choices are **SpongeBob SquarePants, DrDonutt (real-life-inspired), Patrick Star, Squidward Tentacles, Mr. Krabs and Sandy Cheeks**. They are available in both **Member and Premium**.
 
@@ -40,7 +48,7 @@ Each character has its own On/Off switch and a live 3D preview using the same cu
 
 Use **F5** to view the model in-game, or open your inventory to see its player preview. Empty-hand first-person rendering uses matching character arms/hands. Native walking, head movement, crouching, using items and attack poses animate the models. Held items stay visible. Character outfits replace the cosmetic armor/cape layers while active; your equipped items, defense, durability and movement keep working normally. Hitboxes and eye height retain their Minecraft values.
 
-Version **1.24.0** adds animated living details: blinking eyelids, subtle breathing, mouth movement timed to the audio’s actual volume pattern, and highlighted 3D sweat beads. Sweat builds during sustained sprinting, burning or low health, follows the curved face, then fades after recovery. **Animated Details** below the character cards can disable these additions. Smooth animations Off or Performance Mode freezes decorative movement. The same details appear on the real F5 model and the native menu previews. Fine clothing seams, fur tufts, shell joints, hair strands, a recessed Patrick belly button and existing facial shading add depth. These remain stylised 3D models, with no claim of photorealism.
+Version **1.25.0** adds animated living details: blinking eyelids, subtle breathing, mouth movement timed to the audio’s actual volume pattern, and highlighted 3D sweat beads. Sweat builds during sustained sprinting, burning or low health, follows the curved face, then fades after recovery. **Animated Details** below the character cards can disable these additions. Smooth animations Off or Performance Mode freezes decorative movement. The same details appear on the real F5 model and the native menu previews. Fine clothing seams, fur tufts, shell joints, hair strands, a recessed Patrick belly button and existing facial shading add depth. These remain stylised 3D models, with no claim of photorealism.
 
 Existing surface details remain: SpongeBob has actual shallow, closed pores with solid material behind them, curved cheeks and eye highlights. Subtle cached vertex-colour variation gives skin and clothing softer material detail. All six retain their curved anatomy and smooth shading. These remain stylised 3D cosmetics rather than photorealistic likenesses.
 
@@ -50,7 +58,7 @@ The authoring source is `tools/generate_characters.py` (Python standard library 
 
 The old header star is replaced with the supplied **moon logo at the top right**, beside the player profile and controls. The profile head and rank remain visible.
 
-## Character voice lines (1.24.0)
+## Character voice lines (1.25.0)
 
 Open **3D Characters → Voice Lines**. Choose a character to enable its speech and play its greeting automatically. Use **Preview voice** to audition it again. The pack contains **648 bundled neural speech recordings**: six distinct voices, 27 event types and four variations per event. Two new personality-specific variants per event double the previous line count. Speech uses licensed Piper/VCTK and public-domain LJ Speech models, with brighter SpongeBob, deeper/slower Patrick, nasal Squidward, gravelly Mr. Krabs and brighter American Sandy profiles. DrDonutt uses an original generic voice. These are character-inspired synthetic performances, not official actor recordings or an exact voice-match claim. The model/dataset attribution, source, license and authoring instructions are in [CHARACTER_VOICES.md](CHARACTER_VOICES.md), also bundled with the audio.
 
@@ -60,7 +68,7 @@ Speech starts **On automatically**. Selecting a character enables its voice and 
 
 All audio plays locally through Minecraft. No speech engine, model download, web account, microphone, helper program or online request is required during play. The characters, audio and Small Totem option are available in both editions; equipping a custom DonutSMP totem still requires active Premium.
 
-## Small Totem (1.24.0)
+## Small Totem (1.25.0)
 
 Open **Customize Totem → Small Totem** at the top of the page or inside the DonutSMP Pack. It works with Minecraft's normal totem and all five custom designs. On reduces totems to **55% in both first-person hands**, preserving their facing direction. Off immediately restores the original size. Inventory/previews, dropped items, third-person items and the totem-pop animation retain their normal size. Other held items and original stack components remain unchanged. The switch is available on the Member page even while the custom pack is locked; it saves across restarts.
 
@@ -68,7 +76,7 @@ Open **Customize Totem → Small Totem** at the top of the page or inside the Do
 
 Choose **Normal, Galaxy, Nebula, Astra, Sunset or Beachy Sands** in the title screen's right-hand **Menu Background** panel or **Right Shift → Visuals → Menu Background**. Both menus share the same saved choice, available in **Member and Premium**. Sunset has a warm orange/violet mountain-and-water landscape; Beachy Sands has golden sand, turquoise water and palms. Both wallpapers are bundled locally.
 
-Switches blend over **1.35 seconds**: the outgoing scenery travels left while the arriving scene eases in from the right. Buttons and text stay still. Clicking again during travel continues smoothly from the current blend toward the latest choice. Custom backgrounds also drift slowly while idle. Normal retains Minecraft's live title panorama and the client menu's clean navy background.
+Switches blend over **1.65 seconds**: the outgoing scenery travels left while the arriving scene eases in from the right. Buttons and text stay still. Clicking again during travel continues smoothly from the current blend toward the latest choice. Custom backgrounds also drift slowly while idle. Normal retains Minecraft's live title panorama and the client menu's clean navy background.
 
 All six title-screen choices fit with a margin from the screen edge. The client menu uses a **three-column, two-row** selector, with Reactive Background and Bubble Font below it. Very short title screens hide the descriptive sentence below Reactive Background to keep every control accessible.
 
@@ -172,7 +180,7 @@ Use a Java 21 JDK:
 ./gradlew runClient
 ```
 
-On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.24.0.jar`, not the sources jar.
+On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.25.0.jar`, not the sources jar.
 
 Coiny is bundled under the included `COINY-OFL.txt`. Background artwork is bundled locally; only lyric lookup requires internet. The installable JAR contains no bundled PowerShell/batch/shell scripts or EXE/DLL helpers. No gameplay cheats are included.
 
@@ -200,13 +208,13 @@ Enable **Essentials → Freelook**, choose **Set a key**, and hold that keyboard
 
 Astra's enable toggle gates activation. Menus, lost window focus, disabling the setting or clearing the bind stop active Freelook using the supplied mod's own stop method. Its server block list is preserved and respected; Astra displays a notice when that list disables Freelook. It defaults to blocking Hypixel. Astra does not clear that list or override a blocked state. Camera collision and player movement remain native; no detached free camera, movement assistance, reach or automation is added. Each server decides which client mods it permits.
 
-The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.24.0-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
+The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.25.0-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
 
 **Visuals → Menu Background → Fake Media** remains an optional local-only decoration. In F5 it draws the pink media badge beside your own rendered name. It never changes your server name, rank, team, permissions or network packets, and other players cannot see it. It hides in first person, menus, with F1, and when invisible/spectating. It defaults to Off.
 
 Open/close transitions use quintic easing, subtle zoom and short movement. Rounded panels use cached nine-slice sprites. Smooth animations Off makes transitions immediate. Reset is in Settings and resets the Freelook enable/bind and Fake Media preference too.
 
-## Reference icons, Minecraft profile and separate Premium download (1.24.0)
+## Reference icons, Minecraft profile and separate Premium download (1.25.0)
 
 Visuals, Jamble, HUD, Spotify HUD and Essentials use the supplied reference designs as colour icons. Best Buds is replaced by **Customize Totem**, with the vanilla Totem of Undying texture. Settings keeps its gear icon. Icon textures are cached resources; no downloads occur during menu rendering.
 
@@ -222,9 +230,9 @@ To build the separate edition with Java 21:
 ./gradlew build -PpremiumEdition=true
 ```
 
-This produces `build/libs/astra-client-1.24.0-premium.jar`. Plain `./gradlew build` produces Member edition. The JAR's `astra-edition.json` records the edition; there are no hidden credentials or account endpoints.
+This produces `build/libs/astra-client-1.25.0-premium.jar`. Plain `./gradlew build` produces Member edition. The JAR's `astra-edition.json` records the edition; there are no hidden credentials or account endpoints.
 
-## DonutSMP Pack (1.24.0)
+## DonutSMP Pack (1.25.0)
 
 Open **Right Shift → Customize Totem → DonutSMP Pack → Open Pack**. The built-in pack contains five reference-based pixel-art totem designs:
 
@@ -242,7 +250,7 @@ This changes the client appearance of actual Totems of Undying in inventory/hotb
 
 The pack can be previewed in Member mode; equipping it requires active Premium. Premium dates are preserved across this update.
 
-## Performance Mode for streamers (1.24.0)
+## Performance Mode for streamers (1.25.0)
 
 Open **Right Shift → top-right gear → Performance Mode**. This saved, reversible toggle applies a balanced native video preset:
 
@@ -264,7 +272,7 @@ Your previous native values and the applied preset are stored with Astra prefere
 
 This reduces rendering work using Minecraft's normal settings. The FPS result depends on your hardware, world, shaders and recording workload; no fixed gain is promised. Both downloads include Performance Mode, and the Premium period is preserved.
 
-## Solid 3D creator totems (1.24.0)
+## Solid 3D creator totems (1.25.0)
 
 All five DonutSMP Pack designs now use **closed 3D cuboid character models**, replacing the old `minecraft:item/generated` sprites. Heads, torsos, arms and separate legs have front, back, side, top and bottom faces. The original reference-based front artwork remains; hair, clothing, skin and footwear patches estimate unseen sides and backs.
 
@@ -274,7 +282,7 @@ The pack menu now renders the actual 3D models at an angle, rather than a flat t
 
 `tools/generate_totem_models.py` authors the model geometry and UV mappings from the existing texture artwork using Python's standard library. No runtime texture processing or new dependencies are required.
 
-## Original Jamble restored (1.24.0)
+## Original Jamble restored (1.25.0)
 
 Enable **Right Shift → Jamble → Enable Jamble** before receiving items. Name Host items **1.1–9.1** and Viewer items **1–9** in an anvil. Receive exactly one of each together into the **hotbar**, within two seconds. Higher wins; **5.1 beats 5**, so Host wins on matching base numbers.
 
@@ -284,7 +292,7 @@ No payment is required. Existing inventory, main-inventory/offhand/cursor transf
 
 The payment listener, payment queue, J-key review screen/keybinding, chat Review links, stake limits, payout confirmation/records and payment HUD/toast have been removed. Previous payment-limit fields in an old config are ignored and disappear on the next Astra save. Minecraft's J key is available to your other bindings. This release retains the PvP page and the rest of Astra's features.
 
-## Offhand orientation fix (1.13.1, retained in 1.24.0)
+## Offhand orientation fix (1.13.1, retained in 1.25.0)
 
 The five DonutSMP character totems now use matching authored first-person transforms. Minecraft mirrors the left-hand pose itself, so the face stays turned towards you in either hand, including when Left is your Minecraft main-hand preference. Meshes, textures, size, Equip/Unequip, Jamble and other settings are preserved. Disable competing custom-totem mods/packs when using Astra's selected model.
 
