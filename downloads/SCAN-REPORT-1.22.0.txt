@@ -1,0 +1,56 @@
+Astra Client 1.22.0 — replacement-build scan report
+
+IMPORTANT: This is NOT a Microsoft Defender result or a guarantee of safety.
+The reported Defender threat name and affected-file hash were unavailable.
+The installable replacements remove the embedded script and encoded/hidden
+PowerShell launcher entirely. Windows media uses the system WinRT APIs.
+
+Scanner: official Cisco-Talos ClamAV 1.5.4, verified release package SHA-256
+28d6efc5b4423e7830c3559339552eb53870a9eac51ac4efb37d60530d329886
+Databases: official signed daily 28184 (15 Nov 2026) and bytecode 339.
+Coverage is LIMITED: the main database was CDN rate-limited and not available.
+No attempt was made to bypass that cooldown. Signature verification stayed on.
+The old 1.14.0 JARs also had no detections under this same limited scan;
+that does not invalidate the reported Defender alert.
+
+Live Microsoft Defender and Windows Spotify were not available on this
+Linux host. Native Windows ABI-contract tests and real Minecraft/Linux UI
+checks passed. Source, tests and review are supplied for inspection.
+
+Keep antivirus protection enabled. If Defender blocks a replacement, keep
+the block; do not add exclusions, disguise the file or turn protection off.
+
+Version 1.22.0 refines the six existing local character cosmetics with curved
+surfaces, softened facial/body details, smooth lighting normals and matching
+native skin previews. Geometry and atlas assets are bundled locally and cached.
+No new endpoint, process, executable, native dependency or gameplay action was
+introduced. Original Jamble, PvP, backgrounds, media and Freelook remain intact.
+The final archives contain no runtime scripts/executables or excluded fixtures.
+Builds, geometry/winding/lighting tests and actual Minecraft/Linux checks passed.
+The signature snapshot is over seven days old; the raw warning is retained below.
+
+Final SHA-256 values:
+49a461f99626711dc9f645d649a13bf81dfa32495b44e6175c7809a254dc130b  astra-client-1.22.0.jar
+47fb44acd962dace2d62e3a1c76ba29f14e6ce62ff8adf0d2729f59879f72108  astra-client-1.22.0-premium.jar
+bd2bf469c83f83a6a26c8869eec80d49ac12c89ac812ecd95a56511adfbd97a5  astra-client-1.22.0-source.zip
+
+Raw scanner output:
+LibClamAV Warning: **************************************************
+LibClamAV Warning: ***  The virus database is older than 7 days!  ***
+LibClamAV Warning: ***   Please update it as soon as possible.    ***
+LibClamAV Warning: **************************************************
+/workspace/output/astra-client-1.22.0.jar: OK
+/workspace/output/astra-client-1.22.0-premium.jar: OK
+/workspace/output/astra-client-1.22.0-source.zip: OK
+
+----------- SCAN SUMMARY -----------
+Known viruses: 341270
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 3
+Infected files: 0
+Data scanned: 57.85 MiB
+Data read: 38.50 MiB (ratio 1.50:1)
+Time: 15.385 sec (0 m 15 s)
+Start Date: 2026:11:22 14:10:13
+End Date:   2026:11:22 14:10:28
