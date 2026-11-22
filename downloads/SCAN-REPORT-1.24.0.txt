@@ -1,0 +1,61 @@
+Astra Client 1.24.0 — replacement-build scan report
+
+IMPORTANT: This is NOT a Microsoft Defender result or a guarantee of safety.
+The reported Defender threat name and affected-file hash were unavailable.
+The installable replacements remove the embedded script and encoded/hidden
+PowerShell launcher entirely. Windows media uses the system WinRT APIs.
+
+Scanner: official Cisco-Talos ClamAV 1.5.4, verified release package SHA-256
+28d6efc5b4423e7830c3559339552eb53870a9eac51ac4efb37d60530d329886
+Databases: official signed daily 28184 (15 Nov 2026) and bytecode 339.
+Coverage is LIMITED: the main database was CDN rate-limited and not available.
+No attempt was made to bypass that cooldown. Signature verification stayed on.
+The old 1.14.0 JARs also had no detections under this same limited scan;
+that does not invalidate the reported Defender alert.
+
+Live Microsoft Defender and Windows Spotify were not available on this
+Linux host. Native Windows ABI-contract tests and real Minecraft/Linux UI
+checks passed. Source, tests and review are supplied for inspection.
+
+Keep antivirus protection enabled. If Defender blocks a replacement, keep
+the block; do not add exclusions, disguise the file or turn protection off.
+
+Version 1.24.0 adds 648 character-inspired speech clips, automatic selected-
+character greetings, a one-time legacy preference migration, and cached living
+model details: eyelids, audio-envelope mouth movement, breathing and sweat.
+Runtime interpolates precomputed RMS data; all speech synthesis and pitch/timbre
+processing occur during development. Sandy uses a public-domain LJ Speech voice;
+VCTK attribution and both model hashes are included. DrDonutt retains an original
+generic voice. The supplied moon logo replaces the header star at the top right.
+No new runtime endpoint, microphone access, helper executable, native dependency,
+audio-analysis process or gameplay action is introduced. Original media/Jamble/
+PvP/backgrounds/totems/Freelook remain intact. Archived code/assets, required
+contracts and packaged Minecraft/Linux UI/audio/animation checks passed.
+The signature snapshot is over seven days old; its raw warning remains below.
+No Defender clearance, Windows listening verdict or exact actor match is claimed.
+
+Final SHA-256 values:
+46b11a0aa5fcbbb970e7cbb73f023ce2d4a020f9e5a62665f64c7f6e40d6148a  astra-client-1.24.0.jar
+3cb06800b8690d163d257e55334115bbc3226487d7089df40037b34480058fe2  astra-client-1.24.0-premium.jar
+51a95519d44206010628c372038e315c97e60d45863bca25d420a7def1906005  astra-client-1.24.0-source.zip
+
+Raw scanner output:
+LibClamAV Warning: **************************************************
+LibClamAV Warning: ***  The virus database is older than 7 days!  ***
+LibClamAV Warning: ***   Please update it as soon as possible.    ***
+LibClamAV Warning: **************************************************
+/workspace/output/astra-client-1.24.0.jar: OK
+/workspace/output/astra-client-1.24.0-premium.jar: OK
+/workspace/output/astra-client-1.24.0-source.zip: OK
+
+----------- SCAN SUMMARY -----------
+Known viruses: 341270
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 3
+Infected files: 0
+Data scanned: 92.36 MiB
+Data read: 68.90 MiB (ratio 1.34:1)
+Time: 13.484 sec (0 m 13 s)
+Start Date: 2026:11:22 16:43:11
+End Date:   2026:11:22 16:43:24
