@@ -1,13 +1,13 @@
-# Astra 1.27.0 owner setup — JackJ25
+# Astra 1.28.0 owner setup — JackJ25
 
-Premium exports are assigned to a Java account before sharing. They expire 30 days after issuance. No Astra server is installed or required.
+Premium exports are assigned to a Java account before sharing. Standard exports expire 30 days after issuance; Lifetime exports have no expiry. No Astra server is installed or required.
 
 ## Install the private owner setup
 
-1. Install one Astra 1.27.0 release JAR and Fabric API in your Minecraft instance's `mods` folder. The Member JAR can issue files too. The owner Premium download is already bound to JackJ25.
+1. Install one Astra 1.28.0 release JAR and Fabric API in your Minecraft instance's `mods` folder. The Member JAR can issue files too. The owner Premium download is already bound to JackJ25.
 2. Download the **private owner setup ZIP supplied directly in the conversation**. It is deliberately not hosted in the public GitHub repository.
 3. Extract it into the same Minecraft instance folder that contains `mods` and `config`. The resulting key path must be `config/astra-owner/issuer.pk8`.
-4. Sign in with your Minecraft Java account **JackJ25**. Join a world and type `/client <username>` in chat. For example: `/client JackJ25`.
+4. Sign in with your Minecraft Java account **JackJ25**. Join a world and type `/client <username>` in chat. For example: `/client JackJ25`. For a Lifetime award, use `/client <username> lifetime`.
 5. Wait for the confirmation. The newly created JAR is in the instance's `astra-premium-exports` folder. Send **only that recipient's JAR**. They remove their old Astra JAR and install this one alongside Fabric API.
 6. To give the same player a fresh 30 days, run `/client <their current Java username>` again and send the newly generated file. Each file has its own signed serial and expiration; their previous file is not rewritten or revoked.
 
@@ -28,3 +28,9 @@ This is an offline restriction, not an unbreakable DRM service. It cannot global
 `/client` uses a background HTTPS request to Microsoft's official `api.minecraftservices.com/minecraft/profile/lookup/name/<username>` endpoint to resolve the recipient. It sends only the requested public username; no access token or issuer key is sent. Internet is needed to issue a new file. Normal offline license checks do not contact Astra or a licensing server.
 
 The 3D Characters Work In Progress lock applies to both editions until 15 December 2026, independently of Premium. Its date/progress also follows the device clock.
+
+## Case prize fulfilment
+
+The existing private owner setup/key remains compatible with this update. For an approved Discord ticket, assign the special Discord role manually, issue a month file with `/client <username>`, or issue a Lifetime file with `/client <username> lifetime`. Recipients install only their new account-bound JAR. Neither the case screen nor its local claim files can activate Premium or sign a license. The owner command still requires the matching private key and owner account.
+
+Case records are saved locally for manual review. A Claim ID or screenshot alone is not server-verified proof: users can modify their own client/files. No authoritative rewards server was created. Decide how to review tickets before granting external prizes.
