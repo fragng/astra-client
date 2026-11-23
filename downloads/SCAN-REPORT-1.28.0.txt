@@ -1,0 +1,73 @@
+Astra Client 1.28.0 — replacement-build scan report
+
+IMPORTANT: This is NOT a Microsoft Defender result or a guarantee of safety.
+The reported Defender threat name and affected-file hash were unavailable.
+The installable replacements remove the embedded script and encoded/hidden
+PowerShell launcher entirely. Windows media uses the system WinRT APIs.
+
+Scanner: official Cisco-Talos ClamAV 1.5.4, verified release package SHA-256
+28d6efc5b4423e7830c3559339552eb53870a9eac51ac4efb37d60530d329886
+Databases: official signed daily 28184 (15 Nov 2026) and bytecode 339.
+Coverage is LIMITED: the main database was CDN rate-limited and not available.
+No attempt was made to bypass that cooldown. Signature verification stayed on.
+The old 1.14.0 JARs also had no detections under this same limited scan;
+that does not invalidate the reported Defender alert.
+
+Live Microsoft Defender and Windows Spotify were not available on this
+Linux host. Native Windows ABI-contract tests and real Minecraft/Linux UI
+checks passed. Source, tests and review are supplied for inspection.
+
+Keep antivirus protection enabled. If Defender blocks a replacement, keep
+the block; do not add exclusions, disguise the file or turn protection off.
+
+Version 1.28.0 adds Games and local case rewards, a committed scrolling reel,
+saved allowances/collections/claim references, a gold/cyan crown, magenta/gold
+wings and a native personal-skin totem. Reward art is bundled; the renderers
+reuse cached geometry/native skin textures without image/network work on hover.
+The original Freelook dependency, six characters, 648 audio clips, world skies,
+signs, media bridge, original Jamble and PvP code are retained.
+
+Case data and references are local bookkeeping for manual Discord-ticket review,
+not independently verified prize entitlement. No reward server, Discord bot,
+automatic Premium/role grant, new credential request or helper process was added.
+The existing owner issuer can sign Lifetime grants with the same private key.
+Public downloads contain only the verifier; private key bytes and raw owner UUID
+were checked absent from both JARs and the complete source ZIP. The JackJ25
+monthly file preserves the previous signed grant and expiry. A public template
+build flag alone grants no Premium. Offline account/time checks cannot protect
+against modified clients, identity/clock spoofing or revoke old downloads.
+
+Final Member and unlicensed-template builds passed all 22 Gradle tasks. The
+packaged client passed real Minecraft/Linux review of Games, reel restoration,
+Auto navigation/acknowledgement, case allowance, reset persistence, claim history,
+640x480 controls, both-hand personal totems and real cosmetic models. An excluded
+fixture also tested the actual signed Lifetime command/profile. Test fixtures,
+runtime files and private issuing keys are excluded from the release archives.
+These checks do not establish live Windows media, Discord capture, FPS or Defender
+acceptance. Limited database coverage and its age warning remain as above.
+
+Final SHA-256 values:
+de1e81ec3c76a8b5388ddb8394e8242bd823ea18925a3a438e3417a220447098  astra-client-1.28.0.jar
+92bb0bc07152d540db44adf661aa355d9262d628be574e38b6ae4ead18b6b62c  astra-client-1.28.0-premium-JackJ25.jar
+fb1a6e6f73402e894f5aff9480df4462c1daab9931769909bbd16b8fad6484b1  astra-client-1.28.0-source.zip
+
+Raw scanner output:
+LibClamAV Warning: **************************************************
+LibClamAV Warning: ***  The virus database is older than 7 days!  ***
+LibClamAV Warning: ***   Please update it as soon as possible.    ***
+LibClamAV Warning: **************************************************
+/workspace/output/astra-client-1.28.0.jar: OK
+/workspace/output/astra-client-1.28.0-premium-JackJ25.jar: OK
+/workspace/output/astra-client-1.28.0-source.zip: OK
+
+----------- SCAN SUMMARY -----------
+Known viruses: 341270
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 3
+Infected files: 0
+Data scanned: 98.07 MiB
+Data read: 72.45 MiB (ratio 1.35:1)
+Time: 13.720 sec (0 m 13 s)
+Start Date: 2026:11:23 17:07:21
+End Date:   2026:11:23 17:07:35
