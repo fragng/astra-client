@@ -1,3 +1,17 @@
+# Astra Client 1.29.0 validation
+
+- Member and unlicensed Premium-template Java 21 / Minecraft 1.21.11 / Fabric Loader 0.19.3 builds pass all 22 required tasks. Existing archive, media, font/sign, transition, voice, geometry and licensing contracts remain included.
+- CaseGameTest exhaustively counts all 420,000 integer tickets. Every existing prize retains its previous exact probability; the new Infinite Cases weight comes only from empty results and matches the requested rare chance. Tests cover the last ordinary case winning the unlock, immediate unlimited Member opens beyond the former cap, bounded spent counters, lifetime-open accounting, duplicate wins, restart/rollback/refill/Premium-expiry persistence and existing equipped-wing saves loading unchanged. The transaction still commits before reveal and failed saves cannot reveal a new outcome.
+- CaseSpinTest checks 800 committed outcomes across 192,800 frames: varied preview decks independent of award weights, exact committed landing, deterministic restored previews, forward easing, the 4.5-second reveal with a settled interval, reduced motion and Auto cadence. No adjacent preview is forced to manufacture a near miss.
+- CaseMeshTest now samples 100,000 wing poses across flap/cycle boundaries, checking continuous bounded movement, a fold that stays behind the body, visible bursts, player-specific timing and a stable disabled/performance pose. Actual crown/wing mesh contracts still pass.
+- The packaged JAR ran in Minecraft. Native samples confirmed the longer moving reel, a varied preview deck, the correct committed card and the landing chime. Actual native dragon-head BIG WIN and Keep Opening controls were exercised with an excluded deterministic fixture. The account balance changed to Infinite Cases immediately, opened after a simulated exhausted quota, survived the normal save loader and Reset Astra preferences, and retained the unlock while equipping Wings.
+- Native F5 views were inspected at rest, during real forward movement, from the front, while crouch was held and in the player inventory. The revised pose anchors behind the body, and the coplanar feather glow pass/shared-angle mutation are absent. Real sampled flap poses varied smoothly; Performance Mode held a stable rest pose. These are local cosmetics only.
+- All seven rewards and the dragon icon fit the contents/reel UI at 1280x720 and 640x480. The observer/test commands are outside the project and excluded from all public artifacts. Test inputs do not become shipped player rewards.
+- Archive audits confirm only case reward/ledger/presentation and wing pose families changed, original world/media/licensing/assets/Freelook are unchanged, and the updated owner JAR preserves its exact signed monthly grant and expiry. Private key/seed/raw owner UUID and all runtime/fixture state are absent from public archives.
+- Linux software rendering and null audio were used. Native sound playback events and actual UI/model rendering are verified; subjective audio quality, physical-GPU FPS, live Windows integration and Defender acceptance remain unverified. The limited scanner report retains these limits.
+
+## Previous release validation
+
 # Astra Client 1.28.1 validation
 
 - Both Java 21 / Minecraft 1.21.11 / Fabric Loader 0.19.3 edition builds pass all 22 required Gradle tasks. The Member/Premium implementations are identical apart from edition/license metadata. The updated owner JAR retains the exact prior signed monthly grant and expiry.
