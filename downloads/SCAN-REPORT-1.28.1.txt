@@ -1,0 +1,67 @@
+Astra Client 1.28.1 — replacement-build scan report
+
+IMPORTANT: This is NOT a Microsoft Defender result or a guarantee of safety.
+The reported Defender threat name and affected-file hash were unavailable.
+The installable replacements remove the embedded script and encoded/hidden
+PowerShell launcher entirely. Windows media uses the system WinRT APIs.
+
+Scanner: official Cisco-Talos ClamAV 1.5.4, verified release package SHA-256
+28d6efc5b4423e7830c3559339552eb53870a9eac51ac4efb37d60530d329886
+Databases: official signed daily 28184 (15 Nov 2026) and bytecode 339.
+Coverage is LIMITED: the main database was CDN rate-limited and not available.
+No attempt was made to bypass that cooldown. Signature verification stayed on.
+The old 1.14.0 JARs also had no detections under this same limited scan;
+that does not invalidate the reported Defender alert.
+
+Live Microsoft Defender and Windows Spotify were not available on this
+Linux host. Native Windows ABI-contract tests and real Minecraft/Linux UI
+checks passed. Source, tests and review are supplied for inspection.
+
+Keep antivirus protection enabled. If Defender blocks a replacement, keep
+the block; do not add exclusions, disguise the file or turn protection off.
+
+Version 1.28.1 changes only CaseSpin and GamesPanel timing/presentation/audio.
+The two-second reel now scrolls in Performance Mode, decelerates, holds the
+committed card at the red marker and uses native passing ticks/landing chime.
+Explicit animation and sound preferences are retained. The local case ledger,
+reward distribution, claims, cosmetic meshes, licensing, media, world code,
+all original assets and exact Freelook dependency remain byte-identical.
+No new endpoint, executable, helper, library or credential was added.
+
+Both edition builds passed all 22 required Gradle tasks. The actual installed
+client was checked in Minecraft using a separate excluded observer: reel motion
+in Performance Mode, correct landing and timing, native tick/chime playback,
+one landing chime, mute/reduced-motion preferences and stopping sounds when
+leaving. Linux/null audio checks native playback events, not subjective speaker
+quality or Windows hardware. The updated monthly owner grant is unchanged.
+Archive/source audits found no private issuing key, raw owner UUID, fixture or
+runtime state. Local case claims still require manual ticket review and are
+not independently verified reward proof. No reward backend was added.
+Antivirus coverage, old database warning and Windows verification limits remain
+as above. This is not Microsoft Defender clearance.
+
+Final SHA-256 values:
+70bfc1c88425da9674be8d38f7f5a99aa5655e065740d68904e05ff56fa42d24  astra-client-1.28.1.jar
+f208a170ab5360eabbed0a45f4eb43fe5d6a63a8547ba374dabb5a732af26cad  astra-client-1.28.1-premium-JackJ25.jar
+f461e6249e8cafe6a9438bf4a8d2904f4fa5e25200466d3bb4e45a06792321ed  astra-client-1.28.1-source.zip
+
+Raw scanner output:
+LibClamAV Warning: **************************************************
+LibClamAV Warning: ***  The virus database is older than 7 days!  ***
+LibClamAV Warning: ***   Please update it as soon as possible.    ***
+LibClamAV Warning: **************************************************
+/workspace/output/astra-client-1.28.1.jar: OK
+/workspace/output/astra-client-1.28.1-premium-JackJ25.jar: OK
+/workspace/output/astra-client-1.28.1-source.zip: OK
+
+----------- SCAN SUMMARY -----------
+Known viruses: 341270
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 3
+Infected files: 0
+Data scanned: 98.09 MiB
+Data read: 72.45 MiB (ratio 1.35:1)
+Time: 13.654 sec (0 m 13 s)
+Start Date: 2026:11:23 17:19:51
+End Date:   2026:11:23 17:20:05
