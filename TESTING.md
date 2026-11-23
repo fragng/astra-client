@@ -1,3 +1,13 @@
+# Astra Client 1.28.1 validation
+
+- Both Java 21 / Minecraft 1.21.11 / Fabric Loader 0.19.3 edition builds pass all 22 required Gradle tasks. The Member/Premium implementations are identical apart from edition/license metadata. The updated owner JAR retains the exact prior signed monthly grant and expiry.
+- CaseSpinTest checks 700 committed outcomes across 168,700 sampled frames, monotonic visible scrolling, accurate landing, identical restored decks and exact two-second completion. New assertions ensure movement before the result, a short settled interval under the red marker before revealing, and the unchanged explicit reduced-motion preference.
+- The actual installed JAR was exercised in Minecraft with Performance Mode enabled. Native observer samples confirmed multiple distinct reel positions during the same opening, the correct result under the red marker and completion after two seconds. A native SoundManager listener received passing-card ticks and exactly one amethyst landing chime. Waiting after completion did not replay it.
+- Native follow-up checks confirmed Button sounds Off suppressed case tick/chime playback; Smooth animations Off kept the reel static while still announcing the completed result; navigating away mid-spin stopped subsequent case audio. The test observer is separate and excluded from all shipped archives. Linux/null audio validates the actual playback events, not subjective speaker quality or Windows hardware output.
+- Archive audits verify only CaseSpin/GamesPanel class families changed from 1.28.0, original assets/Freelook and reward/licensing/world/media code remain byte-identical, and runtime/private/test state is absent. The complete source ZIP includes the updated contracts. Antivirus and Windows integration limitations below remain unchanged.
+
+## Previous release validation
+
 # Astra Client 1.28.0 validation
 
 - Final Member and unlicensed Premium-template Java 21 builds pass all 22 Gradle tasks for Minecraft 1.21.11 / Fabric Loader 0.19.3. This includes the existing 19 contracts and three new case/reel/mesh suites. No production test observer or forced-result controls are shipped.
