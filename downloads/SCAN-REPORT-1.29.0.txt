@@ -1,0 +1,76 @@
+Astra Client 1.29.0 — replacement-build scan report
+
+IMPORTANT: This is NOT a Microsoft Defender result or a guarantee of safety.
+The reported Defender threat name and affected-file hash were unavailable.
+The installable replacements remove the embedded script and encoded/hidden
+PowerShell launcher entirely. Windows media uses the system WinRT APIs.
+
+Scanner: official Cisco-Talos ClamAV 1.5.4, verified release package SHA-256
+28d6efc5b4423e7830c3559339552eb53870a9eac51ac4efb37d60530d329886
+Databases: official signed daily 28184 (15 Nov 2026) and bytecode 339.
+Coverage is LIMITED: the main database was CDN rate-limited and not available.
+No attempt was made to bypass that cooldown. Signature verification stayed on.
+The old 1.14.0 JARs also had no detections under this same limited scan;
+that does not invalidate the reported Defender alert.
+
+Live Microsoft Defender and Windows Spotify were not available on this
+Linux host. Native Windows ABI-contract tests and real Minecraft/Linux UI
+checks passed. Source, tests and review are supplied for inspection.
+
+Keep antivirus protection enabled. If Defender blocks a replacement, keep
+the block; do not add exclusions, disguise the file or turn protection off.
+
+Version 1.29.0 adds richer display previews, a longer committed case reel, a
+native dragon-head Infinite Cases reward and revised local cosmetic wing poses.
+Every existing prize probability remains exact; the new reward comes only from
+empty-result probability. Display previews do not represent drop probabilities,
+and no adjacent cards are forced to manufacture near misses. Infinite Cases is
+saved in the local account collection, unlocks unlimited openings immediately
+and survives reloads/reset preferences; it is not a Premium license or remote
+entitlement. Existing local-data/manual-ticket trust limitations still apply.
+
+Wing fold direction and back clearance are corrected, shared model rotation
+mutation is removed and the coplanar feather overlay is removed. Continuous
+player-specific flap bursts use stateless cached-mesh poses, with a stable
+resting pose for Performance Mode/reduced motion. No world/player gameplay data
+is changed. Existing assets, native media integration, signed licensing, all
+648 audio clips and the exact original Freelook dependency are unchanged.
+No new asset download, endpoint, executable, helper or credential was introduced.
+
+Both edition builds passed all 22 required Gradle tasks, including exhaustive
+integer-distribution, unlock/migration, reel and wing-continuity contracts.
+Real Minecraft/Linux checks exercised previews/committed landing, native sound,
+the dragon BIG WIN, unlimited opens beyond an exhausted quota, load/reset,
+seven-reward layout at 1280x720/640x480 and actual walking/crouch/inventory wings.
+Observers/forced test results remain outside public artifacts. Private issuer
+key/seed/raw owner UUID and runtime state were checked absent from both JARs
+and complete source. The owner's signed monthly grant/expiry is unchanged.
+Linux/null audio/software rendering is not live Windows, physical-GPU FPS or
+Defender validation. Limited signature coverage and database-age warning remain
+as above; this does not establish Microsoft Defender clearance.
+
+Final SHA-256 values:
+7fc34702f51b02e5b26d7a9f8699c1a3b8cd7c05eca2b52bc9d9f61c709daf2d  astra-client-1.29.0.jar
+6541b1ca20f239f1a11de2654803642a1820dcfa34bf81ff6a544ec36d68a271  astra-client-1.29.0-premium-JackJ25.jar
+39c7eaa747a25196169fa8b649000e09f319dd0d10d108f2ea4297779cb4e45a  astra-client-1.29.0-source.zip
+
+Raw scanner output:
+LibClamAV Warning: **************************************************
+LibClamAV Warning: ***  The virus database is older than 7 days!  ***
+LibClamAV Warning: ***   Please update it as soon as possible.    ***
+LibClamAV Warning: **************************************************
+/workspace/output/astra-client-1.29.0.jar: OK
+/workspace/output/astra-client-1.29.0-premium-JackJ25.jar: OK
+/workspace/output/astra-client-1.29.0-source.zip: OK
+
+----------- SCAN SUMMARY -----------
+Known viruses: 341270
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 3
+Infected files: 0
+Data scanned: 98.14 MiB
+Data read: 72.46 MiB (ratio 1.35:1)
+Time: 13.613 sec (0 m 13 s)
+Start Date: 2026:11:23 17:41:01
+End Date:   2026:11:23 17:41:15
