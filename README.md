@@ -1,18 +1,41 @@
-# Astra Client 1.27.0
+# Astra Client 1.28.0
 
-Version 1.17.0 has been withdrawn at the owner's request. The recommended version is 1.27.0.
+Version 1.17.0 has been withdrawn at the owner's request. The recommended version is 1.28.0.
 
 Cosmetic client mod for Minecraft Java **1.21.11**, **Java 21**, **Fabric Loader 0.19.3+**, and **Fabric API 0.141.6+1.21.11**.
 
-[Download replacement Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.27.0.jar) · [Owner Premium file — JackJ25 only](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.27.0-premium-JackJ25.jar)
+[Download replacement Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.28.0.jar) · [Owner Premium file — JackJ25 only](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.28.0-premium-JackJ25.jar)
 
 **Defender verification is pending.** These replacements retain the script-free native media bridge from 1.14.2 and include source/checksums. A scan with another engine is not proof that Defender will accept a file. Keep any antivirus block in place and report the exact threat name and affected filename if it persists.
 
-[SHA-256 checksums](downloads/SHA256SUMS-1.27.0.txt) · [Security review](SECURITY.md) · [Scan report](downloads/SCAN-REPORT-1.27.0.txt)
+[SHA-256 checksums](downloads/SHA256SUMS-1.28.0.txt) · [Security review](SECURITY.md) · [Scan report](downloads/SCAN-REPORT-1.28.0.txt)
 
-## Account-bound Premium and character release lock (1.27.0)
+## Games and Case Opening (1.28.0)
 
-New Premium files are signed and assigned to one **Minecraft Java UUID** before distribution. Copying an unchanged file to a different account leaves it in Member mode. A file expires **30 days after issuance**, rather than starting a resettable local timer. Only **JackJ25**, with the separate private owner key installed, can run the client-side `/client <username>` command to create a fresh file. New exports appear in the instance's `astra-premium-exports` folder. Share only the recipient's exported JAR. The signing key is supplied privately to the owner; it is absent from public downloads/source.
+Open **Right Shift → Games** in the **Tools** section, marked by a controller. The page displays **GAMES** and “Bored? Have a Chance to win cool rewards for FREE!” Choose **Case Opening** and press **OPEN**. A smooth scrolling reel settles beneath a fixed red centre marker. The committed result and the landing card always match, including after closing/reopening the menu or restarting.
+
+Members receive **100 cases per 12-hour window**; active Premium, including Lifetime, receives **200**. The window begins with the first opening, refills automatically and does not accumulate above the allowance. Upgrading adds the extra allowance without resetting cases already used. Case count, unlocks, equipment and claim history save per launcher-account fingerprint. Reset Astra preferences unequips cosmetics but does not replenish cases or erase the collection.
+
+**Auto Open** opens cases while the case page is visible. It stops when leaving the page, closing the menu, switching accounts, disconnecting or exhausting the allowance. Real prize wins receive a large **BIG WIN!** panel with a reward preview, a short sparkle animation and claim/equip controls. During Auto Open, the panel acknowledges after a short display and the sequence continues. Empty cases use the supplied-style **NOTHING!** pixel artwork and one of six short messages. The contents page lists available rewards without numerical probability labels.
+
+Available rewards:
+
+- **Special Discord Rank** — claim through a Discord ticket.
+- **1 Month Premium** — claim through a Discord ticket.
+- **Lifetime Premium** — claim through a Discord ticket.
+- **Yellow Glowing Crown** — an original curved 3D gold filigree crown with emissive cyan gems.
+- **Astral Wings** — layered magenta/purple feathers, gold details and light inner feathers with gentle movement.
+- **Your Skin Totem** — a solid 3D totem using your own currently loaded Minecraft skin, including classic/slim support.
+
+All three cosmetics are rare case unlocks. Crown and Wings are equipped through **Settings → Rare Cosmetics**; the personal skin totem appears in **Customize Totem** and can be used by a Member who has won it. The DonutSMP creator pack still requires Premium. Personal and creator totems are mutually exclusive. Small Totem still works in both hands. Cosmetics affect your local view only, without changing account skins, other players, hitboxes, flight or item/server data. The personal totem reads Minecraft's existing skin texture; Astra does not download, decode, copy or reload skins on item hover.
+
+**My Claims** retains recent major wins and offers a copyable Claim ID. Individual claim records are also archived in the instance's `config/astra-games/claims` directory. To claim, join **https://discord.gg/astrayt**, create a ticket and provide the reference. Discord roles and Premium are fulfilled manually after review; a local result is not an automatically verified entitlement. No Discord messages are sent automatically and no role/Premium is granted by opening a case. The owner can fulfil an approved month prize with `/client <username>` or a Lifetime prize with `/client <username> lifetime` using the existing private owner setup.
+
+This remains server-free. Case allowances, clock checks, collections and claim records are local data and can be edited or copied by a modified client or filesystem owner. They are not an anti-fraud or cross-device reward-verification service. See SECURITY.md for that trust boundary. No new account credentials, private issuing keys or hosting service are bundled.
+
+## Account-bound Premium and character release lock (1.28.0)
+
+New Premium files are signed and assigned to one **Minecraft Java UUID** before distribution. Copying an unchanged file to a different account leaves it in Member mode. A month file expires **30 days after issuance**, rather than starting a resettable local timer. An owner-issued Lifetime grant has no expiry. Only **JackJ25**, with the separate private owner key installed, can run the client-side `/client <username>` command to create a fresh file. New exports appear in the instance's `astra-premium-exports` folder. Share only the recipient's exported JAR. The signing key is supplied privately to the owner; it is absent from public downloads/source.
 
 The **3D Characters** category is temporarily locked with **Work In Progress**, a lock icon and a calendar-based percentage bar. The bar fills gradually from 22 November to **15 December 2026 at 00:00 Europe/London (GMT)** and continues across restarts. The page unlocks automatically at that deadline. Existing saved characters and their voices are inactive until then; their choices are kept for release. The lock applies to Member and Premium alike.
 
@@ -49,14 +72,15 @@ The sidebar groups appearance controls first, then tools, with Settings and Buy 
 - **Spotify HUD:** desktop linking, playback, HUD size/themes and HUD lyrics.
 - **3D Characters:** Work In Progress lock/progress until 15 December; then six self-only models and exclusive switches.
 - **Essentials:** Freelook and its keyboard/mouse binding, plus a saved Fullbright toggle.
-- **Customize Totem — Premium:** the five solid 3D DonutSMP creator totems.
+- **Customize Totem:** the Premium creator pack and the case-unlocked personal skin totem.
 - **Jamble — Premium:** original named-item hotbar tracking, Host/Viewer cards and winner announcements.
-- **Settings:** animation, button sounds, Discord Capture Mode and reset preferences.
+- **Games:** free cases, a rolling reveal, rare cosmetic unlocks and Discord-ticket claim history.
+- **Settings:** animation, sounds, capture mode, Rare Cosmetics and reset preferences.
 - **Buy Premium:** Discord-logo button linking to https://discord.gg/astrayt through Minecraft's native link confirmation.
 
-**Active Premium is required for Custom Sky, Lyrics In Sky, Customize Totem and Jamble.** Member mode can browse sky previews and see clearly labelled locked feature pages. Existing selections are retained when Premium is inactive; their effects stop, native totem/sky rendering returns and pending Jamble results clear. Other Astra functions remain available.
+**Active Premium is required for Custom Sky, Lyrics In Sky, the DonutSMP creator totem pack and Jamble. The rare personal skin totem is a separate case unlock.** Member mode can browse sky previews and see clearly labelled locked feature pages. Existing selections are retained when Premium is inactive; their effects stop, native totem/sky rendering returns and pending Jamble results clear. Other Astra functions remain available.
 
-## 3D Characters (1.27.0)
+## 3D Characters (1.28.0)
 
 **Work In Progress until 15 December 2026:** the release page shows the shared calendar progress; saved models and voices remain inactive until release. After it unlocks, open **Right Shift → 3D Characters** on the **first page**, identified by the SpongeBob face icon. The six choices are **SpongeBob SquarePants, DrDonutt (real-life-inspired), Patrick Star, Squidward Tentacles, Mr. Krabs and Sandy Cheeks**. They are available in both **Member and Premium**.
 
@@ -70,7 +94,7 @@ Existing surface details remain: SpongeBob has actual shallow, closed pores with
 
 This is a local visual cosmetic: other players keep seeing your normal server-side skin, and other players' models/skins on your screen remain unchanged. Cached articulated geometry and a shared colour atlas are reused between the actual player and native Minecraft skin previews, with independent poses so preview rendering does not disturb world animation. Curved surfaces are built once per character, rather than rebuilt every frame. The sidebar retains the SpongeBob face icon.
 
-The authoring source is `tools/generate_characters.py` (Python standard library only); generated shape definitions and textures are bundled in the mod. No model/skin download or account service is needed at runtime. The first sidebar page has nine sections; the PvP page retains its separate eight categories.
+The authoring source is `tools/generate_characters.py` (Python standard library only); generated shape definitions and textures are bundled in the mod. No model/skin download or account service is needed at runtime. The first sidebar page has ten sections; the PvP page retains its separate eight categories.
 
 The old header star is replaced with the supplied **moon logo at the top right**, beside the player profile and controls. The profile head and rank remain visible.
 
@@ -196,7 +220,7 @@ Use a Java 21 JDK:
 ./gradlew runClient
 ```
 
-On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.27.0.jar`, not the sources jar.
+On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.28.0.jar`, not the sources jar.
 
 Coiny is bundled under the included `COINY-OFL.txt`. Background artwork is bundled locally; only lyric lookup requires internet. The installable JAR contains no bundled PowerShell/batch/shell scripts or EXE/DLL helpers. No gameplay cheats are included.
 
@@ -224,13 +248,13 @@ Enable **Essentials → Freelook**, choose **Set a key**, and hold that keyboard
 
 Astra's enable toggle gates activation. Menus, lost window focus, disabling the setting or clearing the bind stop active Freelook using the supplied mod's own stop method. Its server block list is preserved and respected; Astra displays a notice when that list disables Freelook. It defaults to blocking Hypixel. Astra does not clear that list or override a blocked state. Camera collision and player movement remain native; no detached free camera, movement assistance, reach or automation is added. Each server decides which client mods it permits.
 
-The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.27.0-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
+The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.28.0-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
 
 **Visuals → Menu Background → Fake Media** remains an optional local-only decoration. In F5 it draws the pink media badge beside your own rendered name. It never changes your server name, rank, team, permissions or network packets, and other players cannot see it. It hides in first person, menus, with F1, and when invisible/spectating. It defaults to Off.
 
 Open/close transitions use quintic easing, subtle zoom and short movement. Rounded panels use cached nine-slice sprites. Smooth animations Off makes transitions immediate. Reset is in Settings and resets the Freelook enable/bind and Fake Media preference too.
 
-## Minecraft profile and account-bound Premium files (1.27.0)
+## Minecraft profile and account-bound Premium files (1.28.0)
 
 Visuals, Jamble, HUD, Spotify HUD and Essentials use the supplied reference designs as colour icons. Best Buds is replaced by **Customize Totem**, with the vanilla Totem of Undying texture. Settings keeps its gear icon. Icon textures are cached resources; no downloads occur during menu rendering.
 
