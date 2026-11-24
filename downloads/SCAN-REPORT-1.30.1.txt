@@ -1,0 +1,73 @@
+Astra Client 1.30.1 — replacement-build scan report
+
+IMPORTANT: This is NOT a Microsoft Defender result or a guarantee of safety.
+The reported Defender threat name and affected-file hash were unavailable.
+The installable replacements remove the embedded script and encoded/hidden
+PowerShell launcher entirely. Windows media uses the system WinRT APIs.
+
+Scanner: official Cisco-Talos ClamAV 1.5.4, verified release package SHA-256
+28d6efc5b4423e7830c3559339552eb53870a9eac51ac4efb37d60530d329886
+Databases: official signed daily 28184 (15 Nov 2026) and bytecode 339.
+Coverage is LIMITED: the main database was CDN rate-limited and not available.
+No attempt was made to bypass that cooldown. Signature verification stayed on.
+The old 1.14.0 JARs also had no detections under this same limited scan;
+that does not invalidate the reported Defender alert.
+
+Live Microsoft Defender and Windows Spotify were not available on this
+Linux host. Native Windows ABI-contract tests and real Minecraft/Linux UI
+checks passed. Source, tests and review are supplied for inspection.
+
+Keep antivirus protection enabled. If Defender blocks a replacement, keep
+the block; do not add exclusions, disguise the file or turn protection off.
+
+Version 1.30.1 adds original native vector fish/ocean artwork and a bounded
+visual descent model to Astra's independent offline Krillion practice game.
+The fish dips and sinks after scored answers while depth markers/scenery scroll.
+The camera retains it in view; Next/Enter wait for landing. Reduced motion snaps
+to the correct depth; Performance Mode keeps essential descent and skips ambient
+effects. No official game's code/files/artwork, paid content or web engine is
+embedded. No new runtime asset, endpoint, executable, library or credential is
+introduced. All existing assets, scoring/timers/saves, Wordle/case/wing/licensing/
+world/media code, 648 audio clips and the exact Freelook dependency are unchanged.
+
+Both edition builds passed all 23 required Gradle tasks, including monotonic
+visual depth, exact landing/advance gating, camera/viewport bounds, continuous
+retargeting, zero-score behaviour, reset and reduced-motion contracts.
+Actual packaged Minecraft/Linux tests ran seven scored rounds, recording fish
+motion and scrolling camera coordinates through the trench, new-dive reset,
+Next/Enter gating, Performance/reduced-motion behaviour and focused small-window
+input. The final header/footer layout and restored depth were checked at both
+1280x720 and640x480. Case/prize/Premium state stayed unchanged. Fixtures/test
+inputs remain excluded. Public archive/source checks found no private issuing
+key/seed/raw owner UUID or runtime state. The owner's signed monthly grant/expiry
+is unchanged. Both casual games remain unlimited and award no prizes/cases.
+
+Linux/software rendering and null audio do not establish live Windows integration,
+physical-GPU FPS or Microsoft Defender acceptance. The limited signature coverage
+and database-age warning remain as above. This is not Defender clearance.
+
+Final SHA-256 values:
+987cda50f2283cd2b6da0222f4c1f2253a7bb991e9c09b74064f768048fee36e  astra-client-1.30.1.jar
+42a5003ea0be1f5ba641c99d7d4deb18fde2764026109a4f0ba90821bca457ab  astra-client-1.30.1-premium-JackJ25.jar
+f4e52bbb6391cf75a456a2a2893baa085589faaa10de739b69adab284bceeb60  astra-client-1.30.1-source.zip
+
+Raw scanner output:
+LibClamAV Warning: **************************************************
+LibClamAV Warning: ***  The virus database is older than 7 days!  ***
+LibClamAV Warning: ***   Please update it as soon as possible.    ***
+LibClamAV Warning: **************************************************
+/workspace/output/astra-client-1.30.1.jar: OK
+/workspace/output/astra-client-1.30.1-premium-JackJ25.jar: OK
+/workspace/output/astra-client-1.30.1-source.zip: OK
+
+----------- SCAN SUMMARY -----------
+Known viruses: 341270
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 3
+Infected files: 0
+Data scanned: 98.97 MiB
+Data read: 72.73 MiB (ratio 1.36:1)
+Time: 13.584 sec (0 m 13 s)
+Start Date: 2026:11:24 17:27:18
+End Date:   2026:11:24 17:27:32
