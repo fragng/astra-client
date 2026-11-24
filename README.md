@@ -1,16 +1,24 @@
-# Astra Client 1.30.0
+# Astra Client 1.30.1
 
-Version 1.17.0 has been withdrawn at the owner's request. The recommended version is 1.30.0.
+Version 1.17.0 has been withdrawn at the owner's request. The recommended version is 1.30.1.
 
 Cosmetic client mod for Minecraft Java **1.21.11**, **Java 21**, **Fabric Loader 0.19.3+**, and **Fabric API 0.141.6+1.21.11**.
 
-[Download replacement Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.30.0.jar) · [Owner Premium file — JackJ25 only](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.30.0-premium-JackJ25.jar)
+[Download replacement Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.30.1.jar) · [Owner Premium file — JackJ25 only](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.30.1-premium-JackJ25.jar)
 
 **Defender verification is pending.** These replacements retain the script-free native media bridge from 1.14.2 and include source/checksums. A scan with another engine is not proof that Defender will accept a file. Keep any antivirus block in place and report the exact threat name and affected filename if it persists.
 
-[SHA-256 checksums](downloads/SHA256SUMS-1.30.0.txt) · [Security review](SECURITY.md) · [Scan report](downloads/SCAN-REPORT-1.30.0.txt)
+[SHA-256 checksums](downloads/SHA256SUMS-1.30.1.txt) · [Security review](SECURITY.md) · [Scan report](downloads/SCAN-REPORT-1.30.1.txt)
 
-## Unlimited Wordle and Krillion practice (1.30.0)
+## Visible fish descent (1.30.1)
+
+Krillion now has a dedicated animated ocean panel with a large, original pink-and-teal fish. Each scored answer sends the fish downward, nose-first, while depth markers, bubbles and the ocean scenery scroll upward. The camera keeps the whole fish visible through all seven rounds, the water darkens as you dive, and rocks appear at the 7,000-metre trench. A depth counter follows the animation.
+
+Next Prompt and Enter wait briefly for the descent to settle so it cannot be skipped accidentally. Zero-point answers do not invent a fall. Play Again returns the fish to the surface, and saved games reopen at their correct depth. Performance Mode retains the essential descent and disables ambient effects; Smooth animations Off snaps directly to the correct depth. Both games remain unlimited and award no prizes or cases.
+
+This uses original Astra code and vector artwork. The offline question bank/scoring, Wordle, saved progress and existing case/Premium state remain unchanged; no official Krillion files or web engine are embedded.
+
+## Unlimited Wordle and Krillion practice (1.30.1)
 
 Open **Right Shift → Games → Wordle** or **Krillion**. Both games are available to Member and Premium without limits, tickets, a daily reset or a case unlock. **They award no prizes, cases, cosmetics, roles or Premium.** The Case Opening game keeps its own existing quota and rewards.
 
@@ -20,7 +28,7 @@ Open **Right Shift → Games → Wordle** or **Krillion**. Both games are availa
 
 The trivia timer pauses while another page is selected or the Astra menu is closed. Both puzzles retain progress and partial input when you reopen the menu or restart. Saves use the separate account-fingerprint-scoped `config/astra-puzzles` directory. No game answer is sent online. Reset Astra preferences does not erase these practice sessions. Existing case collections, case usage, claims, rewards and Premium expiry are unchanged.
 
-## More reel variety, Infinite Cases and smoother wings (1.30.0)
+## More reel variety, Infinite Cases and smoother wings (1.30.1)
 
 The opening lasts **4.5 seconds**, with a richer mix of reward previews scrolling under the red marker, a smooth slowdown and a short settled hold before the result. Preview cards are display artwork, not a representation of drop probabilities; only the committed landing awards a prize. Existing prize chances are unchanged. The new reward takes its small share from empty results. No neighbours are arranged to manufacture near misses.
 
@@ -30,7 +38,7 @@ Wings now fold behind the back, have more clearance from the body and use indepe
 
 The small case reel still moves in Performance Mode; Smooth animations Off retains a static reveal. Passing-card ticks, the landing chime and prize sound follow Button sounds and Minecraft's Master volume.
 
-## Games and Case Opening (1.30.0)
+## Games and Case Opening (1.30.1)
 
 Open **Right Shift → Games** in the **Tools** section, marked by a controller. The page displays **GAMES** and “Bored? Have a Chance to win cool rewards for FREE!” Choose **Case Opening** and press **OPEN**. A smooth scrolling reel settles beneath a fixed red centre marker. The committed result and the landing card always match, including after closing/reopening the menu or restarting.
 
@@ -54,7 +62,7 @@ All three cosmetics are rare case unlocks. Crown and Wings are equipped through 
 
 This remains server-free. Case allowances, clock checks, collections and claim records are local data and can be edited or copied by a modified client or filesystem owner. They are not an anti-fraud or cross-device reward-verification service. See SECURITY.md for that trust boundary. No new account credentials, private issuing keys or hosting service are bundled.
 
-## Account-bound Premium and character release lock (1.30.0)
+## Account-bound Premium and character release lock (1.30.1)
 
 New Premium files are signed and assigned to one **Minecraft Java UUID** before distribution. Copying an unchanged file to a different account leaves it in Member mode. A month file expires **30 days after issuance**, rather than starting a resettable local timer. An owner-issued Lifetime grant has no expiry. Only **JackJ25**, with the separate private owner key installed, can run the client-side `/client <username>` command to create a fresh file. New exports appear in the instance's `astra-premium-exports` folder. Share only the recipient's exported JAR. The signing key is supplied privately to the owner; it is absent from public downloads/source.
 
@@ -101,7 +109,7 @@ The sidebar groups appearance controls first, then tools, with Settings and Buy 
 
 **Active Premium is required for Custom Sky, Lyrics In Sky, the DonutSMP creator totem pack and Jamble. The rare personal skin totem is a separate case unlock.** Member mode can browse sky previews and see clearly labelled locked feature pages. Existing selections are retained when Premium is inactive; their effects stop, native totem/sky rendering returns and pending Jamble results clear. Other Astra functions remain available.
 
-## 3D Characters (1.30.0)
+## 3D Characters (1.30.1)
 
 **Work In Progress until 15 December 2026:** the release page shows the shared calendar progress; saved models and voices remain inactive until release. After it unlocks, open **Right Shift → 3D Characters** on the **first page**, identified by the SpongeBob face icon. The six choices are **SpongeBob SquarePants, DrDonutt (real-life-inspired), Patrick Star, Squidward Tentacles, Mr. Krabs and Sandy Cheeks**. They are available in both **Member and Premium**.
 
@@ -241,7 +249,7 @@ Use a Java 21 JDK:
 ./gradlew runClient
 ```
 
-On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.30.0.jar`, not the sources jar.
+On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.30.1.jar`, not the sources jar.
 
 Coiny is bundled under the included `COINY-OFL.txt`. Background artwork is bundled locally; only lyric lookup requires internet. The installable JAR contains no bundled PowerShell/batch/shell scripts or EXE/DLL helpers. No gameplay cheats are included.
 
@@ -269,13 +277,13 @@ Enable **Essentials → Freelook**, choose **Set a key**, and hold that keyboard
 
 Astra's enable toggle gates activation. Menus, lost window focus, disabling the setting or clearing the bind stop active Freelook using the supplied mod's own stop method. Its server block list is preserved and respected; Astra displays a notice when that list disables Freelook. It defaults to blocking Hypixel. Astra does not clear that list or override a blocked state. Camera collision and player movement remain native; no detached free camera, movement assistance, reach or automation is added. Each server decides which client mods it permits.
 
-The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.30.0-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
+The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.30.1-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
 
 **Visuals → Menu Background → Fake Media** remains an optional local-only decoration. In F5 it draws the pink media badge beside your own rendered name. It never changes your server name, rank, team, permissions or network packets, and other players cannot see it. It hides in first person, menus, with F1, and when invisible/spectating. It defaults to Off.
 
 Open/close transitions use quintic easing, subtle zoom and short movement. Rounded panels use cached nine-slice sprites. Smooth animations Off makes transitions immediate. Reset is in Settings and resets the Freelook enable/bind and Fake Media preference too.
 
-## Minecraft profile and account-bound Premium files (1.30.0)
+## Minecraft profile and account-bound Premium files (1.30.1)
 
 Visuals, Jamble, HUD, Spotify HUD and Essentials use the supplied reference designs as colour icons. Best Buds is replaced by **Customize Totem**, with the vanilla Totem of Undying texture. Settings keeps its gear icon. Icon textures are cached resources; no downloads occur during menu rendering.
 
