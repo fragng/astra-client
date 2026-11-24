@@ -1,16 +1,26 @@
-# Astra Client 1.29.0
+# Astra Client 1.30.0
 
-Version 1.17.0 has been withdrawn at the owner's request. The recommended version is 1.29.0.
+Version 1.17.0 has been withdrawn at the owner's request. The recommended version is 1.30.0.
 
 Cosmetic client mod for Minecraft Java **1.21.11**, **Java 21**, **Fabric Loader 0.19.3+**, and **Fabric API 0.141.6+1.21.11**.
 
-[Download replacement Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.29.0.jar) · [Owner Premium file — JackJ25 only](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.29.0-premium-JackJ25.jar)
+[Download replacement Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.30.0.jar) · [Owner Premium file — JackJ25 only](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.30.0-premium-JackJ25.jar)
 
 **Defender verification is pending.** These replacements retain the script-free native media bridge from 1.14.2 and include source/checksums. A scan with another engine is not proof that Defender will accept a file. Keep any antivirus block in place and report the exact threat name and affected filename if it persists.
 
-[SHA-256 checksums](downloads/SHA256SUMS-1.29.0.txt) · [Security review](SECURITY.md) · [Scan report](downloads/SCAN-REPORT-1.29.0.txt)
+[SHA-256 checksums](downloads/SHA256SUMS-1.30.0.txt) · [Security review](SECURITY.md) · [Scan report](downloads/SCAN-REPORT-1.30.0.txt)
 
-## More reel variety, Infinite Cases and smoother wings (1.29.0)
+## Unlimited Wordle and Krillion practice (1.30.0)
+
+Open **Right Shift → Games → Wordle** or **Krillion**. Both games are available to Member and Premium without limits, tickets, a daily reset or a case unlock. **They award no prizes, cases, cosmetics, roles or Premium.** The Case Opening game keeps its own existing quota and rewards.
+
+**Wordle** has five letters and six guesses, a coloured clue grid, a physical/on-screen keyboard, Enter/Submit, Backspace/DEL and an always-available New Word button. Green is the correct spot, amber is elsewhere in the word and grey is absent. Duplicate letters use standard remaining-letter counts; an unknown or incomplete word does not use a guess. Solving or using all six guesses reveals the answer. The offline bank has 921 independently selected targets and 15,921 accepted English guesses. The accepted dictionary is filtered from the Unlicense [dwyl English word list](https://github.com/dwyl/english-words); its license and attribution are bundled with the data. No official Wordle answer set or artwork is included.
+
+**Krillion** is an independent Astra practice adaptation of the [original game's timed open-answer format](https://krillion.io/), with its own 35 categories and 1,949 accepted answers plus aliases. A dive draws seven different categories. Each prompt allows 25 seconds; type an answer and press Enter or Submit Answer. Fixed, locally curated tiers reward less-obvious listed answers, up to 100 points each / 700 points and 7,000 metres per dive. They are practice scores, not live popularity statistics or official Krillion results. Minor unambiguous typos, aliases, accents and ordinary plurals are handled. An unlisted answer can be retried until timeout; Skip or a timeout gives no points for that round. Next Prompt waits for you, and Play Again starts another unlimited random set. There is no connection to the official server, question bank, daily game or paid content.
+
+The trivia timer pauses while another page is selected or the Astra menu is closed. Both puzzles retain progress and partial input when you reopen the menu or restart. Saves use the separate account-fingerprint-scoped `config/astra-puzzles` directory. No game answer is sent online. Reset Astra preferences does not erase these practice sessions. Existing case collections, case usage, claims, rewards and Premium expiry are unchanged.
+
+## More reel variety, Infinite Cases and smoother wings (1.30.0)
 
 The opening lasts **4.5 seconds**, with a richer mix of reward previews scrolling under the red marker, a smooth slowdown and a short settled hold before the result. Preview cards are display artwork, not a representation of drop probabilities; only the committed landing awards a prize. Existing prize chances are unchanged. The new reward takes its small share from empty results. No neighbours are arranged to manufacture near misses.
 
@@ -20,7 +30,7 @@ Wings now fold behind the back, have more clearance from the body and use indepe
 
 The small case reel still moves in Performance Mode; Smooth animations Off retains a static reveal. Passing-card ticks, the landing chime and prize sound follow Button sounds and Minecraft's Master volume.
 
-## Games and Case Opening (1.29.0)
+## Games and Case Opening (1.30.0)
 
 Open **Right Shift → Games** in the **Tools** section, marked by a controller. The page displays **GAMES** and “Bored? Have a Chance to win cool rewards for FREE!” Choose **Case Opening** and press **OPEN**. A smooth scrolling reel settles beneath a fixed red centre marker. The committed result and the landing card always match, including after closing/reopening the menu or restarting.
 
@@ -44,7 +54,7 @@ All three cosmetics are rare case unlocks. Crown and Wings are equipped through 
 
 This remains server-free. Case allowances, clock checks, collections and claim records are local data and can be edited or copied by a modified client or filesystem owner. They are not an anti-fraud or cross-device reward-verification service. See SECURITY.md for that trust boundary. No new account credentials, private issuing keys or hosting service are bundled.
 
-## Account-bound Premium and character release lock (1.29.0)
+## Account-bound Premium and character release lock (1.30.0)
 
 New Premium files are signed and assigned to one **Minecraft Java UUID** before distribution. Copying an unchanged file to a different account leaves it in Member mode. A month file expires **30 days after issuance**, rather than starting a resettable local timer. An owner-issued Lifetime grant has no expiry. Only **JackJ25**, with the separate private owner key installed, can run the client-side `/client <username>` command to create a fresh file. New exports appear in the instance's `astra-premium-exports` folder. Share only the recipient's exported JAR. The signing key is supplied privately to the owner; it is absent from public downloads/source.
 
@@ -85,13 +95,13 @@ The sidebar groups appearance controls first, then tools, with Settings and Buy 
 - **Essentials:** Freelook and its keyboard/mouse binding, plus a saved Fullbright toggle.
 - **Customize Totem:** the Premium creator pack and the case-unlocked personal skin totem.
 - **Jamble — Premium:** original named-item hotbar tracking, Host/Viewer cards and winner announcements.
-- **Games:** free cases, a rolling reveal, rare cosmetic unlocks and Discord-ticket claim history.
+- **Games:** unlimited Wordle and Krillion practice with no prizes, alongside cases, rare cosmetic unlocks and manual-ticket claim history.
 - **Settings:** animation, sounds, capture mode, Rare Cosmetics and reset preferences.
 - **Buy Premium:** Discord-logo button linking to https://discord.gg/astrayt through Minecraft's native link confirmation.
 
 **Active Premium is required for Custom Sky, Lyrics In Sky, the DonutSMP creator totem pack and Jamble. The rare personal skin totem is a separate case unlock.** Member mode can browse sky previews and see clearly labelled locked feature pages. Existing selections are retained when Premium is inactive; their effects stop, native totem/sky rendering returns and pending Jamble results clear. Other Astra functions remain available.
 
-## 3D Characters (1.29.0)
+## 3D Characters (1.30.0)
 
 **Work In Progress until 15 December 2026:** the release page shows the shared calendar progress; saved models and voices remain inactive until release. After it unlocks, open **Right Shift → 3D Characters** on the **first page**, identified by the SpongeBob face icon. The six choices are **SpongeBob SquarePants, DrDonutt (real-life-inspired), Patrick Star, Squidward Tentacles, Mr. Krabs and Sandy Cheeks**. They are available in both **Member and Premium**.
 
@@ -231,7 +241,7 @@ Use a Java 21 JDK:
 ./gradlew runClient
 ```
 
-On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.29.0.jar`, not the sources jar.
+On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.30.0.jar`, not the sources jar.
 
 Coiny is bundled under the included `COINY-OFL.txt`. Background artwork is bundled locally; only lyric lookup requires internet. The installable JAR contains no bundled PowerShell/batch/shell scripts or EXE/DLL helpers. No gameplay cheats are included.
 
@@ -259,13 +269,13 @@ Enable **Essentials → Freelook**, choose **Set a key**, and hold that keyboard
 
 Astra's enable toggle gates activation. Menus, lost window focus, disabling the setting or clearing the bind stop active Freelook using the supplied mod's own stop method. Its server block list is preserved and respected; Astra displays a notice when that list disables Freelook. It defaults to blocking Hypixel. Astra does not clear that list or override a blocked state. Camera collision and player movement remain native; no detached free camera, movement assistance, reach or automation is added. Each server decides which client mods it permits.
 
-The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.29.0-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
+The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.30.0-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
 
 **Visuals → Menu Background → Fake Media** remains an optional local-only decoration. In F5 it draws the pink media badge beside your own rendered name. It never changes your server name, rank, team, permissions or network packets, and other players cannot see it. It hides in first person, menus, with F1, and when invisible/spectating. It defaults to Off.
 
 Open/close transitions use quintic easing, subtle zoom and short movement. Rounded panels use cached nine-slice sprites. Smooth animations Off makes transitions immediate. Reset is in Settings and resets the Freelook enable/bind and Fake Media preference too.
 
-## Minecraft profile and account-bound Premium files (1.29.0)
+## Minecraft profile and account-bound Premium files (1.30.0)
 
 Visuals, Jamble, HUD, Spotify HUD and Essentials use the supplied reference designs as colour icons. Best Buds is replaced by **Customize Totem**, with the vanilla Totem of Undying texture. Settings keeps its gear icon. Icon textures are cached resources; no downloads occur during menu rendering.
 
