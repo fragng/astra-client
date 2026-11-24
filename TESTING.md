@@ -1,3 +1,15 @@
+# Astra Client 1.30.1 validation
+
+- Member and unlicensed Premium-template Java 21 / Minecraft 1.21.11 / Fabric Loader 0.19.3 builds pass all 23 required tasks, including the existing word/trivia, case, wing, licensing, media and rendering contracts.
+- Extended casual-game contracts sample the fish descent over time for monotonic bounded motion, exact landing and Next Prompt readiness, visible viewport/camera bounds, continuous retargeting, new-dive surface reset, zero-score behaviour and reduced-motion snapping. Game scoring and persistence are unchanged.
+- The actual packaged client ran seven real trivia rounds with accepted answers. Native samples recorded visible fish movement at increasing score/depth, scrolling camera coordinates, the 7,000-metre finish and reset to zero on Play Again. The fish stayed inside the viewport throughout.
+- The Next Prompt button was unavailable during descent; pressing Enter while moving did not advance the round. The fish continued to descend in Performance Mode. Smooth animations Off snapped to the correct depth. Native text input remained focused and usable at 640x480. Case counts, spent counts, claims, Infinite Cases and Premium state stayed unchanged.
+- Native screenshots at the surface, during descent, at intermediate depths, at the trench and on a small window were inspected. A minor depth-label/header overlap was corrected by reserving the header/footer areas, and the current depth now has a separate readable pill.
+- Archive audits verify only FreeGamesPanel and the new KrillionDive/KrillionOcean families changed. All existing data/assets, Wordle/trivia scoring, saved-session code, cases/odds, wings, world/media code, exact Freelook and signed licenses remain unchanged. The owner JAR retains its exact original monthly grant/expiry. Private keys/raw owner UUID and runtime/test state are absent from public archives.
+- All fish/scenery artwork and implementation are original Astra work; no official game's files, source, paid content or browser engine are copied into the mod. This remains independent offline practice with unlimited use and no prizes. Linux/software-render tests do not verify Windows integration, physical-GPU FPS or Defender acceptance; scanner coverage limits below still apply.
+
+## Previous release validation
+
 # Astra Client 1.30.0 validation
 
 - Java 21 / Minecraft 1.21.11 / Fabric Loader 0.19.3 Member and unlicensed Premium-template builds pass all 23 required Gradle tasks. The new testCasualGames suite is included in check alongside the existing case, wing, licensing, media, font/sign, geometry, voice and transition contracts.
