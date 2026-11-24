@@ -1,0 +1,75 @@
+Astra Client 1.30.0 — replacement-build scan report
+
+IMPORTANT: This is NOT a Microsoft Defender result or a guarantee of safety.
+The reported Defender threat name and affected-file hash were unavailable.
+The installable replacements remove the embedded script and encoded/hidden
+PowerShell launcher entirely. Windows media uses the system WinRT APIs.
+
+Scanner: official Cisco-Talos ClamAV 1.5.4, verified release package SHA-256
+28d6efc5b4423e7830c3559339552eb53870a9eac51ac4efb37d60530d329886
+Databases: official signed daily 28184 (15 Nov 2026) and bytecode 339.
+Coverage is LIMITED: the main database was CDN rate-limited and not available.
+No attempt was made to bypass that cooldown. Signature verification stayed on.
+The old 1.14.0 JARs also had no detections under this same limited scan;
+that does not invalidate the reported Defender alert.
+
+Live Microsoft Defender and Windows Spotify were not available on this
+Linux host. Native Windows ABI-contract tests and real Minecraft/Linux UI
+checks passed. Source, tests and review are supplied for inspection.
+
+Keep antivirus protection enabled. If Defender blocks a replacement, keep
+the block; do not add exclusions, disguise the file or turn protection off.
+
+Version 1.30.0 adds native offline Wordle and an independent Krillion-style
+practice game, with unlimited replay and no prizes/case usage in either edition.
+New data consists of 921 independently selected word targets, 15,921 accepted
+five-letter English guesses filtered from public-domain/Unlicense dwyl English
+words, and 35 original trivia categories with 1,949 accepted answers plus aliases.
+The dictionary license/attribution is bundled. No official paid/daily answer
+bank, code, artwork, remote scoring or live popularity data is used.
+
+New account-local practice files are separate from case collections and signed
+licenses. The word-game cores cannot award cases, cosmetics, Discord claims or
+Premium. No new runtime network endpoint, executable, helper, native dependency,
+credential request or microphone access is introduced. Existing case rules and
+odds, all original assets, wing models/motion, world/media code, 648 voice clips
+and the exact Freelook dependency are byte-identical. The owner monthly grant
+and expiry are unchanged. Private issuer key/seed/raw owner UUID and all
+runtime/test fixture state were checked absent from both JARs/source ZIP.
+
+Both edition builds passed all 23 required Gradle tasks. Contracts cover repeated
+Wordle letters/input/win/loss/replay/restore, accepted trivia aliases/typos,
+clocks/pause/restore, retries/timeouts, seven unique rounds and score/depth caps.
+Actual Minecraft/Linux checks exercised keyboard/mouse/native text input,
+auto-focus after rebuilds, completion/replay, saved partial input and paused
+timers, small-screen layouts and unchanged cases/claims/Premium state. A separate
+regression case opening produced exactly one draw. The test observers are
+excluded. This validates native Linux gameplay/UI, not live Windows media,
+physical-GPU FPS, subjective sound output or Microsoft Defender acceptance.
+The limited database coverage and age warning remain as above.
+
+Final SHA-256 values:
+9bd00d2ac5331727e27da1912a8b0dfb75c69922581af9bd31fc5af5fd96041c  astra-client-1.30.0.jar
+89765a01e718fea9ce4601c8d6e635a457159eac2c0ab6f1cd4e1ebe41f4de8d  astra-client-1.30.0-premium-JackJ25.jar
+a5bd6951c415e5d34b8c99f2f8c226897224aad3fc3d1d4d1504b7320b633f89  astra-client-1.30.0-source.zip
+
+Raw scanner output:
+LibClamAV Warning: **************************************************
+LibClamAV Warning: ***  The virus database is older than 7 days!  ***
+LibClamAV Warning: ***   Please update it as soon as possible.    ***
+LibClamAV Warning: **************************************************
+/workspace/output/astra-client-1.30.0.jar: OK
+/workspace/output/astra-client-1.30.0-premium-JackJ25.jar: OK
+/workspace/output/astra-client-1.30.0-source.zip: OK
+
+----------- SCAN SUMMARY -----------
+Known viruses: 341270
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 3
+Infected files: 0
+Data scanned: 98.92 MiB
+Data read: 72.71 MiB (ratio 1.36:1)
+Time: 13.245 sec (0 m 13 s)
+Start Date: 2026:11:24 16:28:33
+End Date:   2026:11:24 16:28:47
