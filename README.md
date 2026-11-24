@@ -1,14 +1,24 @@
-# Astra Client 1.30.1
+# Astra Client 1.31.0
 
-Version 1.17.0 has been withdrawn at the owner's request. The recommended version is 1.30.1.
+Version 1.17.0 has been withdrawn at the owner's request. The recommended version is 1.31.0.
 
 Cosmetic client mod for Minecraft Java **1.21.11**, **Java 21**, **Fabric Loader 0.19.3+**, and **Fabric API 0.141.6+1.21.11**.
 
-[Download replacement Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.30.1.jar) · [Owner Premium file — JackJ25 only](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.30.1-premium-JackJ25.jar)
+[Download replacement Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.31.0.jar) · [Owner Premium file — JackJ25 only](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.31.0-premium-JackJ25.jar)
 
 **Defender verification is pending.** These replacements retain the script-free native media bridge from 1.14.2 and include source/checksums. A scan with another engine is not proof that Defender will accept a file. Keep any antivirus block in place and report the exact threat name and affected filename if it persists.
 
-[SHA-256 checksums](downloads/SHA256SUMS-1.30.1.txt) · [Security review](SECURITY.md) · [Scan report](downloads/SCAN-REPORT-1.30.1.txt)
+[SHA-256 checksums](downloads/SHA256SUMS-1.31.0.txt) · [Security review](SECURITY.md) · [Scan report](downloads/SCAN-REPORT-1.31.0.txt)
+
+## Creamy Keys and Performance Mode (1.31.0)
+
+Open **Right Shift → Settings → Creamy Keys**. Enable it for soft mechanical keyboard and mouse sounds throughout Minecraft, with separate keyboard/mouse switches and volume sliders, three sound styles (Creamy, Soft, Thock) and preview buttons. It is off by default. Settings save automatically. Master volume applies; Button sounds remains a separate preference. Sounds use real press events only: holding a key does not flood audio with OS repeats. No global keyboard capture, typed-text logging, input automation or external audio app is used. This is Astra's own implementation with six original local sounds, not a bundled copy of the separately published CreamyKeys mod.
+
+**Performance Mode** is in the top-right gear/profile page. It now caps render distance at **6 chunks**, simulation at **5**, and entity-distance scaling at **50%**. Clouds and entity shadows are off, particles are Minimal, biome blending is zero, ambient occlusion and improved transparency are off, leaves use their simple cutout setting, and the vignette is off. Lower existing distance values are kept. This deliberately trades distant scenery and lighting detail for less CPU/GPU work. It does not alter FOV, world gamma, VSync or your frame cap, install a renderer, change server behaviour or automate gameplay.
+
+Astra HUD rendering is reduced: Spotify becomes a smaller flat card with the current lyric line, the watermark uses one text line, PvP is limited to six selected rows with a hidden-row count and a 10 Hz update budget, and menu gradients use a single rounded atlas panel. Decorative shadows/glow, reactive effects and sky lyrics pause; essential case/fish animations and Jamble results still work. Vanilla health, hotbar, chat and scoreboard are retained. Spotify themes, lyric choices, HUD preferences, cosmetics and Premium state stay saved. Turning the mode off restores the prior video settings and full HUD presentation, while preserving deliberate video-setting edits made during the mode. Existing saved Performance Mode backups upgrade without losing their original values.
+
+These changes reduce rendering work; they cannot promise a fixed FPS gain on every PC. If VSync or a frame cap is reached, FPS may stay at that limit. For a faster world renderer, the separately installed [Sodium](https://modrinth.com/mod/sodium/versions?g=1.21.11&l=fabric) and [Lithium](https://modrinth.com/mod/lithium/versions?g=1.21.11&l=fabric) projects offer additional optimizations; they are not bundled or claimed as Astra code. See [validation and limits](TESTING.md).
 
 ## Visible fish descent (1.30.1)
 
@@ -249,7 +259,7 @@ Use a Java 21 JDK:
 ./gradlew runClient
 ```
 
-On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.30.1.jar`, not the sources jar.
+On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.31.0.jar`, not the sources jar.
 
 Coiny is bundled under the included `COINY-OFL.txt`. Background artwork is bundled locally; only lyric lookup requires internet. The installable JAR contains no bundled PowerShell/batch/shell scripts or EXE/DLL helpers. No gameplay cheats are included.
 
@@ -277,7 +287,7 @@ Enable **Essentials → Freelook**, choose **Set a key**, and hold that keyboard
 
 Astra's enable toggle gates activation. Menus, lost window focus, disabling the setting or clearing the bind stop active Freelook using the supplied mod's own stop method. Its server block list is preserved and respected; Astra displays a notice when that list disables Freelook. It defaults to blocking Hypixel. Astra does not clear that list or override a blocked state. Camera collision and player movement remain native; no detached free camera, movement assistance, reach or automation is added. Each server decides which client mods it permits.
 
-The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.30.1-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
+The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.31.0-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
 
 **Visuals → Menu Background → Fake Media** remains an optional local-only decoration. In F5 it draws the pink media badge beside your own rendered name. It never changes your server name, rank, team, permissions or network packets, and other players cannot see it. It hides in first person, menus, with F1, and when invisible/spectating. It defaults to Off.
 
