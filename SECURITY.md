@@ -1,4 +1,7 @@
-# Astra Client security review — 1.30.1 (script-free bridge retained from 1.14.2)
+# Astra Client security review — 1.31.0 (script-free bridge retained from 1.14.2)
+
+Version 1.31.0 adds Astra's self-contained Creamy Keys keyboard/mouse audio and a reversible native performance preset/compact HUD path. Its two new input mixins listen only inside the Minecraft window and ignore unfocused windows, releases and OS auto-repeat. They pass no key identities or text to the sound service, retain no input history, and never synthesize gameplay input. Short original OGG sounds are bundled; previews and playback use Minecraft's existing SoundManager. The source includes their deterministic audio generator. Six original clips were added; existing character audio is unchanged. No third-party CreamyKeys binary/updater, new executable, script, native library, network endpoint or dependency is bundled. Performance Mode changes only the listed native client video options and presentation budgets, stores restoration data in the existing config, and leaves FOV, gamma, VSync, caps, case/reward state and licensing untouched. The complete source ZIP contains developer Python tools, as prior source archives do; they are not installed or executed by the client.
+
 
 A Microsoft Defender threat alert was reported by a friend of the client owner for the latest public version (1.14.0). The exact Defender detection name, affected filename and file hash were not available. The report is taken seriously; the recommended download links were paused during investigation, and both 1.14.0 installable JARs were withdrawn from the default branch (source/history retained). No claim is made that the report was a false positive or that Defender has cleared the replacement.
 
