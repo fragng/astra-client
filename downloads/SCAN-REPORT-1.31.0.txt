@@ -1,0 +1,73 @@
+Astra Client 1.31.0 — replacement-build scan report
+
+IMPORTANT: This is NOT a Microsoft Defender result or a guarantee of safety.
+The reported Defender threat name and affected-file hash were unavailable.
+The installable replacements remove the embedded script and encoded/hidden
+PowerShell launcher entirely. Windows media uses the system WinRT APIs.
+
+Scanner: official Cisco-Talos ClamAV 1.5.4, verified release package SHA-256
+28d6efc5b4423e7830c3559339552eb53870a9eac51ac4efb37d60530d329886
+Databases: official signed daily 28184 (15 Nov 2026) and bytecode 339.
+Coverage is LIMITED: the main database was CDN rate-limited and not available.
+No attempt was made to bypass that cooldown. Signature verification stayed on.
+The old 1.14.0 JARs also had no detections under this same limited scan;
+that does not invalidate the reported Defender alert.
+
+Live Microsoft Defender and Windows Spotify were not available on this
+Linux host. Native Windows ABI-contract tests and real Minecraft/Linux UI
+checks passed. Source, tests and review are supplied for inspection.
+
+Keep antivirus protection enabled. If Defender blocks a replacement, keep
+the block; do not add exclusions, disguise the file or turn protection off.
+
+Version 1.31.0 adds Astra's keyboard/mouse sound controls in Settings, with six
+original short local OGG clips, native press-only/focus-gated input mixins and
+separate volume/style controls. No key names, typed text or input history are
+captured or retained. No third-party updater, new executable, library, network
+endpoint or credential is included. Existing voice clips and sound definitions
+are unchanged. Input events do not trigger gameplay automation.
+
+Performance Mode uses a stronger reversible native video preset and a compact
+HUD path. Actual Minecraft checks verified supported values, restoration,
+manual-edit preservation, legacy backup upgrade and restart persistence. The
+sampled Astra HUD submissions fell from 361 to 33; this is not an FPS multiplier.
+The test environment uses Linux/software rendering, not Windows/physical GPU.
+Both editions pass 24 required Gradle tasks; all six audio resources and physical
+key/mouse control paths were tested through the native SoundManager.
+
+Archive audits verify complete readable source, the deterministic sound
+generator, unchanged exact original Freelook dependency, unchanged games/prize
+weights/licensing/media/skins/assets except the stated performance/UI paths and
+new sounds, no private key/raw owner UUID/test fixture/runtime scripts or
+executable helper, and the exact original monthly grant/expiry in the owner's
+updated file. The full developer source archive contains build/test Python tools;
+these are not in the installable JAR or run by the mod.
+
+The limited scan below found no detections. Main signatures remain unavailable,
+so this does not establish Microsoft Defender acceptance or guarantee safety.
+
+Final SHA-256 values:
+d2b0c415c39841fe543b44db9d8eeceaf672a86ac5349b59401a17cc138bdfa4  astra-client-1.31.0.jar
+6a2463d9c86f8dfae8a8bf12869fbe14ae35fbf72de4b90ec3df6fd9fe43c1fd  astra-client-1.31.0-premium-JackJ25.jar
+7ff164d0a021bee446c0c9015ce2c2d99a5822c46159ae524522995782fe02e8  astra-client-1.31.0-source.zip
+
+Raw scanner output:
+LibClamAV Warning: **************************************************
+LibClamAV Warning: ***  The virus database is older than 7 days!  ***
+LibClamAV Warning: ***   Please update it as soon as possible.    ***
+LibClamAV Warning: **************************************************
+/workspace/output/astra-client-1.31.0.jar: OK
+/workspace/output/astra-client-1.31.0-premium-JackJ25.jar: OK
+/workspace/output/astra-client-1.31.0-source.zip: OK
+
+----------- SCAN SUMMARY -----------
+Known viruses: 341270
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 3
+Infected files: 0
+Data scanned: 99.17 MiB
+Data read: 72.83 MiB (ratio 1.36:1)
+Time: 14.069 sec (0 m 14 s)
+Start Date: 2026:11:24 18:34:11
+End Date:   2026:11:24 18:34:25
