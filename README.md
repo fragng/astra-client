@@ -6,7 +6,7 @@ Customisable client mod for Minecraft Java **1.21.11**, **Java 21**, **Fabric Lo
 
 **Downloads paused while a reported Windows antivirus detection is investigated.** Do not install the 1.32.0 JARs or bypass the block. The exact detection name and affected filename/hash are still needed. A limited scan by another engine does not establish Defender clearance. Your uploaded Creamy Keys and browser integration are not included in 1.32.0.
 
-[Source for inspection](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.32.0-source.zip) · [SHA-256 checksums](downloads/SHA256SUMS-1.32.0.txt) · [Security review](SECURITY.md) · [Limited scan report](downloads/SCAN-REPORT-1.32.0.txt)
+[Source for inspection](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.32.0-source.zip) · [SHA-256 checksums](downloads/SHA256SUMS-1.32.0.txt) · [Security review](SECURITY.md) · [Original limited scan report](downloads/SCAN-REPORT-1.32.0.txt) · [Current investigation](downloads/INVESTIGATION-1.32.0.txt)
 
 ## Client colours and fixed menu scenery (1.32.0)
 
