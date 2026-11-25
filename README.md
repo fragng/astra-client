@@ -1,14 +1,22 @@
-# Astra Client 1.31.0
+# Astra Client 1.32.0
 
-Version 1.17.0 has been withdrawn at the owner's request. The recommended version is 1.31.0.
+Version 1.17.0 has been withdrawn at the owner's request. The recommended version is 1.32.0.
 
-Cosmetic client mod for Minecraft Java **1.21.11**, **Java 21**, **Fabric Loader 0.19.3+**, and **Fabric API 0.141.6+1.21.11**.
+Customisable client mod for Minecraft Java **1.21.11**, **Java 21**, **Fabric Loader 0.19.3+**, and **Fabric API 0.141.6+1.21.11**.
 
-[Download replacement Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.31.0.jar) · [Owner Premium file — JackJ25 only](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.31.0-premium-JackJ25.jar)
+[Download replacement Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.32.0.jar) · [Owner Premium file — JackJ25 only](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.32.0-premium-JackJ25.jar)
 
 **Defender verification is pending.** These replacements retain the script-free native media bridge from 1.14.2 and include source/checksums. A scan with another engine is not proof that Defender will accept a file. Keep any antivirus block in place and report the exact threat name and affected filename if it persists.
 
-[SHA-256 checksums](downloads/SHA256SUMS-1.31.0.txt) · [Security review](SECURITY.md) · [Scan report](downloads/SCAN-REPORT-1.31.0.txt)
+[SHA-256 checksums](downloads/SHA256SUMS-1.32.0.txt) · [Security review](SECURITY.md) · [Scan report](downloads/SCAN-REPORT-1.32.0.txt)
+
+## Client colours and fixed menu scenery (1.32.0)
+
+**Right Shift → Visuals → Client Colour** now offers exactly **Black, Blue, Red, Pink and Purple**, with **Black as the default**. One colour is selected at a time. Panels, borders, buttons, sliders and the Astra watermark update immediately and the preference saves automatically. Menu brightness, Bubble Font and smooth menu/tab/hover animations still work.
+
+The title screen uses Minecraft's normal panorama. The right-side background appearance panel has been removed. Singleplayer/Multiplayer/Realms are centred, or aligned to the existing Mods button without changing that button's position. The client menu has a solid dark surface and the selected colour's controls. Galaxy, Astra, Nebula, Sunset, Beachy Sands and Reactive Background are no longer menu options; texture preloading and reactive menu scenery have been removed. On upgrade, old scenery/reactive preferences are ignored and the colour begins as Black. Reset Astra preferences restores Black.
+
+World custom skies and their Premium controls remain separate from menu styling. Their gentle movement follows Smooth animations and pauses in Performance Mode. Spotify HUD themes, games, input sounds, player models/totems and account-bound Premium are retained. Older release notes below describe previous menu-background features that this update replaces.
 
 ## Creamy Keys and Performance Mode (1.31.0)
 
@@ -259,7 +267,7 @@ Use a Java 21 JDK:
 ./gradlew runClient
 ```
 
-On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.31.0.jar`, not the sources jar.
+On Windows use `gradlew.bat`. Install `build/libs/astra-client-1.32.0.jar`, not the sources jar.
 
 Coiny is bundled under the included `COINY-OFL.txt`. Background artwork is bundled locally; only lyric lookup requires internet. The installable JAR contains no bundled PowerShell/batch/shell scripts or EXE/DLL helpers. No gameplay cheats are included.
 
@@ -287,7 +295,7 @@ Enable **Essentials → Freelook**, choose **Set a key**, and hold that keyboard
 
 Astra's enable toggle gates activation. Menus, lost window focus, disabling the setting or clearing the bind stop active Freelook using the supplied mod's own stop method. Its server block list is preserved and respected; Astra displays a notice when that list disables Freelook. It defaults to blocking Hypixel. Astra does not clear that list or override a blocked state. Camera collision and player movement remain native; no detached free camera, movement assistance, reach or automation is added. Each server decides which client mods it permits.
 
-The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.31.0-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
+The original JAR is unmodified. Its metadata labels the license GNU GPLv3 and its included license file is AGPLv3; both are preserved. `THIRD-PARTY-FREELOOK.txt` inside Astra contains its bundled license and source details. The [complete source archive](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.32.0-source.zip) includes Astra's integration and the matching upstream 1.2.8 source/build scripts under `third-party/freelook/upstream`, pinned to [e9415883](https://github.com/Celibistrial/freelook/tree/e9415883af0fb031a0f3bb49c4e701e9b575bb8f).
 
 **Visuals → Menu Background → Fake Media** remains an optional local-only decoration. In F5 it draws the pink media badge beside your own rendered name. It never changes your server name, rank, team, permissions or network packets, and other players cannot see it. It hides in first person, menus, with F1, and when invisible/spectating. It defaults to Off.
 
