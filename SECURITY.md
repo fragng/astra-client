@@ -1,5 +1,10 @@
 # Astra Client security review — 1.32.0 (script-free bridge retained from 1.14.2)
 
+**25 November 2026: downloads withdrawn after a new Windows antivirus report.** The user describes the alert as “Trojan” and “Severe”; its full detection identifier and affected filename are still unknown. Both 1.32.0 installable JARs were removed from the default branch and their raw links now return404. Do not override the block. No replacement has been released and neither malware nor a false positive has been established. The uploaded Creamy Keys and proposed browser changes have not been integrated. Further feature work is on hold while this is investigated.
+
+The scanner has since been updated with the full official main63/daily28194/bytecode339 databases. Six scanned artifacts had no detections; this does not clear Microsoft Defender. An independent public-source compile plus normalized delta comparison also matched all18 changed classes; this is not a full reproducible-build or antivirus attestation. See [the investigation/evidence report](downloads/INVESTIGATION-1.32.0.txt). The earlier limited scan report is retained unchanged as historical evidence.
+
+
 Version 1.32.0 removes title/client menu background selection, reactive menu effects and menu-image preloading. It restores the unmodified vanilla title panorama and adds five local client colour palettes with Black as the default. The palette changes client chrome/text only, retains semantic reward/status colours and leaves texture/item/player artwork intact. Old background/reactive fields are ignored on load and omitted on the next save. The chosen colour uses the existing client config. The independent world sky remains available and now follows the existing animations/performance switches instead of the removed reactive-menu option. No new dependency, endpoint, image, sound, executable, process or credential is added. Input sounds, games, cases/prize weights, licenses and the native media bridge are unchanged.
 
 
