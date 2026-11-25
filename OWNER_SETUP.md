@@ -1,5 +1,7 @@
 # Astra 1.32.0 owner setup — JackJ25
 
+**Current installable downloads are withdrawn pending a reported Windows antivirus detection. Do not install the flagged release or override the block. The setup instructions below are retained for reference.**
+
 Premium exports are assigned to a Java account before sharing. Standard exports expire 30 days after issuance; Lifetime exports have no expiry. No Astra server is installed or required.
 
 ## Install the private owner setup
