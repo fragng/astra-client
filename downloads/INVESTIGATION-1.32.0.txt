@@ -1,0 +1,62 @@
+Astra 1.32.0 — reported Windows detection investigation
+25 November 2026
+
+STATUS: INSTALLABLE DOWNLOADS WITHDRAWN. NO DEFENDER CLEARANCE.
+The user reports Windows blocking a download, describing the alert as
+“Trojan” and “Severe”. The full detection identifier and affected filename
+have not been provided. Malware versus false positive is not established.
+Do not run, allow-list, rename/repackage to bypass detection, restore from
+quarantine for testing, or otherwise override the antivirus block.
+
+Both 1.32.0 installable JARs were removed from the repository default branch.
+Their raw default-branch download links were verified HTTP404 after caches
+updated. Original artifacts, hashes and source are retained for investigation.
+No replacement installable was released in response to this report.
+The user's uploaded Creamy Keys and proposed embedded browser are NOT part
+of the flagged 1.32.0 release. Those changes remain on hold.
+
+The exact published colour-update delta was compared with an independent
+javac21 compile of its 15 source families extracted from the public source ZIP,
+followed by an offline production remap. All18 class disassemblies match JVM
+instructions, fields, signatures, constant-pool contents and other attributes
+when Fabric's generated client-environment annotation/attribute-name constant
+and CP indices are normalized. This is a normalized delta comparison, not a
+full reproducible-build attestation and not evidence of Defender acceptance.
+The existing release audit also confirms all other baseline classes/assets
+and the exact original Freelook dependency are unchanged from1.31.0.
+Source review found no process/shell launcher or executable helper. Network
+code uses the documented Minecraft profile lookup and LRCLIB lyric endpoint;
+the Windows media bridge reads system media through the existing COM API.
+No cause of the Windows detection has been confirmed by this review.
+
+ClamAV databases were updated through the official updater with signature
+verification enabled: main63, daily28194, bytecode339. This scan has the main
+database that was unavailable during the original limited release scan.
+The full updated scan of six artifacts below found0 detections.
+A ClamAV result is NOT a Microsoft Defender result or a safety guarantee.
+Live Windows/Defender validation is unavailable in this Linux environment.
+
+Original1.32.0 SHA-256 values (evidence; not installation recommendations):
+82a7816bc8309aaeb4af8134cd4d881f7cd46bc93f131835b1a3e1d5e5935e1f  astra-client-1.32.0.jar
+2ed5092f6efd6d9cca78dec58bcdbe3643e8b690e50cd3921b07bc1417b3c4bf  astra-client-1.32.0-premium-JackJ25.jar
+4d544be3692512e76971ebe36c54a6dcede064a52b37d064d3fa83ec63f426b3  astra-client-1.32.0-source.zip
+
+Updated full-database scanner output:
+astra-client-1.32.0.jar: OK
+astra-client-1.32.0-premium-JackJ25.jar: OK
+astra-client-1.32.0-source.zip: OK
+astra-client-1.31.0.jar: OK
+CreamyKeys-1.21.X-26.X.jar: OK
+freelook-1.2.8.jar: OK
+
+----------- SCAN SUMMARY -----------
+Known viruses: 3628228
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 6
+Infected files: 0
+Data scanned: 132.85 MiB
+Data read: 101.03 MiB (ratio 1.31:1)
+Time: 139.183 sec (2 m 19 s)
+Start Date: 2026:11:25 20:36:23
+End Date:   2026:11:25 20:38:42
