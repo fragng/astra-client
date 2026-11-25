@@ -1,0 +1,66 @@
+Astra Client 1.32.0 — replacement-build scan report
+
+IMPORTANT: This is NOT a Microsoft Defender result or a guarantee of safety.
+The reported Defender threat name and affected-file hash were unavailable.
+The installable replacements remove the embedded script and encoded/hidden
+PowerShell launcher entirely. Windows media uses the system WinRT APIs.
+
+Scanner: official Cisco-Talos ClamAV 1.5.4, verified release package SHA-256
+28d6efc5b4423e7830c3559339552eb53870a9eac51ac4efb37d60530d329886
+Databases: official signed daily 28184 (15 Nov 2026) and bytecode 339.
+Coverage is LIMITED: the main database was CDN rate-limited and not available.
+No attempt was made to bypass that cooldown. Signature verification stayed on.
+The old 1.14.0 JARs also had no detections under this same limited scan;
+that does not invalidate the reported Defender alert.
+
+Live Microsoft Defender and Windows Spotify were not available on this
+Linux host. Native Windows ABI-contract tests and real Minecraft/Linux UI
+checks passed. Source, tests and review are supplied for inspection.
+
+Keep antivirus protection enabled. If Defender blocks a replacement, keep
+the block; do not add exclusions, disguise the file or turn protection off.
+
+Version 1.32.0 removes title/client background selectors, menu image preloading
+and reactive scenery. Five local client palettes replace them: Black (default),
+Blue, Red, Pink and Purple. Native checks cover all five controls, save/reload,
+legacy-default migration, title/Mods alignment, small-window layout and a clean
+restart directly to the actual title screen with saved Blue and vanilla panorama.
+Both editions pass required Java21/Minecraft1.21.11/Fabric0.19.3 build checks.
+
+No dependency, endpoint, asset, audio clip, helper, script or executable was added.
+Four obsolete menu-scenery/control classes were removed. Independent world skies
+now use the existing animations/performance switches. All existing resources,
+input audio, games/prize weights, licensing/media and original Freelook are
+unchanged. The owner update retains its original signed month grant and expiry.
+No private signing key/raw owner UUID/test/runtime state is in public archives.
+Full public source, existing audio generator and contracts remain included.
+
+Linux software-render UI validation and this limited scan do not establish
+Windows desktop integration, physical-GPU FPS or Microsoft Defender acceptance.
+Keep the antivirus block if a file is rejected; do not add exclusions.
+
+Final SHA-256 values:
+82a7816bc8309aaeb4af8134cd4d881f7cd46bc93f131835b1a3e1d5e5935e1f  astra-client-1.32.0.jar
+2ed5092f6efd6d9cca78dec58bcdbe3643e8b690e50cd3921b07bc1417b3c4bf  astra-client-1.32.0-premium-JackJ25.jar
+4d544be3692512e76971ebe36c54a6dcede064a52b37d064d3fa83ec63f426b3  astra-client-1.32.0-source.zip
+
+Raw scanner output:
+LibClamAV Warning: **************************************************
+LibClamAV Warning: ***  The virus database is older than 7 days!  ***
+LibClamAV Warning: ***   Please update it as soon as possible.    ***
+LibClamAV Warning: **************************************************
+/workspace/output/astra-client-1.32.0.jar: OK
+/workspace/output/astra-client-1.32.0-premium-JackJ25.jar: OK
+/workspace/output/astra-client-1.32.0-source.zip: OK
+
+----------- SCAN SUMMARY -----------
+Known viruses: 341270
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 3
+Infected files: 0
+Data scanned: 99.08 MiB
+Data read: 72.80 MiB (ratio 1.36:1)
+Time: 12.695 sec (0 m 12 s)
+Start Date: 2026:11:25 20:27:49
+End Date:   2026:11:25 20:28:02
