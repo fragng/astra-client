@@ -1,14 +1,12 @@
 # Astra Client 1.32.0
 
-Version 1.17.0 has been withdrawn at the owner's request. The recommended version is 1.32.0.
+Version 1.17.0 has been withdrawn at the owner's request. Installable downloads are currently paused.
 
 Customisable client mod for Minecraft Java **1.21.11**, **Java 21**, **Fabric Loader 0.19.3+**, and **Fabric API 0.141.6+1.21.11**.
 
-[Download replacement Member edition](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.32.0.jar) · [Owner Premium file — JackJ25 only](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.32.0-premium-JackJ25.jar)
+**Downloads paused while a reported Windows antivirus detection is investigated.** Do not install the 1.32.0 JARs or bypass the block. The exact detection name and affected filename/hash are still needed. A limited scan by another engine does not establish Defender clearance. Your uploaded Creamy Keys and browser integration are not included in 1.32.0.
 
-**Defender verification is pending.** These replacements retain the script-free native media bridge from 1.14.2 and include source/checksums. A scan with another engine is not proof that Defender will accept a file. Keep any antivirus block in place and report the exact threat name and affected filename if it persists.
-
-[SHA-256 checksums](downloads/SHA256SUMS-1.32.0.txt) · [Security review](SECURITY.md) · [Scan report](downloads/SCAN-REPORT-1.32.0.txt)
+[Source for inspection](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.32.0-source.zip) · [SHA-256 checksums](downloads/SHA256SUMS-1.32.0.txt) · [Security review](SECURITY.md) · [Limited scan report](downloads/SCAN-REPORT-1.32.0.txt)
 
 ## Client colours and fixed menu scenery (1.32.0)
 
