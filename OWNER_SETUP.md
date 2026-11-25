@@ -1,10 +1,10 @@
-# Astra 1.31.0 owner setup — JackJ25
+# Astra 1.32.0 owner setup — JackJ25
 
 Premium exports are assigned to a Java account before sharing. Standard exports expire 30 days after issuance; Lifetime exports have no expiry. No Astra server is installed or required.
 
 ## Install the private owner setup
 
-1. Install one Astra 1.31.0 release JAR and Fabric API in your Minecraft instance's `mods` folder. The Member JAR can issue files too. The owner Premium download is already bound to JackJ25.
+1. Install one Astra 1.32.0 release JAR and Fabric API in your Minecraft instance's `mods` folder. The Member JAR can issue files too. The owner Premium download is already bound to JackJ25.
 2. Download the **private owner setup ZIP supplied directly in the conversation**. It is deliberately not hosted in the public GitHub repository.
 3. Extract it into the same Minecraft instance folder that contains `mods` and `config`. The resulting key path must be `config/astra-owner/issuer.pk8`.
 4. Sign in with your Minecraft Java account **JackJ25**. Join a world and type `/client <username>` in chat. For example: `/client JackJ25`. For a Lifetime award, use `/client <username> lifetime`.
