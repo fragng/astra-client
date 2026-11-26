@@ -1,6 +1,12 @@
-# Astra Client 1.33.1 security status
+# Astra Client 1.34.0 security status
 
-**26 November 2026: the reported Windows detection is unresolved.** The user described the latest 1.32.0 alert as “Trojan.Severe”; the complete Defender identifier and affected filename/hash were not supplied. The 1.32.0 installable JARs remain withdrawn. Version 1.33.1 is a requested feature preview, not a verified remedy. Neither malware nor a false positive has been established. Do not disable protection, add exclusions or restore a blocked file to run this preview.
+**26 November 2026: the reported Windows detection is unresolved.** The user described the latest 1.32.0 alert as “Trojan.Severe”; the complete Defender identifier and affected filename/hash were not supplied. The 1.32.0 installable JARs remain withdrawn. Version 1.34.0 is a requested client update, not a verified remedy. Neither malware nor a false positive has been established. Do not disable protection, add exclusions or restore a blocked file to run this preview.
+
+## 1.34.0 UI/performance scope
+
+This update changes local GUI submission, bounded label caching, elapsed-time visual interpolation, hidden HUD work and the case reel's presentation clock. The new gradient uses Minecraft's existing position/colour GUI pipeline, preserves half-pixel rounded edges and applies clipping/opacity. No shader download or framebuffer capture is added. Shared labels are read-only and bounded to 512 short entries; long text is not retained. Case draws, odds, claims, allowance, account data, licenses and backend rules are unchanged. The reel now advances even when decorative animations are disabled. Only its countdown label is cached; saving/opening still uses the same committed ledger path.
+
+No new runtime endpoint, dependency, executable, helper process, credential, native library, OS hook, server command or gameplay action is introduced. Original CreamyKeys/Freelook/MCEF hashes remain unchanged. The existing optional browser still downloads native components and starts helpers as disclosed below; it is not included in the no-new-helper statement.
 
 ## 1.33.1 repair scope
 
