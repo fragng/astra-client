@@ -1,0 +1,42 @@
+Astra Client1.34.0 — scan and validation report
+26 November 2026
+
+The earlier Windows alert (“Trojan.Severe”, full Defender identifier/affected filename unknown) remains unresolved. This update changes UI performance and case-reel presentation, not antivirus behavior. It is not a confirmed antivirus fix or Microsoft Defender clearance. Keep protection enabled and retain any block. Previous1.32.0 binaries remain withdrawn.
+
+Scanned: final Member JAR, JackJ25-bound Premium update retaining its original signed grant/expiry, and complete source ZIP. Exact SHA-256 values follow. Native Chromium components downloaded on Krillion use are not inside the distributable archives and are outside this scan scope.
+
+ClamAV1.5.4 with full official main63/daily28194/bytecode339, verified with official detached signatures. No detections. This result does not invalidate Defender or establish safety.
+
+fca3551535331f4acc76602148a27b9f78f67f4d18ee4ba820af7e43b5b6bce1  astra-client-1.34.0.jar
+c87307b40b24892728a09c5105db81be21f0d980dcd3a3799f0b6d356bb62c7a  astra-client-1.34.0-premium-JackJ25.jar
+473a280b745c294302eeb405a16041c8c033a4ea30289bbd1f1ddb3a6f0c94c8  astra-client-1.34.0-source.zip
+
+
+----------- SCAN SUMMARY -----------
+Known viruses: 3628228
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 3
+Infected files: 0
+Data scanned: 122.46 MiB
+Data read: 85.37 MiB (ratio 1.43:1)
+Time: 127.850 sec (2 m 7 s)
+Start Date: 2026:11:26 22:06:01
+End Date:   2026:11:26 22:08:09
+
+Code scope: one batched GUI element per rounded gradient with precomputed AA corners; bounded512-entry read-only text-label cache; smooth elapsed-time hover/selected/toggle/slider/HUD/lyric motion and subpixel knob/reel positions; no hidden Astra HUD layers behind modal client/game screens; no hidden PvP inventory sampling; second-based refill formatting. Functional case reel no longer depends on the decorative-animation preference. Rewards, odds, ledger, claims, allowance and expiry/cadence are unchanged.
+
+Both Java21/Minecraft1.21.11/Fabric0.19.3 builds passed26 required tasks. New geometry/alpha/clipping/cache/motion contracts and updated800-outcome/192800-frame reel contracts pass, along with existing required suites.
+
+Native Linux Minecraft comparison, software OpenGL,1280x720/GUI640x360 scale2 Visuals page:
+1.33.1 median non-text GUI elements/frame5643; sampled UI CPU setup24.65ms (48 samples).
+1.34.0 median non-text GUI elements/frame1047; sampled UI CPU setup8.78ms (25 samples).
+81.4% fewer submitted GUI elements and64.4% lower sampled UI CPU median. Captures were12 seconds with world rendering active; frame counts/driver/world scheduling differed. This is not a controlled whole-game FPS benchmark or a guarantee of FPS gain.
+
+Native1.33.1 decorative-animations-Off reel range0.0 reproduced the reported static opening. Updated ranges were27.66 cards(normal),27.86(animations off) and25.86(animations off +Performance Mode). Every action retained one new committed draw through landing and respected the account's allowance. The pre-existing native fixture account has Infinite Cases, so it did not consume a finite allowance; distribution/allowance contracts are unchanged and pass.
+
+Actual FOV/brightness slider clicks, five colours, Bubble/Minecraft fonts, every sidebar page,640x480 layout, mouse coordinate transforms, close/reopen and original FOV restoration passed. The small-window automation initially omitted the recentered window origin; the corrected continuation passed without an application workaround. Performance Mode applied6/5 chunk distances, then restored12/8. Both baseline and updated Minecraft exited successfully and saved the world.
+
+Strict archive/source audit: only declared UI/motion/essential-reel source changed; other UI classes recompiled for read-only Component API. Exact original CreamyKeys/Freelook/MCEF dependencies and all prior assets retained. Case ledger/odds/licensing/browser-interaction sources unchanged. Member/Premium code/assets match; original monthly owner grant/expiry preserved. No private key/raw owner UUID/native fixture/runtime script or executable in installable archives. Complete source and dependency source/notices included.
+
+Live Windows performance/Spotify/browser behavior and actual live Krillion gameplay are not verified on this Linux host. Existing browser input/security/shutdown fixes are retained; the cloud proxy still prevents live-site TLS validation. No certificate or antivirus bypass is used. No new dependency/network/helper/native/runtime command is introduced.
