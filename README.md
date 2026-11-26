@@ -1,10 +1,20 @@
-# Astra Client 1.33.1 — feature preview
+# Astra Client 1.34.0 — smoother UI
 
 Minecraft Java **1.21.11**, **Java 21**, **Fabric Loader 0.19.3+**, **Fabric API 0.141.6+1.21.11**.
 
 **Windows antivirus status remains unresolved.** The previous 1.32.0 downloads remain withdrawn after the reported “Trojan / Severe” alert. This feature preview is not a confirmed fix or Microsoft Defender clearance. Keep protection enabled; if it blocks Astra, keep the block. See [security status](SECURITY.md).
 
-[Download Member JAR](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.33.1.jar) · [JackJ25-bound Premium update](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.33.1-premium-JackJ25.jar) · [Complete source](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.33.1-source.zip) · [Checksums](downloads/SHA256SUMS-1.33.1.txt)
+[Download Member JAR](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.34.0.jar) · [JackJ25-bound Premium update](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.34.0-premium-JackJ25.jar) · [Complete source](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.34.0-source.zip) · [Checksums](downloads/SHA256SUMS-1.34.0.txt)
+
+## Smoother UI and working case reels (1.34.0)
+
+- Rounded gradients now use **one batched GUI element** each, with cached corner geometry. Panels, buttons, HUD cards and the rounded Minecraft controls keep their existing appearance with much less CPU submission work.
+- Read-only text labels share a bounded 512-entry cache; slider labels rebuild only when values change. Dynamic text cannot grow the cache indefinitely.
+- Hover/selection glows, toggle knobs and sliders ease using real elapsed time, with subpixel knob/reel movement. Watermark, menu brightness and Spotify/lyric motion catch up correctly after a dropped frame. Smooth animations Off still disables decorative interface motion.
+- Hidden Astra HUD layers are skipped behind the client menu, Wordle and Krillion. The PvP HUD avoids sampling while hidden in an inventory or another screen. Performance Mode retains its saved lower-work video/HUD preset and restores previous settings when disabled.
+- **Case reels keep spinning in every mode**, including Smooth animations Off and Performance Mode. Previously the reel jumped to its destination and waited through the 4.5-second timer. The committed reward, landing marker, sound behavior, opening duration, allowance and reward rules are retained. Countdown formatting is cached per second.
+
+In the same 1280×720 Linux software-rendered menu test, non-text GUI elements fell from **5,643 to 1,047 per frame (81.4% fewer)**. Median UI setup CPU time in those runs fell from 24.7 ms to 8.8 ms. These are measurements of the menu's submission stage, not a whole-game FPS benchmark. Real FPS depends on hardware, world load, graphics settings, VSync and frame caps. This update does not promise a fixed FPS increase or install a different world renderer. See [validation](TESTING.md).
 
 ## Krillion input and rendering fixes (1.33.1)
 
