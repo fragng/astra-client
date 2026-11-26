@@ -1,0 +1,33 @@
+Astra Client 1.33.0 feature preview — scan/evidence report
+26 November 2026
+
+The previous Windows alert (“Trojan.Severe”, full identifier and affected filename unknown) remains unresolved. This is not Microsoft Defender clearance or a confirmed antivirus fix. Keep any protection block in place. Previous1.32.0 binaries remain withdrawn.
+
+Scope: final Member JAR, original-grant JackJ25 Premium update, complete source ZIP. SHA-256 values below identify exactly these artifacts. Native Chromium components downloaded on Krillion first use are not inside these artifacts and are not covered by this distribution scan.
+
+ClamAV1.5.4 used the full official main63/daily28194/bytecode339 databases, verified with official detached signatures. There were no detections in this scan. Another engine's result does not invalidate Defender's alert or guarantee safety.
+
+81f2532c263f15a552bc2d439bffbe42c3de801e2330042afd5444700b47dc78  astra-client-1.33.0.jar
+391c31d2cfd549228763af8845db86fd33ebe2037ee8219f7fda2de3e2cd14a0  astra-client-1.33.0-premium-JackJ25.jar
+97a077d2ffb3d23cad344d5fb10801f78271aea9052722d5b982fea3af07c9bb  astra-client-1.33.0-source.zip
+
+
+----------- SCAN SUMMARY -----------
+Known viruses: 3628228
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 3
+Infected files: 0
+Data scanned: 122.31 MiB
+Data read: 85.33 MiB (ratio 1.43:1)
+Time: 125.766 sec (2 m 5 s)
+Start Date: 2026:11:26 20:01:14
+End Date:   2026:11:26 20:03:20
+
+Build/contracts: Member and Premium-template Java21/Minecraft1.21.11/Fabric0.19.3 builds passed24 tasks. New Wordle timing/origin/argument contracts passed along with existing required contracts.
+
+Native Linux Minecraft: exact uploaded CreamyKeys0.0.5 settings screen and real OpenAL press/mute behavior tested; large Wordle board, staggered reveals, clue/input gating, reduced motion, performance, win/new word, small resolution and saved reopen tested. Cases remained unchanged and browser stayed unstarted during these features.
+
+Browser: pinned MCEF/JCEF engine downloaded and rendered a genuine Chromium texture at https://krillion.io/. The cloud HTTPS proxy certificate was rejected (ERR_CERT_AUTHORITY_INVALID). Live Krillion gameplay/input and Windows compatibility remain unverified. TLS checks were not disabled; no protection bypass was used. The browser is experimental, with helper-process/native-runtime requirements disclosed in THIRD_PARTY.md and SECURITY.md.
+
+Archive audit: exact original nested CreamyKeys/Freelook/MCEF hashes; duplicate Astra key-sound engine removed; release editions share code/assets; original signed monthly grant/expiry preserved; existing Wordle/case/licensing/Jamble rules byte-identical; no private key/raw owner UUID, test fixture or runtime script/executable in installable archives. Complete source includes corresponding MCEF/JCEF sources and notices.
