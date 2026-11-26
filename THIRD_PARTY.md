@@ -1,4 +1,4 @@
-# Third-party components in Astra 1.33.0
+# Third-party components in Astra 1.33.1
 
 ## CreamyKeys — user-provided original
 
@@ -6,7 +6,7 @@ Author: cutebow. Exact uploaded CreamyKeys Universal 0.0.5, SHA-256 `023767afb37
 
 ## MCEF Modern / JCEF
 
-[MCEF Modern](https://github.com/Dimaskama/mcef-modern), version0.3.3 for Minecraft1.21.11 / JCEF146.0.10, LGPL-2.1. Original JAR SHA-256 `5d7b0da06c97085fde4f76bc1b98fe2765a270a006dd8b37d903bd479eb27dda`. Astra uses the unchanged SDK and applies its own small security/shutdown mixins; those mixins are included in Astra source.
+[MCEF Modern](https://github.com/Dimaskama/mcef-modern), version0.3.3 for Minecraft1.21.11 / JCEF146.0.10, LGPL-2.1. Original JAR SHA-256 `5d7b0da06c97085fde4f76bc1b98fe2765a270a006dd8b37d903bd479eb27dda`. Astra uses the unchanged SDK and applies its own security/shutdown mixins, an idempotent JCEF termination guard and a local browser subclass for input compatibility and bounded frame staging/upload. These additions are included in Astra source.
 
 Corresponding MCEF Modern, jcefmaven and JCEF API source archives and the LGPL text are in `third-party/mcef-modern/` in the complete source ZIP. Original licenses remain inside the dependencies. You may replace or rebuild these LGPL components for your own use, subject to compatibility; the source project's `libs` and `libs/browser-api` inputs make their versions explicit. Preserve third-party notices on redistribution. No private key is needed to build the Member client.
 
