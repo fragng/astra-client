@@ -1,6 +1,10 @@
-# Astra Client 1.33.0 security status
+# Astra Client 1.33.1 security status
 
-**26 November 2026: the reported Windows detection is unresolved.** The user described the latest 1.32.0 alert as “Trojan.Severe”; the complete Defender identifier and affected filename/hash were not supplied. The 1.32.0 installable JARs remain withdrawn. Version 1.33.0 is a requested feature preview, not a verified remedy. Neither malware nor a false positive has been established. Do not disable protection, add exclusions or restore a blocked file to run this preview.
+**26 November 2026: the reported Windows detection is unresolved.** The user described the latest 1.32.0 alert as “Trojan.Severe”; the complete Defender identifier and affected filename/hash were not supplied. The 1.32.0 installable JARs remain withdrawn. Version 1.33.1 is a requested feature preview, not a verified remedy. Neither malware nor a false positive has been established. Do not disable protection, add exclusions or restore a blocked file to run this preview.
+
+## 1.33.1 repair scope
+
+Only the Krillion screen/browser input/frame pipeline, hidden Astra-HUD render gate and an idempotent JCEF shutdown guard changed. The latter cancels duplicate shutdown requests from late client-disposal callbacks so the native engine is terminated once per instance. The original CreamyKeys/Freelook/MCEF dependencies remain byte-identical. Windows scan codes are carried in a normal public field on an AWT KeyEvent subclass because upstream JCEF looks up the field on the runtime event class. There is no Unsafe access, private JDK reflection, JVM module opening, OS key injection or new native binary. Editing/control characters go through the existing browser API. Two bounded, reusable buffers and a1280×800 render limit replace unbounded queued full-frame uploads; late paints after close are ignored. TLS checks and navigation/download restrictions are unchanged.
 
 ## Changes requiring review
 
@@ -13,9 +17,9 @@ The earlier claim that Freelook is the only nested dependency, and that the enti
 
 ## Verification and limits
 
-Java 21 builds and required contracts pass. Native Linux Minecraft checks cover the exact CreamyKeys settings/audio and Wordle's larger board, sequential reveals, reduced motion, input gating and saved progress. Browser initialization/download and rendering were observed; the cloud proxy certificate prevented validating live Krillion gameplay. No certificate-check bypass was used. Windows Spotify/browser behavior and Defender clearance are not live-tested on this Linux host.
+Java 21 builds and required contracts pass. Native Linux Chromium tests with a local resource fixture verify actual text editing/submission, cursor/shortcut input, bounded animated frame staging, scaled pointer coordinates, resize and close/reopen. The fixture is not bundled and does not load the live site or weaken its TLS validation. Windows scan-code compatibility is contract-tested; live Windows input remains unverified. Native Linux Minecraft checks cover the exact CreamyKeys settings/audio and Wordle's larger board, sequential reveals, reduced motion, input gating and saved progress. Browser initialization/download and rendering were observed; the cloud proxy certificate prevented validating live Krillion gameplay. No certificate-check bypass was used. Windows Spotify/browser behavior and Defender clearance are not live-tested on this Linux host.
 
-The full official ClamAV main63/daily28194/bytecode339 scan of 1.32.0 found no detections. That does not clear Defender or prove the new browser runtime safe. See the versioned scan report for the exact final 1.33.0 artifact scope and [the earlier investigation](downloads/INVESTIGATION-1.32.0.txt). Report a fresh alert with the complete Protection history threat name, affected filename and SHA-256; keep the block in place.
+The full official ClamAV main63/daily28194/bytecode339 scan of 1.32.0 found no detections. That does not clear Defender or prove the new browser runtime safe. See the versioned scan report for the exact final 1.33.1 artifact scope and [the earlier investigation](downloads/INVESTIGATION-1.32.0.txt). Report a fresh alert with the complete Protection history threat name, affected filename and SHA-256; keep the block in place.
 
 The complete source includes upstream dependency source and licenses where supplied; see [THIRD_PARTY.md](THIRD_PARTY.md). No private issuance key is included.
 
