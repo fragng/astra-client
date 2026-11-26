@@ -1,10 +1,16 @@
-# Astra Client 1.33.0 — feature preview
+# Astra Client 1.33.1 — feature preview
 
 Minecraft Java **1.21.11**, **Java 21**, **Fabric Loader 0.19.3+**, **Fabric API 0.141.6+1.21.11**.
 
 **Windows antivirus status remains unresolved.** The previous 1.32.0 downloads remain withdrawn after the reported “Trojan / Severe” alert. This feature preview is not a confirmed fix or Microsoft Defender clearance. Keep protection enabled; if it blocks Astra, keep the block. See [security status](SECURITY.md).
 
-[Download Member JAR](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.33.0.jar) · [JackJ25-bound Premium update](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.33.0-premium-JackJ25.jar) · [Complete source](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.33.0-source.zip) · [Checksums](downloads/SHA256SUMS-1.33.0.txt)
+[Download Member JAR](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.33.1.jar) · [JackJ25-bound Premium update](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.33.1-premium-JackJ25.jar) · [Complete source](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.33.1-source.zip) · [Checksums](downloads/SHA256SUMS-1.33.1.txt)
+
+## Krillion input and rendering fixes (1.33.1)
+
+Enter, keypad Enter, Backspace, Delete and Tab now receive the editing character events that GLFW does not emit. Browser key events retain the Windows scan code needed by JCEF; no Java module flags, reflection into private JDK fields or OS key injection are needed. Linux Home/End and other navigation keys retain their native key identities. Clicking the page gives it keyboard focus; header controls retain their own focus.
+
+Chromium renders into an aspect-preserving buffer capped at **1280×800** and scales to the menu viewport; mouse coordinates use the same transform. Only the latest paint is uploaded once per Minecraft frame. Two reusable staging buffers replace per-paint allocations and an unbounded main-thread upload queue. The unchanged image stays on the GPU. Browser updates target60Hz normally and30Hz in Performance Mode. The opaque web screen skips the hidden menu blur and Astra HUD underneath. A once-only shutdown guard also prevents late browser-disposal callbacks from shutting down the native engine twice when Minecraft exits. These changes bound memory/work and reduce stutter; they do not promise a particular FPS on every computer.
 
 ## New in 1.33.0
 
