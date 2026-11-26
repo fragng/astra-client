@@ -1,0 +1,37 @@
+Astra Client 1.33.1 feature preview — scan and validation report
+26 November 2026
+
+The reported Windows alert (“Trojan.Severe”, full Defender identifier and affected filename unknown) remains unresolved. This version repairs Krillion input/rendering/shutdown; it is not a verified antivirus fix or Microsoft Defender clearance. Keep protection enabled and retain any block. The previous1.32.0 binaries remain withdrawn.
+
+Scope: final Member JAR, original-grant JackJ25 Premium update and complete source ZIP. SHA-256 below identifies the exact reviewed bytes. Downloaded native Chromium components are outside these distributable archives and are not covered by this scan.
+
+ClamAV1.5.4 used the full official main63/daily28194/bytecode339 databases, verified with official detached signatures. No detections in this scan. Another engine does not clear Defender or prove safety.
+
+9e98cc0262f5380dc4885aa5ba2a2517a4611eaa184846606587e9fe2002240e  astra-client-1.33.1.jar
+de761c5e140b348e14d3501687288218959aa9dc66cead8f9a85a28a9f73e8ba  astra-client-1.33.1-premium-JackJ25.jar
+c3a5d9a29570d2a54298c2b7e7a22ce6415e56be79939d0fa2c09a999a55f9d1  astra-client-1.33.1-source.zip
+
+
+----------- SCAN SUMMARY -----------
+Known viruses: 3628228
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 3
+Infected files: 0
+Data scanned: 122.41 MiB
+Data read: 85.35 MiB (ratio 1.43:1)
+Time: 125.514 sec (2 m 5 s)
+Start Date: 2026:11:26 21:28:55
+End Date:   2026:11:26 21:31:01
+
+Changes: actual browser editing characters for Enter/keypad Enter, Backspace, Delete and Tab; JCEF-compatible public event scan-code field for Windows; native Linux navigation identities; bounded1280x800 aspect-fit view with proportional pointer mapping; two reusable latest-frame staging buffers and at most one upload per Minecraft render; hidden blur/Astra HUD skipped under the opaque page; once-only native JCEF shutdown guard.
+
+Builds: Java21 / Minecraft1.21.11 / Fabric0.19.3 Member and Premium-template builds passed25 required tasks each. BrowserBridgeTest covers scan-code field lookup and modifiers, editing controls, Linux navigation, 4K/ultrawide mapping,10,000 producer frames while rendering stalls, steady-state two-buffer reuse, concurrent frame ownership and late callbacks after close. Existing contracts also pass.
+
+Native Minecraft Linux: a local deterministic HTML resource fixture inside real CEF verifies typing, Backspace, Delete, Enter single submit, Home/End/arrows, Shift, Ctrl+A, multiline newline, mouse focus, animation, resize, Performance Mode and close/reopen. Before resize, over a3-second sample received paints advanced655->842 while uploads advanced178->229 and staging allocations stayed2 in the first completed regression run. The final run repeated the suite successfully after adding the shutdown guard. Larger1600x900 input used1280x633 browser pixels and remained functional. Buffer allocation count grows only when a larger size requires replacing either buffer.
+
+A native SIGSEGV on game exit was reproduced with two queued JCEF shutdown calls. After the per-instance guard, final full regression plus game exit logged exactly one shutdown, saved all worlds and exited successfully.
+
+The fixture is outside Astra source/releases; it does not bypass the live site's TLS. Live krillion.io gameplay remains unverified on the cloud host because its proxy certificate is rejected. Live Windows input/performance is also unverified. No fixed FPS gain is promised; these tests establish bounded work, correct native input on Linux and the Windows scan-code contract.
+
+Archive audit: only seven browser/HUD/shutdown class families plus version/mixin metadata changed from1.33.0. All other assets, games, cases, rules, audio, original dependencies and licensing code remain unchanged. Exact nested CreamyKeys/Freelook/MCEF hashes verified. Member/Premium share code/assets and owner grant/expiry is unchanged. No private key/raw owner UUID, native fixture, runtime script or executable is in the installable archives; full source includes upstream MCEF/JCEF sources/notices.
