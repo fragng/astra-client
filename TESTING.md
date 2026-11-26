@@ -1,14 +1,31 @@
-# Astra Client 1.33.1 validation
+# Astra Client1.34.0 validation
 
-- Java 21 / Minecraft 1.21.11 / Fabric Loader 0.19.3: Member and Premium-template builds pass required check tasks, including BrowserBridgeTest and existing Wordle/browser routing contracts.
-- Native Linux Minecraft loads the original uploaded CreamyKeys Universal 0.0.5 and its nested implementation. Astra's Settings button opens its actual vendor GUI. Real keyboard presses increment its OpenAL playback counter; disabling it prevents new playback. Astra's old sound implementation, resources and duplicate input mixins are removed.
-- Native Wordle checks: larger full board, all keys, visibly staggered flips, clue/input gating, solved/New Word flow, small window, Performance Mode, reduced motion, save/reopen and unchanged case counters. The browser remains unstarted while using Wordle/CreamyKeys.
-- MCEF downloaded the pinned native engine and produced a genuine Chromium texture inside Minecraft. The live URL was https://krillion.io/. The cloud machine's HTTPS proxy root was absent from Chromium's trust store, producing ERR_CERT_AUTHORITY_INVALID; live fish gameplay, successful website input and Windows platform behavior remain unverified. TLS checks were not disabled. Browser retries and load failures display status instead of claiming success.
-- Pure contracts cover reveal timing at20/60/144fps, stagger order, scale bounds, reduced motion/reset, HTTPS game-origin restrictions and filtering upstream insecure browser arguments. Existing contracts cover games, cases, Premium, rendering, media ABI, palettes and other retained features.
-- A deterministic local HTML resource fixture was served inside the real CEF browser to test editing without depending on the cloud proxy certificate. Native Minecraft keyboard/mouse events successfully typed text, erased with Backspace and Delete, submitted once with Enter, moved the cursor with Home/End/arrows, used Shift and Ctrl+A, and inserted textarea newlines. Controls still worked after resize and closing/reopening. This fixture is outside Astra source/releases and does not bypass TLS on the real website.
-- With a continuously animated browser canvas, frame counters advanced while staging stayed at two allocations until resize. At the larger1600×900 window, the texture was capped at1280×633 with correct pointer/input mapping; reallocating the two buffers for the larger viewport raised the lifetime allocation count to four, then it stayed bounded. There is no per-paint queued render task. Performance Mode toggled without breaking the browser.
-- Reproduced a JCEF native SIGSEGV on quitting after browser reopen: two native shutdown calls were scheduled. The new per-instance once-only guard was tested in the final native run: the complete editing/resize/reopen suite passed again, exactly one native shutdown was logged, worlds saved and the process exited successfully.
-- BrowserBridgeTest checks Windows key-event runtime-class scan-code lookup for press/release, modifier retention, Linux navigation key identity, editing characters, 4K/ultrawide aspect/pointer transforms,10,000 paints during a stalled consumer, steady-state two-buffer reuse, concurrent ownership, malformed-frame bounds and late callbacks after close. This is not a live Windows test or a claim of fixed FPS gains.
-- Final archives are checked for exact bundled dependency hashes, source completeness, missing test fixtures/private keys, removed duplicate CreamyKeys code and unchanged owner grant/expiry. See the versioned scan report for scanner results; ClamAV results are not Microsoft Defender clearance.
+- Java21 / Minecraft1.21.11 / Fabric Loader0.19.3 Member and Premium-template builds pass26 required tasks. Existing browser input, Windows media ABI, Wordle, cases, licensing, mesh and other contracts remain required.
+- New UiPerformanceTest verifies frame-rate-independent settling at 20/60/144 fps, dropped-frame recovery, motion-off behavior, bounded text reuse, normal/heading separation, long-text bypass, gradient quad/bounds/clipping invariants, transparent rounded corners and single-layer alpha coverage.
+- CaseSpinTest exercises800 committed outcomes and192,800 reel frames. Essential motion advances without any decorative animation/performance parameter. Centre-marker landing, monotonic motion, duration, resume and committed outcome remain consistent. Existing case distribution/allowance/claims contracts pass.
 
-This is a feature preview. Windows antivirus warnings remain unresolved and the previous 1.32.0 binaries remain withdrawn. Keep protection enabled. No fixed FPS gain, production browser compatibility or antivirus acceptance is promised.
+## Native baseline and updated menu
+
+The same local Fabric observer measured ScreenEvents before/after render and counted non-text GuiRenderState elements before glyph expansion. It is outside the source/release. Both runs used Minecraft's1280×720 window, GUI640×360/scale2, the Visuals page, Bubble Font and Linux software OpenGL. World rendering remained active. This is a diagnostic comparison, not a controlled whole-game FPS benchmark.
+
+| Measure |1.33.1 baseline|1.34.0|
+|---|---:|---:|
+|Median non-text GUI elements/frame|5,643|1,047|
+|Median UI submission CPU time|24.65ms|8.78ms|
+|Samples in12-second capture|48|25|
+
+The new capture contained24 batched gradient elements/frame. Submission count fell81.4%; the sampled UI CPU median fell64.4%. Hardware/software driver scheduling, world work and capture sample counts differ; these numbers do not establish a whole-game FPS gain. No fixed FPS claim is made.
+
+Native checks:
+
+- Baseline1.33.1 reproduced the static reel with Smooth animations Off: the visible position range was0.0 during the timed opening.
+- Updated real OPEN actions moved the reel by27.66 cards in normal mode,27.86 with decorative animations off, and25.86 with animations off plus Performance Mode. Each retained one new committed draw through landing and used the correct allowance behavior. This pre-existing test account had Infinite Cases, so its allowance appropriately stayed unchanged. Reward/allowance rules were not modified for testing.
+- Actual FOV and brightness slider clicks updated their settings and restored the original FOV after close/reopen. Black/Blue/Red/Pink/Purple switched correctly, Bubble Font and Minecraft font were inspected, and every sidebar page opened.
+- Screenshots confirmed rounded gradients, colours, labels and clipping. The640×480 window and menu close/reopen also passed. The test driver was corrected to include the window's screen position after Minecraft recentered a resize; application behavior required no workaround.
+- Performance Mode applied6-chunk rendering/5-chunk simulation in the run, then restored12/8 when disabled. Case motion continued in both states. Minecraft exited successfully and saved the world.
+
+## Retained limits
+
+Live Windows performance/Spotify/browser behavior is not tested on this Linux host. Krillion's browser-input and once-only shutdown repairs are retained; the actual website still encounters the cloud proxy's TLS trust issue, and no certificate bypass is used. Its controls were previously tested in a real CEF local resource fixture;1.34.0 changes only the shared GUI labels used in that screen.
+
+Archive checks verify unchanged dependency hashes/assets/backend rules, matching edition code, original signed owner grant/expiry and absence of private keys or native observers. See the versioned scan report for the final artifact scope and results. The earlier Windows antivirus warning remains unresolved; keep any protection block in place.
