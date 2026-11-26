@@ -1,4 +1,4 @@
-# Third-party components in Astra 1.33.1
+# Third-party components in Astra 1.34.0
 
 ## CreamyKeys — user-provided original
 
