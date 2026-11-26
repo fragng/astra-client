@@ -1,12 +1,23 @@
-# Astra Client 1.32.0
+# Astra Client 1.33.0 — feature preview
 
-Version 1.17.0 has been withdrawn at the owner's request. Installable downloads are currently paused.
+Minecraft Java **1.21.11**, **Java 21**, **Fabric Loader 0.19.3+**, **Fabric API 0.141.6+1.21.11**.
 
-Customisable client mod for Minecraft Java **1.21.11**, **Java 21**, **Fabric Loader 0.19.3+**, and **Fabric API 0.141.6+1.21.11**.
+**Windows antivirus status remains unresolved.** The previous 1.32.0 downloads remain withdrawn after the reported “Trojan / Severe” alert. This feature preview is not a confirmed fix or Microsoft Defender clearance. Keep protection enabled; if it blocks Astra, keep the block. See [security status](SECURITY.md).
 
-**Downloads paused while a reported Windows antivirus detection is investigated.** Do not install the 1.32.0 JARs or bypass the block. The exact detection name and affected filename/hash are still needed. A limited scan by another engine does not establish Defender clearance. Your uploaded Creamy Keys and browser integration are not included in 1.32.0.
+[Download Member JAR](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.33.0.jar) · [JackJ25-bound Premium update](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.33.0-premium-JackJ25.jar) · [Complete source](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.33.0-source.zip) · [Checksums](downloads/SHA256SUMS-1.33.0.txt)
 
-[Source for inspection](https://raw.githubusercontent.com/fragng/astra-client/main/downloads/astra-client-1.32.0-source.zip) · [SHA-256 checksums](downloads/SHA256SUMS-1.32.0.txt) · [Security review](SECURITY.md) · [Original limited scan report](downloads/SCAN-REPORT-1.32.0.txt) · [Current investigation](downloads/INVESTIGATION-1.32.0.txt)
+## New in 1.33.0
+
+- **Creamy Keys:** the exact uploaded Universal 0.0.5 JAR, with its original settings page, keyboard/mouse sounds and audio controls. There is one implementation, replacing Astra's former imitation.
+- **Wordle:** a dedicated, larger board with the full on-screen keyboard. Accepted guesses reveal one tile at a time. Input and keyboard clues wait until the reveal is complete. Reduced motion reveals immediately; progress remains saved.
+- **Krillion:** opens the actual **https://krillion.io/** website inside a Chromium browser view, with mouse/keyboard input, Reload and Back to Games. The former imitation is no longer offered. The website controls its own content and rules.
+- **Client colours:** Black (default), Blue, Red, Pink and Purple remain; there are no configurable title/client scenery backgrounds.
+
+**Krillion is experimental:** its browser downloads native components on first use, requires internet access and starts helper processes. The engine does not initialize until Krillion opens. The browser rendered successfully in Linux Minecraft, but the cloud test host rejected its HTTPS proxy certificate; live fish gameplay and Windows browser compatibility could not be verified. Certificate checks remain enabled. No credentials or Minecraft JavaScript bridge are provided. See [validation](TESTING.md) and [browser/dependency notices](THIRD_PARTY.md).
+
+Install exactly one Astra JAR with Fabric API. Remove older Astra JARs and separate copies of bundled CreamyKeys, Freelook or MCEF Modern. **Right Shift** opens Astra in a world; Games contains Wordle and Krillion. The Premium update keeps the original signed entitlement and expiry; it does not restart the month.
+
+The notes below retain earlier feature history. Current colour controls and the genuine CreamyKeys/live-browser integration above replace old menu-theme and native Krillion descriptions.
 
 ## Client colours and fixed menu scenery (1.32.0)
 
@@ -18,7 +29,7 @@ World custom skies and their Premium controls remain separate from menu styling.
 
 ## Creamy Keys and Performance Mode (1.31.0)
 
-Open **Right Shift → Settings → Creamy Keys**. Enable it for soft mechanical keyboard and mouse sounds throughout Minecraft, with separate keyboard/mouse switches and volume sliders, three sound styles (Creamy, Soft, Thock) and preview buttons. It is off by default. Settings save automatically. Master volume applies; Button sounds remains a separate preference. Sounds use real press events only: holding a key does not flood audio with OS repeats. No global keyboard capture, typed-text logging, input automation or external audio app is used. This is Astra's own implementation with six original local sounds, not a bundled copy of the separately published CreamyKeys mod.
+Open **Right Shift → Settings → Creamy Keys** to use the exact uploaded CreamyKeys Universal **0.0.5** mod and its own settings/audio engine. Astra's former imitation, six sounds and duplicate input hooks have been removed. Install only one version; do not add another CreamyKeys JAR alongside Astra. Its preferences are managed by the original mod. See [third-party notices](THIRD_PARTY.md).
 
 **Performance Mode** is in the top-right gear/profile page. It now caps render distance at **6 chunks**, simulation at **5**, and entity-distance scaling at **50%**. Clouds and entity shadows are off, particles are Minimal, biome blending is zero, ambient occlusion and improved transparency are off, leaves use their simple cutout setting, and the vignette is off. Lower existing distance values are kept. This deliberately trades distant scenery and lighting detail for less CPU/GPU work. It does not alter FOV, world gamma, VSync or your frame cap, install a renderer, change server behaviour or automate gameplay.
 
@@ -112,14 +123,14 @@ Jamble is back to its original hotbar-only mode. Enable it, then receive a Host 
 
 The sidebar groups appearance controls first, then tools, with Settings and Buy Premium at the bottom:
 
-- **Visuals:** menu brightness, Minecraft FOV, menu themes, Reactive Background, Bubble Font and a Custom Sky preview picker.
+- **Visuals:** menu brightness, Minecraft FOV, the five client colours, Bubble Font and a Custom Sky preview picker.
 - **HUD:** Astra watermark, moon logo and local Fake Media badge.
 - **Spotify HUD:** desktop linking, playback, HUD size/themes and HUD lyrics.
 - **3D Characters:** Work In Progress lock/progress until 15 December; then six self-only models and exclusive switches.
 - **Essentials:** Freelook and its keyboard/mouse binding, plus a saved Fullbright toggle.
 - **Customize Totem:** the Premium creator pack and the case-unlocked personal skin totem.
 - **Jamble — Premium:** original named-item hotbar tracking, Host/Viewer cards and winner announcements.
-- **Games:** unlimited Wordle and Krillion practice with no prizes, alongside cases, rare cosmetic unlocks and manual-ticket claim history.
+- **Games:** unlimited Wordle and the live Krillion website, alongside cases, rare cosmetic unlocks and manual-ticket claim history.
 - **Settings:** animation, sounds, capture mode, Rare Cosmetics and reset preferences.
 - **Buy Premium:** Discord-logo button linking to https://discord.gg/astrayt through Minecraft's native link confirmation.
 
