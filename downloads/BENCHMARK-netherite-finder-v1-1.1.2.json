@@ -1,0 +1,145 @@
+{
+  "minecraft": "1.21.11",
+  "java": 21,
+  "environment": "Local Linux/X11/Mesa survival world",
+  "setup": "28-block flat lane; five-high open case or two-high pre-dug tunnel; Efficiency V netherite pickaxe; no status effects; three repeats per case/version. Game ticks measured to first actual ore attack and inventory-confirmed pickup.",
+  "before": [
+    {
+      "benchCase": "open",
+      "benchTotal": 128,
+      "benchApproach": 91,
+      "benchAir": 0,
+      "benchSprint": 87,
+      "benchAirAttack": 0,
+      "benchServerDebris": 1
+    },
+    {
+      "benchCase": "open",
+      "benchTotal": 138,
+      "benchApproach": 91,
+      "benchAir": 0,
+      "benchSprint": 87,
+      "benchAirAttack": 0,
+      "benchServerDebris": 1
+    },
+    {
+      "benchCase": "open",
+      "benchTotal": 134,
+      "benchApproach": 91,
+      "benchAir": 0,
+      "benchSprint": 87,
+      "benchAirAttack": 0,
+      "benchServerDebris": 1
+    },
+    {
+      "benchCase": "tunnel",
+      "benchTotal": 140,
+      "benchApproach": 91,
+      "benchAir": 0,
+      "benchSprint": 96,
+      "benchAirAttack": 0,
+      "benchServerDebris": 1
+    },
+    {
+      "benchCase": "tunnel",
+      "benchTotal": 133,
+      "benchApproach": 91,
+      "benchAir": 0,
+      "benchSprint": 87,
+      "benchAirAttack": 0,
+      "benchServerDebris": 1
+    },
+    {
+      "benchCase": "tunnel",
+      "benchTotal": 135,
+      "benchApproach": 91,
+      "benchAir": 0,
+      "benchSprint": 96,
+      "benchAirAttack": 0,
+      "benchServerDebris": 1
+    }
+  ],
+  "after": [
+    {
+      "benchCase": "open",
+      "benchTotal": 113,
+      "benchApproach": 76,
+      "benchAir": 55,
+      "benchSprint": 82,
+      "benchAirAttack": 0,
+      "benchServerDebris": 1
+    },
+    {
+      "benchCase": "open",
+      "benchTotal": 114,
+      "benchApproach": 76,
+      "benchAir": 55,
+      "benchSprint": 82,
+      "benchAirAttack": 0,
+      "benchServerDebris": 1
+    },
+    {
+      "benchCase": "open",
+      "benchTotal": 116,
+      "benchApproach": 76,
+      "benchAir": 55,
+      "benchSprint": 82,
+      "benchAirAttack": 0,
+      "benchServerDebris": 1
+    },
+    {
+      "benchCase": "tunnel",
+      "benchTotal": 130,
+      "benchApproach": 90,
+      "benchAir": 0,
+      "benchSprint": 96,
+      "benchAirAttack": 0,
+      "benchServerDebris": 1
+    },
+    {
+      "benchCase": "tunnel",
+      "benchTotal": 130,
+      "benchApproach": 90,
+      "benchAir": 0,
+      "benchSprint": 96,
+      "benchAirAttack": 0,
+      "benchServerDebris": 1
+    },
+    {
+      "benchCase": "tunnel",
+      "benchTotal": 131,
+      "benchApproach": 90,
+      "benchAir": 0,
+      "benchSprint": 96,
+      "benchAirAttack": 0,
+      "benchServerDebris": 1
+    }
+  ],
+  "medians": {
+    "open": {
+      "benchApproach": {
+        "before_ticks": 91,
+        "after_ticks": 76,
+        "less_time_percent": 16.5
+      },
+      "benchTotal": {
+        "before_ticks": 134,
+        "after_ticks": 114,
+        "less_time_percent": 14.9
+      }
+    },
+    "tunnel": {
+      "benchApproach": {
+        "before_ticks": 91,
+        "after_ticks": 90,
+        "less_time_percent": 1.1
+      },
+      "benchTotal": {
+        "before_ticks": 135,
+        "after_ticks": 130,
+        "less_time_percent": 3.7
+      }
+    }
+  },
+  "limits": "Indicative fixture measurements; not a universal speed or FPS guarantee. No public server used."
+}

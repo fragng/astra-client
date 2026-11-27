@@ -1,46 +1,63 @@
-# Netherite Finder V1 — 1.1.1
+# Netherite Finder V1 — 1.1.2
 
-Netherite Finder V1 **1.1.1** fixes unnecessary route changes and freecam controls, improves inventory lava recovery, and adds a camera view-distance request.
+Netherite Finder V1 **1.1.2** adds faster debris approaches using ordinary Minecraft movement.
 
-**[Download netherite-finder-v1-1.1.1.jar](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/netherite-finder-v1-1.1.1.jar)**
+**[Download netherite-finder-v1-1.1.2.jar](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/netherite-finder-v1-1.1.2.jar)**
 
-Replace your old Finder JAR in `mods`; keep one version. **Minecraft Java 1.21.11 / Fabric Loader 0.19.3+ / Java 21**. Fabric API is bundled unchanged. **F6** opens the menu, **F4** toggles freecam and **Z** toggles freelook.
+Replace the old Finder JAR in `mods`; keep one version. **Minecraft Java 1.21.11 / Fabric Loader 0.19.3+ / Java 21**. Fabric API is bundled unchanged. **F6** opens controls; **F4** freecam and **Z** freelook are retained.
 
-### Changed
+### Faster approach
 
-- **Fixed false obstructions and missed waypoints.** Sprinting can cross a waypoint without a tick landing on its exact centre. Progress now uses the travelled segment and the correct lane/floor, so passing a centre does not trigger an unnecessary detour. Player-sized collision and actual support checks replace the overly strict four-corner floor requirement. A clear path is centred locally before trying another route, and confirmed clear corridors can rejoin direct travel.
-- Direct movement, normal sprinting in checked corridors, damped turns and real tool mining speed remain. Newly enabled mining immediately refreshes the closest loaded chunk. No globally optimal route or anti-cheat bypass is claimed.
-- **Freecam A/D strafe directions are corrected relative to the view.** Diagonal motion stays normalised.
-- **Scroll-wheel freecam speed: 0.25×–4×**, shown in the action bar. Scrolling changes camera speed without changing the selected hotbar slot. The multiplier is also available in ESP/CHEATS and is saved.
-- **Lava plugs use suitable blocks from the main inventory when needed**, preferring hotbar supplies. Plain netherrack, basalt, blackstone, cobblestone, cobbled deepslate, stone, deepslate, dirt and end stone are supported; named/customised items are protected.
-- **While immersed in lava**, the bot attempts real supported placements into nearby lava outside the player's body while swimming toward a loaded safe shore. It waits for placement confirmation and keeps automation enabled. This does not grant Fire Resistance or invulnerability; hidden/flowing lava and missing supplies remain dangerous.
-- **Freecam and freelook temporarily request a larger view distance:** 20 chunks by default, adjustable from 12 to 32 in ESP/CHEATS. Your original render distance is restored on exit. Switching between camera modes retains the temporary boost. Larger view distances use more memory and rendering work.
-- **Multiplayer limits still apply.** The request is sent through Minecraft's real client settings; servers decide how many chunks they send around the actual player. Camera modes cannot force remote/server-hidden chunks to load or move the server's streaming centre to the camera.
+- **Fast approach is ON by default**, with an ON/OFF button in MINER. The actual menu toggle and saved preference are tested.
+- Long open approaches can use ordinary **sprint-jumps** after checking a full five-block flat landing corridor, loaded terrain, headroom, hunger and alignment. The bot does not jump in tight tunnels, close to the target, across unknown floors or beside detected lava.
+- A jump keeps its checked heading instead of chasing block centres in mid-air, and the bot lands before mining. The timing runs recorded **zero airborne attack ticks**.
+- When a valid native crosshair is mining a block, the bot can walk closer across checked supported ground. This overlaps the remaining approach with mining and reduces the later pickup walk.
+- Faster critically damped mining aim reduces settling delays without snapping. Normal sprinting continues across waypoint centres with a stopping margin near the target.
+- A restart clears a stale route-retry wait. Existing lava recovery, offhand Mending/totem restoration, storage, base clues and logout behaviour remain.
 
-The previous offhand XP repair/restoration, full usable storage/ender-chest handling, totem refill, debris pickup, loaded storage-clue Base Finder, trial exclusions and nearby-player logout are retained.
+**No movement attribute, velocity, reach, tick rate or tool break speed is increased.** Tool quality, hunger, geometry, server timing and permissions still apply. Fast approach OFF disables the new sprint-jumps and closing-in-while-mining behaviour.
+
+### Measured locally
+
+Three repeats per version and lane, with an Efficiency V netherite pickaxe, a 28-block flat approach and fixed supplies, measured in game ticks:
+
+| Fixture | 1.1.1 median | 1.1.2 median | Less time |
+| --- | ---: | ---: | ---: |
+| Open route: approach to first ore hit | 91 | 76 | 16.5% |
+| Open route: full mine and pickup | 134 | 114 | 14.9% |
+| Two-high pre-dug tunnel: full mine and pickup | 135 | 130 | 3.7% |
+
+The open lane used normal sprint-jumps; the low tunnel stayed grounded. Every candidate run confirmed real server-side debris collection. These are controlled local Linux/Mesa Minecraft results, not a universal speed or FPS promise. Raw samples are provided below.
 
 ### Validation
 
-Build/contracts and **21 actual local Minecraft checks** pass on the final remapped JAR. New checks cover straight, equal-diagonal and unequal-diagonal debris routes without false detours; main-inventory cobblestone lava plugging; block placement and escape while immersed; actual A/D camera movement; real scroll events with speed limits and unchanged hotbar selection; and a larger view-distance request received by the server, followed by restoration on exit. Existing storage, Mending, totem, base inspection and logout checks also pass.
+Build/contracts, **18 native movement and retained-feature checks**, and six candidate timing runs pass. Six matching baseline runs are included. Checks cover the Fast approach toggle, real lava plugs and pickup, external drops, chest recovery, clear paths at several angles, inventory-only blocks, immersed lava recovery, offhand XP repair, totem refill, full usable/ender storage, base inspection/trial exclusion and nearby-player logout. Camera code is unchanged from 1.1.1 and was not re-tested for this movement update.
 
-Tests use an isolated local Linux/Mesa survival world. The immersed-lava fixture supplies Fire Resistance only for deterministic testing; the release does not grant it. The local server caps chunk delivery at six while receiving a larger camera request, so unlimited or remote chunk loading is not claimed. Storage stacks and test containers are supplied by the fixture. No public server is modified.
+Tests use an isolated local world; no public server is modified. The lava fixture supplies Fire Resistance only for deterministic testing, not as a release feature. ClamAV 1.5.4 scanned the complete final JAR: **zero detections**. This is not Microsoft Defender certification or an anti-cheat guarantee. Server-hidden blocks/players and server permissions still limit the client. Use automation where permitted.
 
-ClamAV 1.5.4 scanned the complete final JAR with **zero detections**. This is not Microsoft Defender certification. Server permissions, anti-cheat compatibility, Windows hardware and arbitrary terrain/lava layouts are not guaranteed. Use automation where permitted.
+- [Source and build instructions](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/netherite-finder-v1-1.1.2-source.zip)
+- [SHA-256 checksums](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/SHA256SUMS-netherite-finder-v1-1.1.2.txt)
+- [Scan report](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/SCAN-REPORT-netherite-finder-v1-1.1.2.txt)
+- [F6 menu preview](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/netherite-finder-v1-1.1.2-menu.png)
+- [Raw benchmark samples and comparison](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/BENCHMARK-netherite-finder-v1-1.1.2.json)
 
-- [Source and build instructions](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/netherite-finder-v1-1.1.1-source.zip)
-- [SHA-256 checksums](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/SHA256SUMS-netherite-finder-v1-1.1.1.txt)
-- [Scan report](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/SCAN-REPORT-netherite-finder-v1-1.1.1.txt)
-- [F6 menu preview](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/netherite-finder-v1-1.1.1-menu.png)
-
-# Netherite Finder V1 — 1.1.1
+# Netherite Finder V1 — 1.1.2
 
 Minecraft Java **1.21.11**, **Fabric Loader 0.19.3+**, **Java 21**. This is the standalone Finder, independent of Astra and Crystal. Fabric API 0.141.6+1.21.11 is bundled unchanged as a Fabric nested JAR.
 
 ## Install
 
-Replace the previous Finder JAR with `netherite-finder-v1-1.1.1.jar` in the Fabric instance's `mods` folder; keep only one Finder version. Press **F6** in game. Controls have three categories: **MINER**, **ESP/CHEATS**, **AUTO BASE FINDER**. Choose a mode, switch ON, then close the menu. Automation and cameras start OFF and never resume automatically after reconnecting.
+Replace the previous Finder JAR with `netherite-finder-v1-1.1.2.jar` in the Fabric instance's `mods` folder; keep only one Finder version. Press **F6** in game. Controls have three categories: **MINER**, **ESP/CHEATS**, **AUTO BASE FINDER**. Choose a mode, switch ON, then close the menu. Automation and cameras start OFF and never resume automatically after reconnecting.
 
 **You must have XP bottles in your inventory and a good diamond/netherite pickaxe.** Mending enables automatic repair; Efficiency and Unbreaking help. Carry spare Totems of Undying, an ender chest, and plain building blocks for lava plugs and supported steps. Hotbar blocks are preferred; the miner can bring suitable blocks from the main inventory into the hotbar. Supported materials are netherrack, basalt, blackstone, cobblestone, cobbled deepslate, stone, deepslate, dirt and end stone. Silk Touch enables recovery of a placed ender chest.
+
+## Faster approach
+
+**Fast approach is ON by default** and can be toggled in the MINER category. It uses ordinary Minecraft sprinting, and can use normal sprint-jumps on long, flat approaches only after checking a full five-block landing corridor and enough headroom. It does not jump through low tunnels, over unknown floors, toward nearby targets, or beside detected lava. It keeps the checked heading during the jump and lands before starting to mine.
+
+While a real native crosshair mines a visible block, the bot can walk closer across checked supported ground. This overlaps approach and mining rather than standing at maximum reach and then walking the entire pickup gap. Mining aim uses faster critically damped tracking, without snapping. Regular tool hardness, reach, durability, hunger and server timing still apply. No movement attributes, velocity, tick rate or reach are increased. Turning Fast approach OFF disables sprint-jumps and closing the distance while mining.
+
+In three repeats of each isolated 28-block fixture, the median open-route approach-to-first-hit time fell from **91 to 76 game ticks**, and the full mine/pickup cycle from **134 to 114 ticks**. A two-high pre-dug tunnel remained grounded: its full cycle fell from **135 to 130 ticks**. These are local Minecraft 1.21.11/Mesa tests with an Efficiency V netherite pickaxe and fixed supplies, not a promise for every terrain, tool, server or network connection. See the benchmark report for the raw samples.
 
 ## Mining, lava and storage
 
@@ -87,6 +104,6 @@ The mod takes over movement, aiming, mining and the described inventory actions 
 
 ## Build and inspection
 
-With Java 21, run `./gradlew build` (`gradlew.bat build` on Windows). The installable remapped JAR is `build/libs/netherite-finder-v1-1.1.1.jar`. Contract tests are under `tools/tests`. The external native observer and its disposable test world are excluded from release files.
+With Java 21, run `./gradlew build` (`gradlew.bat build` on Windows). The installable remapped JAR is `build/libs/netherite-finder-v1-1.1.2.jar`. Contract tests are under `tools/tests`. The external native observer and its disposable test world are excluded from release files.
 
 Bundled Fabric API is unchanged and licensed Apache-2.0; its license is in `META-INF/licenses` and `vendor/Fabric-API-LICENSE.txt`. Upstream: https://github.com/FabricMC/fabric . No operating-system helpers, browser engines or executable installers are included. Antivirus scan results identify the exact release bytes and are not Microsoft Defender certification.

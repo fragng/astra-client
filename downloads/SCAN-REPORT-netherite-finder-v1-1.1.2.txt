@@ -1,0 +1,27 @@
+Netherite Finder V1 / 1.1.2
+27 November 2026
+
+ClamAV 1.5.4 scanned the complete final JAR, including nested Fabric API.
+Result: exit 0; zero infected files. Release matches the native-tested JAR.
+Build/contracts, eighteen movement/retained-feature checks and six candidate
+timing runs pass. Six matching baseline timings are also provided.
+This is not Microsoft Defender certification or an anti-cheat guarantee.
+
+
+----------- SCAN SUMMARY -----------
+Known viruses: 3628228
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 1
+Infected files: 0
+Data scanned: 18.77 MiB
+Data read: 2.41 MiB (ratio 7.79:1)
+Time: 64.327 sec (1 m 4 s)
+Start Date: 2026:11:27 17:21:49
+End Date:   2026:11:27 17:22:53
+
+Checksums:
+a53b2950afb3b60ac52c5c8f6e09bd7fe7a81bf563aee48c38e6844b3b17aec9  netherite-finder-v1-1.1.2.jar
+00a061256d865dfba36634b263f70d264f88d6e83bff35162cc0140d6e1edda6  netherite-finder-v1-1.1.2-source.zip
+32db151247292c007f79c5efa6dda2c03a2b68a0c3bfe1593bd980630390e376  netherite-finder-v1-1.1.2-menu.png
+ac290c78010d02e4412ca493b8e44fd97e50bb2f5b01975bc103c02c2071bd64  BENCHMARK-netherite-finder-v1-1.1.2.json
