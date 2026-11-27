@@ -1,0 +1,31 @@
+Crystal Client 1.0.0 — release scan report
+27 November 2026
+
+ClamAV 1.5.4 scanned the final standalone Crystal JAR, complete performance
+pack ZIP and source ZIP. Result: exit code 0, 3 files scanned, 0 infected.
+Archive contents were scanned; originals were not modified or quarantined.
+The dependency files also passed the SHA-256/SHA-512 acquisition-manifest
+checks. The SHA256SUMS file identifies the exact downloadable artifacts.
+
+This is a ClamAV result, not Microsoft Defender certification or a promise
+that every antivirus product will produce the same result. Actual Windows
+Defender scanning was unavailable in this Linux environment.
+
+
+----------- SCAN SUMMARY -----------
+Known viruses: 3628228
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 3
+Infected files: 0
+Data scanned: 52.96 MiB
+Data read: 13.20 MiB (ratio 4.01:1)
+Time: 76.496 sec (1 m 16 s)
+Start Date: 2026:11:27 12:33:20
+End Date:   2026:11:27 12:34:36
+
+SHA-256 checksums:
+6d2b187795db7cd533a903a00a86d18cd5d6e76d1e19b8031b5271514b94b4d7  crystal-client-1.0.0.jar
+48209e76173c432a22d6242398e99f32413002e1dba40fe43be2b111f23c0fec  crystal-client-1.0.0-performance-pack.zip
+b8efbe4c08b600b5266cd192e3afffa1539322fb10617e27dc8d679adaa0a3be  crystal-client-1.0.0-source.zip
+99cf5698f06f3e2c51139352a73adef50797814c707a8dd68a1befabad877f82  crystal-client-1.0.0-preview.png

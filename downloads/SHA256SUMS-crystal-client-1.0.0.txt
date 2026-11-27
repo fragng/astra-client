@@ -1,0 +1,4 @@
+6d2b187795db7cd533a903a00a86d18cd5d6e76d1e19b8031b5271514b94b4d7  crystal-client-1.0.0.jar
+48209e76173c432a22d6242398e99f32413002e1dba40fe43be2b111f23c0fec  crystal-client-1.0.0-performance-pack.zip
+b8efbe4c08b600b5266cd192e3afffa1539322fb10617e27dc8d679adaa0a3be  crystal-client-1.0.0-source.zip
+99cf5698f06f3e2c51139352a73adef50797814c707a8dd68a1befabad877f82  crystal-client-1.0.0-preview.png
