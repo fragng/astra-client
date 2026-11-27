@@ -1,0 +1,2 @@
+247a2436c9e7dded4f22a969487ebacc30ccaf38d64a47bce035a2dc0c02f3dd  netherite-finder-v1-1.0.1.jar
+5237d84f68b1410aa01817483c818c3f13b5deaabfad5fd8c22bf4ac712ae7c4  netherite-finder-v1-1.0.1-source.zip

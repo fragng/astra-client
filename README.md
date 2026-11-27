@@ -1,38 +1,31 @@
-# Netherite Finder V1
+# Netherite Finder V1 — 1.0.1
 
-Netherite Finder V1 is a separate Minecraft Java **1.21.11 / Fabric Loader 0.19.3+ / Java 21** mod. Fabric API is included in the single installable JAR.
+Netherite Finder V1 **1.0.1** fixes debris pickup and changes the menu key to **F7**.
 
-**[Download Netherite Finder V1.jar](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/netherite-finder-v1-1.0.0.jar)**
+**[Download netherite-finder-v1-1.0.1.jar](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/netherite-finder-v1-1.0.1.jar)**
 
-## Install and use
+Replace the old Netherite Finder JAR with this one; keep only one version. Requires **Minecraft 1.21.11 / Fabric Loader 0.19.3+ / Java 21**. Fabric API is included.
 
-Put the JAR in your Fabric instance's `mods` folder. Enter the Nether, press **F8**, switch **ON**, and close the menu. F8 opens/closes its controls; the Instructions button explains supplies and behavior.
+### Changed
 
-**You must have XP bottles and a good diamond/netherite pickaxe in your inventory.** Mending is required for automatic repair. Carry spare totems and an ender chest; Silk Touch lets the mod recover its placed chest.
+- **Pickup fix:** every actual mined ancient-debris block is tracked, including blocks broken during tunnelling. Nearby dropped debris takes priority. The miner walks to the actual item and waits for inventory confirmation before choosing another ore. Longer walks no longer hit the old short collection timeout. If pickup fails, it pauses at the drop.
+- **Direct approach:** it now takes immediate tunnel steps toward debris instead of waiting for a regional route search.
+- **Lava plugging:** it places actual plain netherrack, basalt or blackstone from your inventory into encountered lava and waits for the placed block before advancing. Keep a supply of these blocks.
+- **Auto totem:** normal paced spare-totem swaps remain active while ON, including while the F7 menu is open.
+- **F7 controls:** the new binding works when upgrading from saved F8 settings. Instructions and labels now use F7.
 
-## Included
+Mending repair, 64-debris ender-chest storage, red highlighting and loaded-player logout remain available. Bring XP bottles, a Mending diamond/netherite pickaxe, spare totems, an ender chest and building blocks. Silk Touch allows chest recovery.
 
-- Glowing red through-terrain highlighting of loaded ancient-debris blocks.
-- Bounded route planning, normal-speed Minecraft movement/aim/mining and debris pickup.
-- Known-lava/unsafe-floor avoidance, with branch tunnelling toward Y15 when no reachable debris is known.
-- Actual Mending repair using inventory XP bottles, and paced totem replenishment.
-- Ender-chest placement/opening and debris deposit at 64+ inventory debris.
-- Pickup-space cleanup limited to plain netherrack, basalt, blackstone, gravel, soul sand and soul soil. Named/custom items, supplies and gear are protected.
-- Logout when another loaded non-spectator player is within 128 horizontal blocks (8 chunks).
-- Compact status HUD, F8 instructions and OFF after disconnect/reconnect.
+### Validation
 
-Server-hidden ore and untracked players cannot be revealed by a client. Lava avoidance cannot guarantee safety, supplies are finite, and no anti-cheat compatibility or flag-free guarantee is provided. Use automation only where permitted.
+Actual local Minecraft survival tests passed for F7, direct mining, real lava plugging, pickup after both self-mined and externally broken debris (including walking six blocks to the drop), server-side XP repair, a real totem pop/refill while the F7 screen remained open, server-confirmed 64-debris ender-chest transfer and loaded-player logout. Unit/contract checks cover direct steps and inventory-confirmed collection across long walks.
 
-## Validation
+ClamAV 1.5.4 scanned the final JAR with zero detections. This is not Microsoft Defender certification. Server-hidden ore/players cannot be revealed; no anti-cheat compatibility or lava-safety guarantee is made. Use automation where permitted. Native tests used an isolated Linux/Mesa local world, with no public server connected to or modified.
 
-The build/contract checks pass. Actual local survival-world tests verified mining and pickup, lava avoidance, full-inventory cleanup, server-side Mending repair, a real totem pop/refill, a server-confirmed 64-debris ender-chest transfer and loaded-player radius/logout behavior. The observer/world are excluded from the download. The storage test supplies the 64-stack to exercise transfer, rather than claiming a benchmark of mining 64.
-
-ClamAV 1.5.4 scanned the final JAR, including nested archive contents, with 0 infected files. This is not Microsoft Defender certification. Native tests used Linux/X11/Mesa software rendering; no public Minecraft server was connected to or modified.
-
-- [Source and build instructions](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/netherite-finder-v1-1.0.0-source.zip)
-- [SHA-256 checksums](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/SHA256SUMS-netherite-finder-v1.txt)
-- [Scan report](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/SCAN-REPORT-netherite-finder-v1.txt)
-- [Menu preview](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/netherite-finder-v1-menu.png)
+- [Source and build instructions](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/netherite-finder-v1-1.0.1-source.zip)
+- [SHA-256 checksums](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/SHA256SUMS-netherite-finder-v1-1.0.1.txt)
+- [Scan report](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/SCAN-REPORT-netherite-finder-v1-1.0.1.txt)
+- [F7 menu preview](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/netherite-finder-v1-1.0.1-menu.png)
 
 # Netherite Finder V1
 
@@ -42,9 +35,9 @@ mod, independent of Crystal Client and Astra Client.
 
 ## Install and start
 
-Put `netherite-finder-v1-1.0.0.jar` in your Fabric instance's `mods` folder.
-Enter the Nether, press **F8**, choose **ON**, and close the menu. The same
-menu has scrollable instructions and an OFF control. F8 also closes it.
+Put `netherite-finder-v1-1.0.1.jar` in your Fabric instance's `mods` folder.
+Enter the Nether, press **F7**, choose **ON**, and close the menu. The same
+menu has scrollable instructions and an OFF control. F7 also closes it.
 Automation starts OFF and stays OFF after disconnect/reconnect.
 
 **You must have XP bottles in your inventory and a good pickaxe.**
@@ -57,13 +50,9 @@ ender chest. **Silk Touch** allows recovery of a placed ender chest.
 - A bounded, incremental scan searches loaded Nether chunks for actual
   ancient-debris block states. A red, full-bright outline and translucent
   glow remain visible through terrain while ON.
-- The miner plans a supported two-block-high route, checks it again before
-  moving/mining, aims with bounded turns, and uses Minecraft's native
-  movement and attack controls. Tool/enchantment mining speed and normal
-  block-interaction reach still apply.
-- It rejects known lava-adjacent cells, unsafe floors, unbreakable blocks,
-  block entities and unloaded routes. It does not dig out the floor under
-  the player. Blocked routes are retried with a bounded search.
+- The miner takes immediate direct tunnel steps toward ancient debris, using normal Minecraft movement, aim, reach and attack inputs.
+- When lava is encountered, it places plain netherrack, basalt or blackstone from your inventory, waits for the block to appear, then continues. It can place supported floor steps where needed. Supply building blocks; it pauses if a safe placement cannot be made.
+- Dropped debris takes priority over new ore and routine repair. Actual item positions are followed, including drops created while tunnelling or already on the ground. Collection is confirmed by inventory changes before a new target is chosen. Progress extends the pickup wait; an unsuccessful pickup pauses the miner at the drop.
 - When no reachable debris is known, it branch-mines toward Y15 so more
   terrain can be searched. A compact HUD shows the current action.
 - Below 70% pickaxe durability, it throws actual XP bottles at paced
@@ -72,7 +61,7 @@ ender chest. **Silk Touch** allows recovery of a placed ender chest.
   bottles; it is not generated. Other damaged Mending equipment can share
   XP. A lack of repair progress stops the miner; a nearly broken tool is
   protected from further mining.
-- A spare totem is equipped after the offhand totem is consumed, using a
+- Auto totem stays active while ON, including in the F7 menu. A spare totem is equipped after the offhand totem is consumed, using a
   paced normal inventory swap. If no spare remains, automation stops.
 - At 64+ ancient debris in the inventory, it opens a visible nearby ender
   chest or places one on a checked floor, waits for the actual chest menu,
@@ -86,7 +75,7 @@ ender chest. **Silk Touch** allows recovery of a placed ender chest.
   junk can be removed, clear the inventory manually.
 - Another loaded, non-spectator player within **128 horizontal blocks
   (8 chunks)** triggers a normal disconnect and turns the mod OFF.
-- User-opened menus pause mining and movement. Its own ender-chest menu
+- User-opened menus pause mining and movement while auto totem remains active. Its own ender-chest menu
   remains active for the deposit. OFF releases all movement/mining inputs.
 
 ## Practical limits
@@ -102,7 +91,7 @@ only where the server permits it. Supplies and chest capacity are finite.
 ## Build and inspect
 
 With Java 21, run `./gradlew build` (Windows: `gradlew.bat build`). The
-installable remapped JAR is `build/libs/netherite-finder-v1-1.0.0.jar`.
+installable remapped JAR is `build/libs/netherite-finder-v1-1.0.1.jar`.
 The source includes route contract tests. The external native test observer
 and its local world are excluded from release files.
 

@@ -1,0 +1,27 @@
+Netherite Finder V1 / 1.0.1
+27 November 2026
+
+ClamAV 1.5.4 scanned the final complete JAR, including its nested Fabric
+API. Result: exit 0, zero infected files. The final build passes all
+contracts. Native gameplay tests pass for F7, direct mining/lava plugging,
+self-mined and externally broken debris pickup, Mending, in-menu totem
+refill, ender-chest storage and logout. The final rebuild only adjusts
+the initial F7 label and metadata description after those native checks.
+This is not Microsoft Defender certification or an anti-cheat guarantee.
+
+
+----------- SCAN SUMMARY -----------
+Known viruses: 3628228
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 1
+Infected files: 0
+Data scanned: 18.58 MiB
+Data read: 2.37 MiB (ratio 7.85:1)
+Time: 36.143 sec (0 m 36 s)
+Start Date: 2026:11:27 14:08:18
+End Date:   2026:11:27 14:08:54
+
+Checksums:
+247a2436c9e7dded4f22a969487ebacc30ccaf38d64a47bce035a2dc0c02f3dd  netherite-finder-v1-1.0.1.jar
+5237d84f68b1410aa01817483c818c3f13b5deaabfad5fd8c22bf4ac712ae7c4  netherite-finder-v1-1.0.1-source.zip
