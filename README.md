@@ -1,31 +1,32 @@
-# Netherite Finder V1 — 1.0.1
+# Netherite Finder V1 — 1.0.2
 
-Netherite Finder V1 **1.0.1** fixes debris pickup and changes the menu key to **F7**.
+Netherite Finder V1 **1.0.2** smooths movement and adds recovery from stalls and obstructions.
 
-**[Download netherite-finder-v1-1.0.1.jar](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/netherite-finder-v1-1.0.1.jar)**
+**[Download netherite-finder-v1-1.0.2.jar](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/netherite-finder-v1-1.0.2.jar)**
 
-Replace the old Netherite Finder JAR with this one; keep only one version. Requires **Minecraft 1.21.11 / Fabric Loader 0.19.3+ / Java 21**. Fabric API is included.
+Replace the old Netherite Finder JAR; keep only one version. **Minecraft 1.21.11 / Fabric Loader 0.19.3+ / Java 21**. Fabric API is included. **F7** opens the controls.
 
 ### Changed
 
-- **Pickup fix:** every actual mined ancient-debris block is tracked, including blocks broken during tunnelling. Nearby dropped debris takes priority. The miner walks to the actual item and waits for inventory confirmation before choosing another ore. Longer walks no longer hit the old short collection timeout. If pickup fails, it pauses at the drop.
-- **Direct approach:** it now takes immediate tunnel steps toward debris instead of waiting for a regional route search.
-- **Lava plugging:** it places actual plain netherrack, basalt or blackstone from your inventory into encountered lava and waits for the placed block before advancing. Keep a supply of these blocks.
-- **Auto totem:** normal paced spare-totem swaps remain active while ON, including while the F7 menu is open.
-- **F7 controls:** the new binding works when upgrading from saved F8 settings. Instructions and labels now use F7.
+- Eased camera turns with bounded turn rates and smooth stops, including shortest-angle turning across the rotation boundary.
+- Waypoints are held until reached, preventing premature turns at block edges and stair steps.
+- Clear corridors use a short look-ahead; open spaces allow checked diagonal walking. Walking uses normal Minecraft inputs and speed.
+- Actual progress is measured while moving. Mining, menus and expected block-placement waits do not count as a stall.
+- If obstructed, a short local recovery route can step around a nearby chest or blocked corner. Recently failed waypoints are remembered so the same spot is not immediately retried.
+- Recovery uses checked supported positions, has a limited number of attempts, and stops with an explanation if there is no safe nearby route.
 
-Mending repair, 64-debris ender-chest storage, red highlighting and loaded-player logout remain available. Bring XP bottles, a Mending diamond/netherite pickaxe, spare totems, an ender chest and building blocks. Silk Touch allows chest recovery.
+The 1.0.1 pickup fix, direct approach, inventory lava plugs, auto totem (including in the F7 menu), XP repair, 64-debris ender-chest storage and loaded-player logout are retained.
 
 ### Validation
 
-Actual local Minecraft survival tests passed for F7, direct mining, real lava plugging, pickup after both self-mined and externally broken debris (including walking six blocks to the drop), server-side XP repair, a real totem pop/refill while the F7 screen remained open, server-confirmed 64-debris ender-chest transfer and loaded-player logout. Unit/contract checks cover direct steps and inventory-confirmed collection across long walks.
+The final JAR passes build/contracts and eight actual local Minecraft checks: F7 controls/highlighting; mining with a real lava plug and pickup; walking to an externally broken debris drop six blocks away; recovery around a chest obstruction followed by pickup; Mending repair; a real totem pop/refill with F7 open; server-confirmed 64-debris ender-chest transfer; and loaded-player radius/logout. Native movement checks bound the camera turn rate, and contract checks cover smoothing, angle wraparound, stall detection and local recovery.
 
-ClamAV 1.5.4 scanned the final JAR with zero detections. This is not Microsoft Defender certification. Server-hidden ore/players cannot be revealed; no anti-cheat compatibility or lava-safety guarantee is made. Use automation where permitted. Native tests used an isolated Linux/Mesa local world, with no public server connected to or modified.
+ClamAV 1.5.4 scanned the final JAR with zero detections. This is not Microsoft Defender certification. Tests use an isolated Linux/Mesa local world, with no public server modified. Server-hidden ore/players cannot be revealed, and no anti-cheat compatibility or lava-safety guarantee is made. Use automation where permitted.
 
-- [Source and build instructions](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/netherite-finder-v1-1.0.1-source.zip)
-- [SHA-256 checksums](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/SHA256SUMS-netherite-finder-v1-1.0.1.txt)
-- [Scan report](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/SCAN-REPORT-netherite-finder-v1-1.0.1.txt)
-- [F7 menu preview](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/netherite-finder-v1-1.0.1-menu.png)
+- [Source and build instructions](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/netherite-finder-v1-1.0.2-source.zip)
+- [SHA-256 checksums](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/SHA256SUMS-netherite-finder-v1-1.0.2.txt)
+- [Scan report](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/SCAN-REPORT-netherite-finder-v1-1.0.2.txt)
+- [F7 menu preview](https://raw.githubusercontent.com/fragng/astra-client/netherite-finder-downloads/downloads/netherite-finder-v1-1.0.2-menu.png)
 
 # Netherite Finder V1
 
@@ -35,7 +36,7 @@ mod, independent of Crystal Client and Astra Client.
 
 ## Install and start
 
-Put `netherite-finder-v1-1.0.1.jar` in your Fabric instance's `mods` folder.
+Put `netherite-finder-v1-1.0.2.jar` in your Fabric instance's `mods` folder.
 Enter the Nether, press **F7**, choose **ON**, and close the menu. The same
 menu has scrollable instructions and an OFF control. F7 also closes it.
 Automation starts OFF and stays OFF after disconnect/reconnect.
@@ -51,6 +52,14 @@ ender chest. **Silk Touch** allows recovery of a placed ender chest.
   ancient-debris block states. A red, full-bright outline and translucent
   glow remain visible through terrain while ON.
 - The miner takes immediate direct tunnel steps toward ancient debris, using normal Minecraft movement, aim, reach and attack inputs.
+- Camera turns ease in and out with bounded turn rates. Waypoints are held
+  until reached, clear corridors use a short look-ahead, and open spaces
+  allow checked diagonal walking. These changes reduce block-by-block
+  stops and abrupt turns without changing Minecraft movement speed.
+- Actual progress is checked while walking. A short nearby detour can
+  recover from corners or solid obstructions such as a chest. Recovery is
+  bounded and only uses checked supported positions; if there is no safe
+  route or repeated recovery fails, the mod stops with an explanation.
 - When lava is encountered, it places plain netherrack, basalt or blackstone from your inventory, waits for the block to appear, then continues. It can place supported floor steps where needed. Supply building blocks; it pauses if a safe placement cannot be made.
 - Dropped debris takes priority over new ore and routine repair. Actual item positions are followed, including drops created while tunnelling or already on the ground. Collection is confirmed by inventory changes before a new target is chosen. Progress extends the pickup wait; an unsuccessful pickup pauses the miner at the drop.
 - When no reachable debris is known, it branch-mines toward Y15 so more
@@ -91,7 +100,7 @@ only where the server permits it. Supplies and chest capacity are finite.
 ## Build and inspect
 
 With Java 21, run `./gradlew build` (Windows: `gradlew.bat build`). The
-installable remapped JAR is `build/libs/netherite-finder-v1-1.0.1.jar`.
+installable remapped JAR is `build/libs/netherite-finder-v1-1.0.2.jar`.
 The source includes route contract tests. The external native test observer
 and its local world are excluded from release files.
 
