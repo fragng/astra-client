@@ -1,0 +1,24 @@
+Crystal Client 1.0.1 complete single-JAR release
+27 November 2026
+
+ClamAV 1.5.4 scanned the final complete Crystal JAR including its nested
+mods and archive contents. Result: exit 0, 0 infected. The five nested
+mod JARs also match the original SHA-256/SHA-512 manifest entries.
+This is a ClamAV result, not Microsoft Defender certification.
+
+
+----------- SCAN SUMMARY -----------
+Known viruses: 3628228
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 1
+Infected files: 0
+Data scanned: 44.23 MiB
+Data read: 6.28 MiB (ratio 7.05:1)
+Time: 97.403 sec (1 m 37 s)
+Start Date: 2026:11:27 12:43:21
+End Date:   2026:11:27 12:44:59
+
+Final checksums:
+c69abe3aacc3cb6843bb1b2aa51457b9f94a45ba52913f19718a41cd632b5cb9  crystal-client-1.0.1.jar
+a565a5b4917213493e545efeb409186ef7ae4e205b7a16a20e71dbb3fc13ada4  crystal-client-1.0.1-source.zip

@@ -1,0 +1,2 @@
+c69abe3aacc3cb6843bb1b2aa51457b9f94a45ba52913f19718a41cd632b5cb9  crystal-client-1.0.1.jar
+a565a5b4917213493e545efeb409186ef7ae4e205b7a16a20e71dbb3fc13ada4  crystal-client-1.0.1-source.zip
